@@ -1,0 +1,25 @@
+1.
+	@echo off
+	:one
+	echo %time% >> file.txt
+	dir >> file.txt
+	ping 1.1.1.1 -n 1 -w 3000 >> nul
+	GoTo one
+
+2.
+	@echo off
+	:one
+	echo "0" > 01.bac
+	echo "01" > 02.bac
+	echo "012" > 03.bac
+	echo "0123" > 04.bob
+	echo "01234" > 05.bob
+	echo "012345" > 06.bak
+	echo "0123456" > 07.bak
+	echo "01234567" > 08.bak
+	echo "012345678" > 09.bac
+	echo "0123456789" > 10.bac
+	ping 1.1.1.1 -n 1 -w 3000 >> nul
+	del *.bak *.bob *.bac
+	ping 1.1.1.1 -n 1 -w 3000 >> nul
+	GoTo one

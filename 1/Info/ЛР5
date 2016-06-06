@@ -1,0 +1,143 @@
+1.
+Содердимое .bat файла:
+	@echo off
+	echo %PATH%
+	echo %TIME%
+	echo %DATE%
+	echo %COMPUTERNAME%
+	echo %HOMEPATH%
+	echo %WINDIR%
+	echo %RANDOM%
+	pause
+
+Результат:
+	C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+	22:07:20,98
+	29.09.2015
+	HOME-E532D627F1
+	\Documents and Settings\DSG
+	C:\WINDOWS
+	20077
+	Для продолжения нажмите любую клавишу . . .
+
+Комментарий:
+	%PATH% - набор директорий, в которых расположены исполняемые файлы
+	%TIME% - Текущее время
+	%DATE% - Дата
+	%COMPUTERNAME% - Сетевое имя устройства
+	%HOMEPATH% - Домашний каталог пользователя
+	%WINDIR% - Каталог windows
+	%RANDOM% - Случайное число
+2.
+Содердимое .bat файла:
+	@echo off
+	set note1=To be or not to be.
+	echo %note1%
+	echo =======================
+	set
+	pause
+
+Результат:
+	To be or not to be.
+	=======================
+	ALLUSERSPROFILE=C:\Documents and Settings\All Users	
+	APPDATA=C:\Documents and Settings\DSG\Application Data
+	CommonProgramFiles=C:\Program Files\Common Files
+	COMPUTERNAME=HOME-E532D627F1
+	ComSpec=C:\WINDOWS\system32\cmd.exe
+	FP_NO_HOST_CHECK=NO
+	HOMEDRIVE=C:
+	HOMEPATH=\Documents and Settings\DSG
+	LOGONSERVER=\\HOME-E532D627F1
+	note1=To be or not to be.
+	NUMBER_OF_PROCESSORS=2
+	OS=Windows_NT
+	Path=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem
+	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+	PROCESSOR_ARCHITECTURE=x86
+	PROCESSOR_IDENTIFIER=x86 Family 6 Model 60 Stepping 3, GenuineIntel
+	PROCESSOR_LEVEL=6
+	PROCESSOR_REVISION=3c03
+	ProgramFiles=C:\Program Files
+	PROMPT=$P$G
+	SESSIONNAME=Console
+	SystemDrive=C:
+	SystemRoot=C:\WINDOWS
+	TEMP=C:\DOCUME~1\DSG\LOCALS~1\Temp
+	TMP=C:\DOCUME~1\DSG\LOCALS~1\Temp
+	USERDOMAIN=HOME-E532D627F1
+	USERNAME=DSG
+	USERPROFILE=C:\Documents and Settings\DSG
+	windir=C:\WINDOWS
+	Для продолжения нажмите любую клавишу . . .
+
+3.
+# Если переменная не установлена:
+Содердимое .bat файла:
+	@echo off
+	if defined MY_VAR echo "it is defined"
+	if "%MY_VAR%"=="97" (set MY_VAR) else (echo "my variable MY_VAR is not defined")
+	pause
+
+Результат:
+	"my variable MY_VAR is not defined"
+	Для продолжения нажмите любую клавишу . . .
+
+# Если переменная установлена
+Содердимое .bat файла:
+	@echo off
+	set MY_VAR=97
+	if defined MY_VAR echo "it is defined"
+	if "%MY_VAR%"=="97" (set MY_VAR) else (echo "my variable MY_VAR is not defined")
+	pause
+
+Результат:
+	"it is defined"
+	MY_VAR=97
+	Для продолжения нажмите любую клавишу . . .
+
+4.
+Содердимое .bat файла:
+	@echo off
+	set LIST=
+	for %%i in (*.txt) do set LIST=!LIST! %%i
+	echo %LIST%
+
+Результат в файле:
+	help.txt if.txt set.txt
+
+5.
+Содердимое .bat файла:
+	@echo off
+	set SPISOK=
+	for %%i in (*) do set SPISOK=!SPISOK!  [%%i]
+	echo %SPISOK%
+	for %%i in (*.txt) do  attrib +R %%i
+
+Результат:
+  [1.bat]  [2.bat]  [3.bat]  [4.bat]  [5.bat]  [help.txt]  [if.txt]  [set.txt] [Лабораторная 5.doc]
+Все файлы подходящие с именами подходящими под маску *.txt доступны только для чтения.
+
+6.
+Содердимое .bat файла:
+	@echo off
+	mkdir mydir
+	cd mydir
+	echo "0" > 01.bac
+	echo "01" > 02.bac
+	echo "012" > 03.bac
+	echo "0123" > 04.bob
+	echo "01234" > 05.bob
+	echo "012345" > 06.bak
+	echo "0123456" > 07.bak
+	echo "01234567" > 08.bak
+	echo "012345678" > 09.bac
+	echo "0123456789" > 10.bac
+
+	"C:\Program Files\WinRAR\WinRAR.exe" a BACi.rar *.bac
+	"C:\Program Files\WinRAR\WinRAR.exe" a BAKi.rar *.bak
+	"C:\Program Files\WinRAR\WinRAR.exe" a BOBi.rar *.bob
+
+	if ERRORLEVEL 1 (echo "Something's gone wrong!") else (del *.bak *.bob *.bac)
+
+
