@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML><HEAD><TITLE>Лабораторная работа N 2.15</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Windows-1251">
+<META NAME="Description" CONTENT="Lecture about Internet">
+<META NAME="Keywords" CONTENT="Internet, Lecture">
+<META NAME="OWNER" CONTENT="Fedotov@ict.nsc.ru">
+<META NAME="LANGUAGE" CONTENT="ru">
+<META NAME="AUTHOR" CONTENT="E.V.Rychkova">
+<STYLE type="text/css">
+  s {text-decoration: none;  /* убрать зачеркивание */
+     font-style:italic;      /* сделать курсив */
+     font-weight: bold;      /* сделать жирный шрифт */
+     } 
+</STYLE>
+</HEAD>
+
+<BODY LEFTMARGIN=10 TOPMARGIN=0  BGCOLOR=#FFEFCF TEXT=#000000 LINK=#006600 VLINK=#330099 ALINK=#ff0000>
+<hr noshade size=3><center>
+<h3>Сибирский государственный университет <br>телекоммуникаций и информатики
+</h3>
+</center>
+<P align=center><i> Лабораторные задания по курсу
+&nbsp;"Введение в Интернет"</i>
+<hr noshade size=3>
+
+<H2 align=center>Лабораторная работа N&nbsp;2.15<br>
+DHTML</H2>
+
+<H3>Задание</H3>
+
+<P>Cоздать документ, содержащий следующий текст: <br>
+<i><p>Атрибут SRC= определяет URL адрес (имя) графического файла. В приведенном примере файл будет размещен в квадрате шириной 46 и высотой 46 пикселей соответственно. Если размеры указанные атрибутами HEIGHT= (высота) и WIDTH= (ширина), не совпадают с размерами графического файла, то последний масштабируется. Масштабирование может привести к резкому ухудшению качества вывода на экран графического файла, поэтому рекомендуется задавать размеры соответствующие размерам изображения в пикселях. 
+
+<p>Рекомендуется для больших графических файлов (более 10 Kb) всегда задавать их размеры, для убыстрения работы броузера. Если размеры не заданы, то встретив графический файл броузер прекращает вывод текста и ждет пока перекачается вся картинка, чтоб определить ее размеры. 
+
+<p>Атрибут ALT= содержит надпись, которая появляется при наведении мышки на изображение. Этот же текст появится на месте рисунка, если в броузере включен режим "не показывать картинки" или вследствие медленной скорости перекачки вы не получили файл по сети. 
+
+Если вы вставляете команду IMG в документ, то броузер размещает следующий за ней текст внизу от картинки. Используя атрибут ALIGN= можно переместить, следующий перед и за картинкой текст. 
+</i> 
+<P>В конце добавить кнопку, при нажатии которой все слова, содержащие в себе корень "атрибут" заменятся на "***".
+
+<p><H3>Дополнительная информация</H3>
+<p>Работу DHTML и регулярных выражений можно рассмотреть на следующем примере:
+<br><br><pre>
+&lt;HTML&gt;
+&lt;HEAD&gt;
+  &lt;META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=Windows-1251"&gt;
+  &lt;SCRIPT LANGUAGE="JavaScript"&gt;
+    &lt;!--
+
+    function Change() {
+      s=document.getElementById('text').innerHTML;
+      s=s.replace(/(x=(\d+))/i,'x=0');
+      document.getElementById('text').innerHTML=s;
+    }
+
+    -->
+  &lt;/SCRIPT&gt;
+
+&lt;/HEAD&gt; 
+
+&lt;BODY&gt; 
+
+&lt;span id="text"&gt;
+&lt;p&gt;X=55
+&lt;p&gt;X=Y
+&lt;/span&gt;
+
+&lt;br&gt;
+&lt;INPUT TYPE="button" onClick="Change()" VALUE="Заменить"&gt; 
+
+&lt;/BODY&gt; 
+&lt;/HTML&gt; 
+</pre>
+
+</BODY></HTML>

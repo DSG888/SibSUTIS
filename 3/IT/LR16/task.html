@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//RU">
+<HTML><HEAD><TITLE>Лабораторная работа N 2.9</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Windows-1251">
+<META NAME="Description" CONTENT="Lecture about Internet">
+<META NAME="Keywords" CONTENT="Internet, Lecture">
+<META NAME="OWNER" CONTENT="Fedotov@ict.nsc.ru">
+<META NAME="LANGUAGE" CONTENT="ru">
+<META NAME="AUTHOR" CONTENT="E.V.Rychkova">
+<STYLE type="text/css">
+  s {text-decoration: none;  /* убрать зачеркивание */
+     font-style:italic;      /* сделать курсив */
+     font-weight: bold;      /* сделать жирный шрифт */
+     } 
+</STYLE>
+</HEAD>
+
+<BODY LEFTMARGIN=10 TOPMARGIN=0  BGCOLOR=#FFEFCF TEXT=#000000 LINK=#006600 VLINK=#330099 ALINK=#ff0000>
+<hr noshade size=3><center>
+<h3>Сибирский государственный университет <br>телекоммуникаций и информатики
+</h3>
+</center>
+<P align=center><i> Лабораторные задания по курсу
+&nbsp;"Введение в Интернет"</i>
+<hr noshade size=3>
+
+<H2 align=center>Лабораторная работа N&nbsp;2.9<br>
+Мозаика 2</H2>
+<script language="JavaScript">
+    function openWin(AddressURL,NUM) {
+    if (NUM == 1) {VarWin = "width=250,height=100,status=no,toolbar=no,menubar=no,scrollbars=no"}
+    else {VarWin = "status=no,toolbar=no,menubar=no,scrollbars=no"}
+    open(AddressURL,"DWIN"+NUM,VarWin)
+    }
+</script>
+
+<h3>I часть</h3>
+<p align=center><table width="100%" border=0>
+<tr>
+<td valign=top>
+<p><s>1 шаг</s>
+<p><table border=1 align=left>
+<tr><th>&nbsp;<br>&nbsp;&nbsp;&nbsp;[1]&nbsp;&nbsp;&nbsp;<br>&nbsp;<br>&nbsp;</th></tr>
+<tr><th>&nbsp;&nbsp;&nbsp;[2]&nbsp;&nbsp;&nbsp;</th></tr>
+</table>
+Разделить экран на 2 фрейма <u>по горизонтали:</u> 
+<br>фрейм <b>[1]</b>&nbsp;- высотой 320&nbsp;пикселей, 
+<br>фрейм <b>[2]</b>&nbsp;- "все остальное".
+</td>
+
+<td>
+<p><s>2 шаг</s>
+<p><table border=1 align=left>
+<tr>
+<th>&nbsp;<br>&nbsp;<br>[1.1]<br>&nbsp;<br>&nbsp;</th>
+<th>&nbsp;<br>&nbsp;<br>[1.2]<br>&nbsp;<br>&nbsp;</th>
+<th>&nbsp;<br>&nbsp;<br>[1.3]<br>&nbsp;<br>&nbsp;</th>
+</tr>
+</table>
+Разделить фрейм <b>[1]</b> на 3 фрейма <u>по вертикали:</u>  
+<br>фрейм <b>[1.1]</b>&nbsp;- шириной 180&nbsp;пикселей, 
+<br>фрейм <b>[1.2]</b>&nbsp;- шириной 250&nbsp;пикселей, 
+<br>фрейм <b>[1.3]</b>&nbsp;- "все остальное".
+</td>
+</tr></table>
+
+<p><s>3 шаг</s>
+<p><table border=1 align=left>
+<tr><th>&nbsp;<br>w1<br>&nbsp;</th><th>&nbsp;<br>w2<br>&nbsp;</th></tr>
+<tr><th>&nbsp;<br>w3<br>&nbsp;</th><th>&nbsp;<br>w4<br>&nbsp;</th></tr>
+</table>
+Разделить фрейм <b>[1.1]</b> на 4 фрейма <u>в виде таблицы:</u>  
+<br>ширина фреймов&nbsp;- 90&nbsp;пикселей, 
+<br>высота фреймов&nbsp;- 160&nbsp;пикселей.
+<br>Имена фреймам дайте в виде <b>"w1"-"w4"</b>.
+<br clear=left>
+<p>В команде  &lt;FRAMESET&gt;  задайте атрибуты FRAMEBORDER=no, BORDER=0, FRAMESPACING=0,
+а в команде &lt;FRAME&gt; -  MARGINHEIGHT=0, MARGINWIDTH=0, SCROLLING=no.
+<p> Сделайте так, чтобы при наведении мышки на каждый фрейм появлялась
+надпись, содержащая номер этого фрейма 
+(для этого нужно создать htm-файлы, в которых использовать файл r0.gif).
+
+<p><s>4 шаг</s>
+<p>Во фрейме <b>[1.3]</b> соберите мозаику из картинок из 
+<a href="lab2.3.html" target="new">лабораторной 2.3</a>.
+<p>Для того, чтобы между картинками не было промежутков, в команде &lt;TABLE&gt; задайте 
+атрибуты BORDER=0, CELLSPACING=0, CELLPADDING=0
+
+<p> Сделайте так, чтобы при наведении мышки на каждый элемент собранной мозаики появлялась
+надпись, содержащая имя соответствующего файла&nbsp;- рядом с указателем мышки, и такая же 
+надпись в статусной строке браузера. 
+Для этого нужно использовать команду задания гиперссылки следующего вида
+<p><tt>&lt;a href="javascript:void(0)" 
+onMouseOver="window.status='</tt><b><i>текст</i></b><tt>';return true"&gt;</tt>
+<p><tt>javascript:void(0)</tt> - чтобы по гиперссылке ничего не открывалось
+<p><tt>"window.status='</tt><b><i>текст</i></b><tt>';return true"</tt> - тот <b><i>текст</i></b>, 
+который будет выведен в статусной строке браузера.
+
+
+<h3>II часть</h3>
+<p>Автоматизируйте сборку мозаики во фрейме <b>[1.1]</b>. Для этого 
+во фрейме <b>[1.2]</b> создайте форму и сделайте так, чтобы в форме
+ <UL>
+  <LI> существовала возможность выбора (SELECT) номера элемента мозаики;
+  <LI> существовала возможность выбора номера (имени) фрейма, 
+       куда ставить выбранный элемент мозаики;
+  <LI> с помощью кнопки "Сопоставить" указанный элемент мозаики загружался бы 
+       в указанный фрейм.
+ </UL>
+
+<p>Здесь в элементе формы &lt;INPUT TYPE="button"&gt; нужно использовать 
+обработчик событий <tt>OnClick="window.open(</tt><b><i>что,куда</i></b><tt>)"></tt>, 
+где <b><i>что</i></b> и <b><i>куда</i></b> имеют вид: 
+<p><tt>this.form.<b><i>name</i></b>.value</tt>
+<p><tt>this.form</tt> - "эта форма", т.к. она у нас одна
+<p><tt><b><i>name</i></b></tt> - имя соответствующего элемента SELECT
+<p><tt>value</tt> - сюда будет подставлено значение выбранного элемента в SELECT'е 
+при обработке формы обработчиком событий OnClick.
+
+<p>Это должно выглядеть так:
+<p align=center><img src="k8.gif" WIDTH=585 HEIGHT=334>
+<br><br>
+
+</BODY></HTML>
+
+
