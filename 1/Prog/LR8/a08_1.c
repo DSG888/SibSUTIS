@@ -9,9 +9,9 @@
 
 int main()
 {
-	int a=0, b=0;
+	int a = 0, b = 0;
 	printf("Введите A и B: ");
-	scanf("%d %d",&a,&b);
+	scanf("%d %d", &a, &b);
 	a = a ^ b;
 	b = b ^ a;
 	a = a ^ b;

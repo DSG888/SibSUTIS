@@ -13,14 +13,14 @@ int main(void)
 {
 	int i=0, n=0, g=0;
 	printf("Введите число вариантов: ");
-	scanf("%d",&i);
+	scanf("%d", &i);
 
 	printf("Введите номер студента: ");
-	scanf("%d",&n);
+	scanf("%d", &n);
 
 	for (g = 1; g <= n; g++ )
 	{ 
-		printf ("\nСтудент [%d]\t №Варианта: (%d)", g, ((g-1)%i)+1);
+		printf ("\nСтудент [%d]\t №Варианта: (%d)", g, ((g - 1) % i) + 1);
 	}
 	printf("\n");
 	

@@ -18,6 +18,6 @@ int main()
 	printf("Введите X: ");
 	scanf("%f",&x);
 	y = x;
-	printf("x=%f y=%d\n\n", x, y+(0.5<=x-y));
+	printf("x=%f y=%d\n\n", x, y + (0.5 <= x - y));
 	return 0;
 }

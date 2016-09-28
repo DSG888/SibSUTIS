@@ -13,13 +13,13 @@
 #include <stdio.h>
 int main()
 {
-	float a=0,b=0;	//	-32 768/32 767
+	float a = 0, b = 0;	//	-32 768/32 767
 	printf("Введите A и B: ");
 	scanf("%f %f", &a, &b);
-	printf("%.2f + %.2f = %.2f\n",a,b,a+b);
-	printf("%.2f - %.2f = %.2f\n",a,b,a-b);
-	printf("%.2f * %.2f = %.2f\n",a,b,a*b);
+	printf("%.2f + %.2f = %.2f\n", a, b, a + b);
+	printf("%.2f - %.2f = %.2f\n", a, b, a - b);
+	printf("%.2f * %.2f = %.2f\n", a, b, a * b);
 	if (b!=0)
-		printf("%.2f / %.2f = %.2f\n",a,b,a/b);
+		printf("%.2f / %.2f = %.2f\n",a ,b ,a / b);
 	return 0;
 }

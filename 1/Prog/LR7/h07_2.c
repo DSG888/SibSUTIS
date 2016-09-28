@@ -14,6 +14,6 @@ int main()
 	long long int i;
 	printf("Input HEX i: ");
 	scanf("%x", &i);
-	printf("Dec representation of i: %d\n",i);
+	printf("Dec representation of i: %d\n", i);
 	return 0;
 }

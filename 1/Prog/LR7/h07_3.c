@@ -14,13 +14,13 @@
 #include <stdio.h>
 int main()
 {
-	int a=0,b=0;
+	int a = 0, b = 0;
 	printf("Введите A и B: ");
 	scanf("%d %d", &a, &b);
-	printf("%d + %d = %d\n",a,b,a+b);
-	printf("%d - %d = %d\n",a,b,a-b);
-	printf("%d * %d = %d\n",a,b,a*b);
-	if (b!=0)
-		printf("%d / %d = %d\n",a,b,a/b);
+	printf("%d + %d = %d\n", a, b, a + b);
+	printf("%d - %d = %d\n", a, b, a - b);
+	printf("%d * %d = %d\n", a, b, a * b);
+	if (b != 0)
+		printf("%d / %d = %d\n", a, b, a / b);
 	return 0;
 }

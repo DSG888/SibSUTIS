@@ -9,7 +9,7 @@ int main(void)
 {
 	int i=0;
 	printf("Введите число: ");
-	scanf("%d",&i);
+	scanf("%d", &i);
 	if (i % 2 == 0) 
 		printf ("\nЧетное 1\n\n", i);
 	else 

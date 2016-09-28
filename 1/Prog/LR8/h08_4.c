@@ -16,8 +16,8 @@ int main()
 	float x;
 	int y;
 	printf("Введите X: ");
-	scanf("%f",&x);
+	scanf("%f", &x);
 	y = x;
-	printf("x=%f y=%f\n\n", x, x-y);
+	printf("x=%f y=%f\n\n", x, x - y);
 	return 0;
 }
