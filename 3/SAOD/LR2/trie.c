@@ -70,6 +70,7 @@ struct trie *trie_insert(struct trie *root, char *key, char *value)
 	return root;
 }
 
+//FIXME Не стирает ключ среднего элемента
 struct trie *trie_delete(struct trie *root, char *key)
 {
 	int found;
@@ -124,4 +125,58 @@ void trie_print(struct trie *root, int level)
 		if (node->child != NULL)
 			trie_print(node->child, level + 1);
 	}
+}
+
+int trie_find(struct trie *root, char *key)
+{
+	void trie_print2(struct trie *root, int level)
+	{
+		struct trie *node;
+		int i;
+		for (node = root; (node != NULL) && (node >= root); node = node->sibling)
+		{
+			for (i = 0; i < level; i++)
+				printf(" ");
+			if (node->value != NULL)
+				printf("%c (%s)\n", node->ch, node->value);
+			else
+				printf("%c \n", node->ch);
+			if (node->child != NULL)
+				trie_print(node->child, level + 1);
+		}
+	}
+	void mytrie_print(struct trie *root, char *key)
+	{
+		struct trie *node;
+		for (node = root; (node != NULL) && (node >= root); node = node->sibling)
+		{
+			if (node->value != NULL)
+			{
+				printf("%c (%s)\n", node->ch, node->value);
+			}
+			else
+			{
+				printf("%c", node->ch);
+			}	
+			if (node->child != NULL)
+			{
+				mytrie_print(node->child, key);
+			}
+		}
+	}
+	struct trie *node, *list;
+	for (list = root; *key != '\0'; key++)
+	{
+		for (node = list; node != NULL; node = node->sibling)
+		{
+			if (node->ch == *key)
+				break;
+		}
+		if (node != NULL)
+			list = node->child;
+		else
+			return -1;
+	}
+	trie_print2(node, 0);
+	return 0;
 }
