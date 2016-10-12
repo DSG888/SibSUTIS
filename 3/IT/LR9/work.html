@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №2.2</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+		</style>
+		<H1>Лабораторная работа №2.2</H1>
+	</head>
+
+<script language="JavaScript">
+var delay = 1000;				// значение задержки
+var imgNumber = 1; 				// стартовый номер картинки
+var arrayOfImg = new Array();	// массив с названиями картинок
+var arrayOfImg1 = new Array();	// массив с названиями картинок
+var startFlag = 3;				// флаг для старта системы
+
+for (i = 1; i < 13; i++) {
+   		arrayOfImg[i] = new Image();
+   		arrayOfImg[i].src = "lab2.2_files/s" + i + ".gif";
+}
+
+function animation() {
+	if (startFlag == 0) {
+		document.anim.src = arrayOfImg[imgNumber].src;
+		imgNumber++;   
+		if (imgNumber >= 12) {
+   			imgNumber = 1;
+   		}
+   		setTimeout('animation()', delay); 
+	}
+}
+
+function slow() {
+	delay = delay + 100;
+	if(delay > 5000)
+		delay = 5000;
+}
+
+function fast() {
+	delay = delay - 100;
+	if(delay < 0)
+		delay = 0;
+}
+
+function start() {
+	startFlag = 0;
+	setTimeout('animation()', delay); 
+}
+
+function stop() {
+	startFlag = 1; 
+}
+
+function StartTimer() {
+	if (startFlag == 3) {
+		setTimeout('animation()', delay); 
+		startFlag = 0; 
+	};
+}
+</script>
+
+	<body>
+		<img name="anim" src="lab2.2_files/s1.gif" alt="Пикча не загружена" onLoad="StartTimer()">
+		<form>
+			<input type="button" value="Медленнее" onclick="slow()">
+			<input type="button" value="Быстрее" onclick="fast()">
+			<input type="button" value="Стоп" onclick="stop()">
+			<input type="button" value="Старт" onclick="start()">
+		</form>
+
+	</body>
+
+</html> 
