@@ -5,7 +5,7 @@ int main ()
 
 	a = 5;
 	b = 6;
-	printf("a=%d b=%d\n",a, b);
+	printf("a=%d b=%d\n", a, b);
 	t = a;
 	a = b;
 	b = t;

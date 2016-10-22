@@ -11,8 +11,8 @@ int main()
 {
 	double a;
 	printf("Введите X: ");
-	scanf("%lf",&a);
-	printf("\t|X| = %.2lf\n",((a>=0)-(a<0))*a);
+	scanf("%lf", &a);
+	printf("\t|X| = %.2lf\n", ((a >= 0) - (a < 0)) * a);
 	return 0;
 }
 

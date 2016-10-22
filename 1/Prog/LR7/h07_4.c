@@ -20,6 +20,6 @@ int main()
 	printf("%.2f - %.2f = %.2f\n", a, b, a - b);
 	printf("%.2f * %.2f = %.2f\n", a, b, a * b);
 	if (b!=0)
-		printf("%.2f / %.2f = %.2f\n",a ,b ,a / b);
+		printf("%.2f / %.2f = %.2f\n", a, b, a / b);
 	return 0;
 }

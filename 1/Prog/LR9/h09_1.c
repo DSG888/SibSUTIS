@@ -11,10 +11,10 @@
 
 int main()
 {
-	float a,b;
+	float a, b;
 	printf("Введите X и Y: ");
-	scanf("%f %f",&a,&b);
-	printf("\tX = %.2f\n\tY = %.2f\n\t|X-Y| = %.2f\n",a,b,(((a-b)>=0)-((a-b)<0))*(a-b));
+	scanf("%f %f", &a, &b);
+	printf("\tX = %.2f\n\tY = %.2f\n\t|X-Y| = %.2f\n", a, b, (((a - b) >= 0) - ((a - b) < 0)) * (a - b));
 	return 0;
 }
 

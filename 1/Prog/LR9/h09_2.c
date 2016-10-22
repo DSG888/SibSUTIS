@@ -13,13 +13,13 @@
 
 int main()
 {
-	float a=0;
-	int c=0, b=0;
+	float a = 0;
+	int c = 0, b = 0;
 	printf("Введите X: ");
 	scanf("%f", &a);
 	c = a;
 	b = c + (a - c >= 0.5);
-	printf("X = %.2f, Y = %d, Z = %.2f\n",a ,b , a-c);
+	printf("X = %.2f, Y = %d, Z = %.2f\n", a, b, a - c);
 	return 0;
 }
 

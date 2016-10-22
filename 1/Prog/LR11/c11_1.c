@@ -10,11 +10,11 @@
 
 int main()
 {
-	unsigned char a=0;
-	while(a>=0)
+	unsigned char a = 0;
+	while(a >= 0)
 	{
 		printf("%d\t", a++);
-		if (!(a%10))
+		if (!(a % 10))
 			printf("\n");
 		if (!(a))
 		{
@@ -26,11 +26,11 @@ int main()
 	printf("Прэс эникей");
 	scanf("d%",&a);
 
-	unsigned short int b=0;
-	while(b>=0)
+	unsigned short int b = 0;
+	while(b >= 0)
 	{
 		printf("%d\t", b++);
-		if (!(b%10))
+		if (!(b % 10))
 			printf("\n");
 		if (!(b))
 		{

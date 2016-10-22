@@ -10,16 +10,16 @@
 		Exiting!
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-	unsigned char a=0;
+	unsigned char a = 0;
 	while (1)
 	{
 		printf("Не хочешь чуток дополнительного кода? (0/1)");
 		scanf("%d", &a);
-		if (a==1)
+		if (a == 1)
 		{
 			printf("Введите число: ");
 			scanf("%d", &a);

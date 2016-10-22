@@ -9,26 +9,26 @@
 	4. Провести конечные и промежуточные результаты работы программы на числах 9, 121, 1024, 27, 1980.
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-	double a=0, b=0, c=0, e=0;
+	double a = 0, b = 0, c = 0, e = 0;
 	printf("Введите число из которого надо вычислить корень: ");
-	scanf("%lf",&a);
+	scanf("%lf", &a);
 	printf("Введите точность (0.00001): ");
-	scanf("%lf",&e);
+	scanf("%lf", &e);
 
-	b=a;
-	if(b>0)
+	b = a;
+	if(b > 0)
 	{
 		do
 		{
-			c=b;
-			b=0.5*(b+a/b);
+			c = b;
+			b = 0.5 * (b + a / b);
 		}
-		while((c-b)>=e);
-		printf("sqrt(%lf) = %lf\n\n",a,b);
+		while((c - b) >= e);
+		printf("sqrt(%lf) = %lf\n\n", a, b);
 	}
 	else
 	{

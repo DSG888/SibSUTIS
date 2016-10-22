@@ -12,12 +12,12 @@ x	y	x>y	x<y	x>=y	x<=y	x==y	x!=y
 
 int main()
 {
-	int a=0,b=0;
+	int a = 0, b = 0;
 	printf("Введите A и B: ");
-	scanf("%d %d",&a, &b);
+	scanf("%d %d", &a, &b);
 	printf("A\tB\tA>B\tA<B\tA>=B\tA<=B\tA==B\tA!=B\n");
-	printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",a,b,a>b,a<b,a>=b,a<=b,a==b,a!=b);
-	printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",b,a,b>a,b<a,b>=a,b<=a,b==a,b!=a);
+	printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", a, b, a > b, a < b, a >= b, a <= b, a==b, a != b);
+	printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", b, a, b > a, b < a, b >= a, b <= a, b == a, b != a);
 	return 0;
 }
 
