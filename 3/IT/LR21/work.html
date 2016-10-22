@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №2.14</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+		</style>
+		<H1>Лабораторная работа №2.14</H1>
+	</head>
+
+
+
+<script>
+
+function dump_props(obj, objName){
+    var result = document.getElementById("textareaName");
+  	result.value = "";
+    for (var i in obj) // обращение к свойствам объекта по индексу
+        result.value += objName + "." + i + " = " + obj[i] + "\n";
+}
+
+
+
+</script>
+
+	<body>
+		<input type="button"  value="Определить" onclick="dump_props(document.getElementById('textareaName'), 'textarea')"><br><br>
+		<textarea id = "textareaName" rows="100" cols="90" name="text" id="text1" ></textarea>
+	</body>
+
+</html> 

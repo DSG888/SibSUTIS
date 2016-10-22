@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №2.13</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+		</style>
+		<H1>Лабораторная работа №2.13</H1>
+		<script src="script.js"></script>
+	</head>
+
+
+
+	<body>
+		<div>
+			<form>
+				Перевести
+				<input type="text" name="num" size="22">
+				<br>
+				Из системы:
+				<input type="text" name="base_from" size="4" value="10" onblur="if ((this.value != 2) && (this.value != 8) && (this.value != 10) && (this.value != 16)) {alert('2 - 8 - 10 - 16'); this.select(); this.focus();}">
+				<br>
+				В систему
+				<input type="text" name="base_to" size="4" value="2" onblur="if ((this.value!=2) && (this.value!=8) && (this.value!=10) && (this.value!=16)) {alert('2 - 8 - 10 - 16'); this.select(); this.focus();}"><br>
+				<input type="button" value="Перевести" onclick="convert(this.form)"><br>
+				<div class="divRezult"><input type="text" name="amount" size="16"></div>
+			</form>
+			<p>Счисления: 2,8,10,16</p>
+		</div>
+	</body>
+
+</html> 

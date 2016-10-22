@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"> 
+<TABLE>
+  <TR>
+    <TH>Name</TH>
+    <TH>Breed</TH>
+    <TH>Age</TH>
+    <TH>Altered</TH>
+    <TH>Declawed</TH>    
+    <TH>License</TH>
+    <TH>Owner</TH>
+  </TR>
+  <xsl:for-each select="CAT">
+  <TR ALIGN="LEFT" VALIGN="TOP">
+    <TD>
+      <xsl:value-of select="NAME"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="BREED"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="AGE"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="ALTERED"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="DECLAWED"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="LICENSE"/>
+    </TD>
+    <TD>
+      <xsl:value-of select="OWNER"/>
+    </TD>
+  </TR>
+</xsl:for-each>
+</TABLE>

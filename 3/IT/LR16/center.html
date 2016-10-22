@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+	<title>без имени</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script src="script.js"></script>
+</head>
+
+<script>
+
+function c_swop(){
+	var w, v;
+	var j = document.getElementById("select_picture").value;
+	var i = document.getElementById("select_frame").value;
+	if(i==1)
+		{w="w1"}
+	if(i==2)
+		{w="w2"}
+	if(i==3)
+		{w="w3"}
+	if(i==4)
+		{w="w4"}
+	if(j==1)
+		{v="w1.html"}
+	if(j==2)
+		{v="w2.html"}
+	if(j==3)
+		{v="w3.html"}
+	if(j==4)
+		{v="w4.html"}
+	top.frames[w].location.href = v;	
+}
+
+</script>
+
+
+<body bgcolor=Gainsboro>
+<h4 align="center"><i>Выбирайте элемент</i></h4>	
+<form name"form1" >
+	<div align=center>
+		<hr>
+		Номер картинки
+		<br>
+		<br>
+		<select name = "select_picture" id = "select_picture">
+  			<option value = "1" selected>r1</option>
+  			<option value = "2">r2</option>
+  			<option value = "3">r3</option>
+  			<option value = "4">r4</option>
+		</select><br><br>
+
+		Номер фрейма<br><br>
+		<select name = "select_frame" id = "select_frame">
+  			<option value = "1" selected>w1</option>
+  			<option value = "2">w2</option>
+  			<option value = "3">w3</option>
+  			<option value = "4">w4</option>
+		</select>
+		<br>
+		<hr>
+		<br>
+
+		<input type=button value="Сопоставить" onClick="c_swop()">
+
+	</div>
+</body>
+
+</html>

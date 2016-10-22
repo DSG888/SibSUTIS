@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+   <TITLE>Untitled</TITLE>
+    <STYLE>
+        .catalog_genre_head {background-color:darkGreen;font-size:24pt;color:white;font-family:Impact;}
+        .catalog_head {background-color:green;font-size:18pt;color:white;font-family:Impact;}
+        .catalog_row0 {background-color:lightGreen;}
+        .catalog_row1 {background-color:white;}
+        .catalog_row_end {background-color:darkGreen;}
+    </STYLE>
+</HEAD>
+
+<BODY>
+<H1>Scootney Press Book Catalog</H1>
+<P>Select a genre to see all books in that genre:</P>
+<DIV id="catalog_table"></DIV>
+
+<xml id="book_catalog" src="book_catalog.xml">
+</xml>
+
+<xml id="catalog_filter">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+        version="1.0">
+
+        <xsl:output method="xml" omit-xml-declaration="yes"/>
+
+        <xsl:param name="selected_genre" select="'all'"/>
+
+        <xsl:template match="/">
+                <div>
+                    <form method="post" action="catalog.asp">
+                    Genre
+                    <select name="genre" value="{$selected_genre}" onchange="showGenre(this.value)">
+                        <option value="all"><xsl:if test="$selected_genre='all'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>All</option>
+                        <option value="Computer"><xsl:if test="$selected_genre='Computer'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>Computer</option>
+                        <option value="Fantasy"><xsl:if test="$selected_genre='Fantasy'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>Fantasy</option>
+                        <option value="Horror"><xsl:if test="$selected_genre='Horror'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>Horror</option>
+                        <option value="Romance"><xsl:if test="$selected_genre='Romance'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>Romance</option>
+                        <option value="Science Fiction"><xsl:if test="$selected_genre='Science Fiction'"><xsl:attribute name="selected">Selected</xsl:attribute></xsl:if>Science Fiction</option>
+                    </select>
+                    </form>
+                    <br/>
+                    <xsl:apply-templates select="catalog"/>
+            </div>                    
+        </xsl:template>
+
+        <xsl:template match="catalog">
+            <table class="catalog_table">
+                <xsl:apply-templates select="book[($selected_genre='all') or ($selected_genre=./genre)]">
+                    <xsl:sort select="title"/>
+                </xsl:apply-templates>
+            </table>
+        </xsl:template>
+
+        <xsl:template match="book">
+            <xsl:if test="position()=1">
+            <tr class="catalog_genre_head"><td colspan="6">
+            <xsl:choose>
+            <xsl:when test="$selected_genre='all'">
+            All Genres
+            </xsl:when>
+            <xsl:otherwise>
+            Genre: <xsl:value-of select="genre"/>
+            </xsl:otherwise>
+            </xsl:choose>
+            </td></tr>            
+            <tr class="catalog_head">
+                <td>#</td>
+                <td>Title</td>
+                <td>Author</td>
+                <td>Publication Date</td>
+                <td>Description</td>
+                <xsl:if test="$selected_genre='all'">
+                <td>Genre</td>
+                </xsl:if>
+            </tr>
+            </xsl:if>
+            <tr class="catalog_row{position() mod 2}">
+                <td><xsl:value-of select="position()"/></td>
+                <td class="catalog_cell"><xsl:value-of select="title"/></td>
+                <td class="catalog_cell"><xsl:value-of select="author"/></td>
+                <td class="catalog_cell"><xsl:value-of select="publish_date"/></td>                    
+                <td class="catalog_cell"><xsl:value-of select="description"/></td>
+                <xsl:if test="$selected_genre='all'">
+                <td class="catalog_cell"><xsl:value-of select="genre"/></td>
+                </xsl:if>
+            </tr>
+            <xsl:if test="position()=last()">
+            <tr class="catalog_row_end"><td colspan="6"> </td></tr>
+            </xsl:if>
+        </xsl:template>
+    </xsl:stylesheet>
+</xml>
+
+
+<SCRIPT language="JavaScript">
+function loadSource(sourceObj){
+    var xmlDoc=new ActiveXObject("Msxml2.FreeThreadedDOMDocument.6.0");
+    xmlDoc.async=false;
+    xmlDoc.load(sourceObj.XMLDocument);
+    return xmlDoc;
+    }
+
+var table_proc=null;
+
+function getProcessor(transformObj){
+    if (table_proc==null){
+        var xslDoc=new ActiveXObject("Msxml2.FreeThreadedDOMDocument.6.0");
+        var xslTemplate=new ActiveXObject("Msxml2.XSLTemplate.6.0");
+        xslDoc.async=false;
+        xslDoc.load(transformObj.XMLDocument);
+        xslTemplate.stylesheet=xslDoc;
+        xslProcessor=xslTemplate.createProcessor();
+        table_proc=xslProcessor;
+        }
+    else {
+        xslProcessor=table_proc;
+        }
+    return xslProcessor;
+    }
+
+function transformData(srcDoc,processor){
+    var resultDoc=new ActiveXObject("MSXML.DOMDocument");
+    processor.input=srcDoc;
+    processor.output=resultDoc;
+    processor.transform();
+    return resultDoc;
+    }
+
+function showGenre(genre){
+    var srcDoc=loadSource(book_catalog);
+    var processor=getProcessor(catalog_filter);
+    processor.addParameter("selected_genre",genre);
+    var rsltDoc=transformData(srcDoc,processor);
+    catalog_table.innerHTML=rsltDoc.xml
+    }    
+
+showGenre("all");    
+
+</SCRIPT>
+
+</BODY>
+</HTML>

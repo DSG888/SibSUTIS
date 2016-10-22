@@ -1,0 +1,43 @@
+<?xml version="l.0"?>
+
+<root>
+
+<book>
+
+<title> Three men in the boat</title>
+
+<author> Jerom-K-Jerom</author>
+
+<price> 12000</price>
+
+</book>
+
+<book>
+
+<title> Notre Domme de Paris</title>
+
+<author> V.Hugo</author>
+
+<price> 15000 </price>
+
+</book>
+
+<book>
+
+<title> А War and Peace</title>
+
+<author> L.Tolstoy</author>
+
+<price> 16500</price>
+
+</book>
+
+<book>
+
+<title> Angelika — the misstress of ghosts</title> <author> А and S. Gallen</author>
+
+<price> 9000</price>
+
+</book>
+
+</root>
