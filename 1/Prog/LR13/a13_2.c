@@ -38,6 +38,6 @@ int main()
         i++;
     }
     while (check > eps);
-    printf("ln(1+x) = %Le\n",ln);
+    printf("ln(1+x) = %Le\n", ln);
     return 0;
 }

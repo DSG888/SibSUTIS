@@ -8,21 +8,11 @@
 */
 
 //TODO 1. Добавить проверки
+//TODO 2. Юзер может ввести какую-то фигню в меню
 
 #include "rbtree.h"
 #include <stdio.h>
 #include <string.h>
-
-struct rbtree {
-	int key;
-	char *value;
-	int color;
-	struct rbtree *parent;
-	struct rbtree *left;
-	struct rbtree *right;
-};
-
-struct rbtree *NullNode;
 
 int fcounter = 0;
 
@@ -34,7 +24,8 @@ void mitoa(int n, char s[])
 	{
 		int i, j;
 		char c; 
-		for (i = 0, j = strlen(s)-1; i<j; i++, j--) {
+		for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
+		{
 			c = s[i];
 			s[i] = s[j];
 			s[j] = c;
@@ -69,7 +60,7 @@ void Menu1()
 int main(int argc, char **argv)
 {
 	system("rm ./*.png");	// Удаление старых картинок
-	int i, Req=-1;
+	int i, Req = -1;
 	int mas[1000];
 	for (i=0; i < 1000; i++)
 		mas[i] = -1;

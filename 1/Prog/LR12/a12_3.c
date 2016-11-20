@@ -50,6 +50,6 @@ int main()
 			n = n * 10;
 		}
 	}
-	printf ("Ответ: %u",a);
+	printf ("Ответ: %u", a);
 	return 0;
 }

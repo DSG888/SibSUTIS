@@ -36,7 +36,7 @@
 //#include <string.h>
 //#include <stdlib.h>
 
-#include "string.h"	//FIXME
+#include "string.h"
 
 #define MAXPATH 261
 #define MAXCNT 10
@@ -177,7 +177,6 @@ void process(char *pat, char *dir, char del)
 	return;
 }
 
-
 void output(char *str)
 {
 	printf(" Выходные данные:\n  Строка:\t%s\n", str);
@@ -189,9 +188,8 @@ int main()
 	char PATHS[MAXSIZE+MAXSIZE*MAXCNT] = {'\0'};// Старая строка
 	char DIR[MAXSIZE] = {'\0'};					// Домашний каталог
 
-	//FIXME
+//FIXME
 //	char PATHS[MAXSIZE] = {"~games/packman.cpp+~alex/docs+~study/Prog/lab4.c+/usr/bin/gcc"};
-
 //	char PATHS[MAXSIZE] = {"~games/packman.cpp+~alex/docs+~study/Prog/lab4.c+/usr/bin/gcc"};
 
 //	char DIR[MAXPATH] = {"/home"};

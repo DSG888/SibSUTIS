@@ -11,22 +11,22 @@
 
 int main()
 {
-	int i=0, j=0, NUM=0, REC=0, Reply=1, tmp=0;
+	int i = 0, j = 0, NUM = 0, REC = 0, Reply = 1, tmp = 0;
 	printf("Введите количество элементов[1-100]: ");
 	scanf("%d", &NUM);
-	if ((NUM > 100)||(NUM < 1))
+	if ((NUM > 100) || (NUM < 1))
 	{
 		printf("Ошибка ввода количества элементов! \n");
 		return 1;
 	}
 	int MAS[NUM], n = NUM;
-	for (i=0; i < NUM; i++)
+	for (i = 0; i < NUM; i++)
 	{
-		printf("Введите значение [%d]: ", i+1);
+		printf("Введите значение [%d]: ", i + 1);
 		scanf("%d", &MAS[i]);
 	}
 	printf("\tВведенный массив: [");
-	for (REC=0; REC < NUM; REC++)
+	for (REC = 0; REC < NUM; REC++)
 		printf("%d ", MAS[REC]);
 	printf("]\n");
 
@@ -37,7 +37,7 @@ int main()
 	{
 		tmp = MAS[REC];
 		j = REC - 1;
-		while ((j >= 0)&&(MAS[j] > tmp))
+		while ((j >= 0) && (MAS[j] > tmp))
 		{
 			MAS[j + 1] = MAS[j];
 			j--;
@@ -47,18 +47,22 @@ int main()
 		if (Reply == 1)
 		{
 			printf("\t{№%d} Массив: [", REC-1);
-			for (i=0; i < NUM; i++)
+			for (i = 0; i < NUM; i++)
 				printf("%d ", MAS[i]);
 			printf("]\n");
 		}
-		else 
+		else
+		{
 			Reply = 0;
+		}
 	}
 	if (Reply == 0)
 	{
 		printf("\tМассив: [");
 		for (i = 0; i < NUM; i++)
+		{
 			printf("%d ", MAS[i]);
+		}
 		printf("]\n");
 	}
 	printf("\n");

@@ -24,13 +24,13 @@ int factorial (int n)
  
 int main()
 {
-	int i=1, t=0, x=0;
-	double Res=1;
+	int i = 1, t = 0, x = 0;
+	double Res = 1;
 	printf("e^x: Введите x и точность: ");
 	scanf("%d %d", &x, &t);
 
     for (i = 1; i <= t; i++)
-		Res = Res + (power(x,i)/(factorial(i)));
+		Res = Res + (power(x, i)/(factorial(i)));
 	printf("\te^%d≈%lf\n", x, Res);
 	return 0;
 }

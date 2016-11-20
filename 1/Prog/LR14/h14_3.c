@@ -15,23 +15,23 @@
 
 int main()
 {
-	int Num=0;
+	int Num = 0;
 	printf("Введите количество элементов: ");
-	scanf("%d",&Num);
-	int Mas[Num],i;
-	for (i=0; i<Num; i++)
+	scanf("%d", &Num);
+	int Mas[Num], i;
+	for (i = 0; i < Num; i++)
 	{
-		printf("Введите %d элемент: ", i+1);
+		printf("Введите %d элемент: ", i + 1);
 		scanf("%d", &Mas[i]);
 	}
-	int n=0, j=0, ret=0, b=0, k=0, tmp=0;;
-	for (i=0; i<Num-1; i++)
+	int n = 0, j = 0, ret = 0, b = 0, k = 0, tmp = 0;;
+	for (i = 0; i < Num - 1; i++)
 	{
-		for (j=k+1; j<Num; j++)
+		for (j = k + 1; j < Num; j++)
 		{
 			n = Mas[i];
 			ret = Mas[j];
-			if (ret>n)
+			if (ret > n)
 			{
 				b = n;
 				n = ret;

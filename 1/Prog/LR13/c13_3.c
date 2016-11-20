@@ -9,7 +9,7 @@
 
 int main()
 {
-	long int a=0, b=0, d=0, i=0, j=0;
+	long int a = 0, b = 0, d = 0, i = 0, j = 0;
 
 	printf("Введите два целых числа: ");
 	scanf("%ld %ld", &a, &b);
@@ -26,7 +26,9 @@ int main()
 	{
 		j = d - i;
 		if (j > i)
+		{
 			d = j;
+		}
 		else
 		{
 			d = i;

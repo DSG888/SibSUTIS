@@ -10,6 +10,18 @@
 #define COLOR_RED 0
 #define COLOR_BLACK 1
 
+struct rbtree {
+	int key;
+	char *value;
+	int color;
+	struct rbtree *parent;
+	struct rbtree *left;
+	struct rbtree *right;
+};
+
+struct rbtree EmptyNode;
+struct rbtree *NullNode;
+
 //struct rbtree EmptyNode = {0, 0, COLOR_BLACK, NULL, NULL, NULL};
 //struct rbtree *NullNode = &EmptyNode;
 
@@ -20,7 +32,6 @@ struct rbtree *rbtree_min(struct rbtree *root);
 struct rbtree *rbtree_max(struct rbtree *root);
 struct rbtree *rbtree_delete(struct rbtree *root, int key);
 void graph_color_print (struct rbtree *root, FILE *inputfile);
-//void rbtree_print_dfs(struct rbtree *root, int level);
 void rbtree_print_dfs(struct rbtree *root, int level, char *filename);
 
 #endif

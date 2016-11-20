@@ -2,7 +2,6 @@
 
 int Researcher(char *Str)
 {
-	
 	int isipv4(char *str)
 	{
 		char *EL[MAXSIZE];
@@ -47,7 +46,7 @@ int Researcher(char *Str)
 		if (6 > slen(str))
 			return 0;
 		int Z = stok(str, '.', EL);
-		if (!((scmp(EL[Z - 1], d_ru) == 0) || (scmp(EL[Z - 1], d_com) == 0) || (scmp(EL[Z - 1], d_org) == 0)) )
+		if (!((scmp(EL[Z - 1], d_ru) == 0) || (scmp(EL[Z - 1], d_com) == 0) || (scmp(EL[Z - 1], d_org) == 0)))
 		{
 			suntok(str, '.', EL, Z);
 			return 0;
@@ -170,7 +169,6 @@ void OverwritePath(char *pat, char *dir)
 	R = stok(pat , '/', TOK);
 	if ((slen(TOK[0]) > 1) && (TOK[0][0] == '~'))
 	{
-//		pat = (char*)realloc(pat, pLEN + dLEN + 1);
 		for (a = pat + pLEN; a > TOK[0]; --a)
 			*(a + dLEN) = *a;
 		scpy(TOK[0], dir);
@@ -185,7 +183,6 @@ void OverwritePath(char *pat, char *dir)
 int process(char *Text, char *dir, stu *Sign)
 {
 	int Z = SplitStr(Text, Sign);
-	
 	int i, j, k;
 	
 	for (i=0; i < Z ; i++)
@@ -233,11 +230,9 @@ int process(char *Text, char *dir, stu *Sign)
 			{
 				continue;
 			}
-			if ( (k <= Z) && (Sign[k].id != 1) )
+			if ((k <= Z) && (Sign[k].id != 1))
 				Sign[i].id = -1;
 		}
 	}
 	return Z;
 }
-
-

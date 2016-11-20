@@ -25,7 +25,7 @@ int stok(char str[], char delim, char *ptr[])
 	char *suf = str;
 	ptr[0] = str; // первое поле – начало str
 	int i, j = 1; // j – счетчик полей
-	while( ( i = schr(suf, delim) ) >= 0 )
+	while((i = schr(suf, delim)) >= 0)
 	{
 		suf[i] = '\0';
 		suf = suf + i + 1;
@@ -35,7 +35,7 @@ int stok(char str[], char delim, char *ptr[])
 	return j;
 }
 
-int suntok(char *str, char delim, char *ptr[80],int cnt)
+int suntok(char *str, char delim, char *ptr[80], int cnt)
 //	Сборка строки из полей
 {
 	int i;

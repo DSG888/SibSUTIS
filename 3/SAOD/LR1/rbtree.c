@@ -1,14 +1,5 @@
 #include "rbtree.h"
 
-struct rbtree {
-	int key;
-	char *value;
-	int color;
-	struct rbtree *parent;
-	struct rbtree *left;
-	struct rbtree *right;
-};
-
 struct rbtree EmptyNode = {0, 0, COLOR_BLACK, NULL, NULL, NULL};
 struct rbtree *NullNode = &EmptyNode;
 
@@ -137,8 +128,7 @@ struct rbtree *rbtree_fixup_add(struct rbtree *root, struct rbtree *node)
 				}
 				node->parent->color = COLOR_BLACK;
 				node->parent->parent->color = COLOR_RED;
-				root = rbtree_left_rotate(root,
-				node->parent->parent);
+				root = rbtree_left_rotate(root, node->parent->parent);
 				if (Printer)
 					printf("    Изменение цветов\n");
 			}
@@ -241,7 +231,8 @@ struct rbtree *rbtree_fixup_delete(struct rbtree *root, struct rbtree *x)
 				root = rbtree_left_rotate(root, x->parent);
 				w = x->parent->right;
 			}
-			if ((w->left->color == COLOR_BLACK) && (w->right->color == COLOR_BLACK)) {
+			if ((w->left->color == COLOR_BLACK) && (w->right->color == COLOR_BLACK))
+			{
 				w->color = COLOR_RED;
 				x = x->parent;
 			}
@@ -413,7 +404,6 @@ void rbtree_print_dfs(struct rbtree *root, int level, char *filename )
 	}
 	
 	char s1[80] = "dot -Tpng tree.dot > ";
-//	char s2[80] = {'\0'};
 	char s3[80] = ".png && rm tree.dot";
 	char *name = "tree.dot"; 
 	FILE *inputfile = fopen(name, "w");

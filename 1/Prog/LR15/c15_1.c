@@ -12,78 +12,80 @@
 int main()
 {
 
-	int i=0,Num=0;
+	int i = 0, Num = 0;
 	printf("Введите количество элементов[1;100]");
-	scanf("%d",&Num);
-	if ((Num>100) || (Num<1))
+	scanf("%d", &Num);
+	if ((Num > 100) || (Num < 1))
+	{
 		printf("Ошибка ввода количества элементов.\n");
+	}
 	else
 	{
 		int Mas[Num];
-		while (i<Num)
+		while (i < Num)
 		{
-			printf("Введите значение [%d]: ",i);
-			scanf("%d",&Mas[i]);
+			printf("Введите значение [%d]: ", i);
+			scanf("%d", &Mas[i]);
 			i++;
 		}
 
-		int r=0;
+		int r = 0;
 		printf("\tЭлементы массива до: ");
-		while (r<Num)
+		while (r < Num)
 		{
-			printf("%d ",Mas[r]);
+			printf("%d ", Mas[r]);
 			r++;
 		}
 		printf("\n");
 		
-		int otvet=1;
+		int otvet = 1;
 		printf("Введите режим отображения результата(1-Отладка/другое число-Результат): ");
-		scanf("%d",&otvet);
-		int n = Num, max=0, imax = -1, j = 0 ,t = 0;
-		i=0;
-		while (i<n)
+		scanf("%d", &otvet);
+		int n = Num, max = 0, imax = -1, j = 0, t = 0;
+		i = 0;
+		while (i < n)
 		{
 			max = Mas[0];
-			j=0;
-			while (j<n)
+			j = 0;
+			while (j < n)
 			{
-				if(max<=Mas[j])
+				if(max <= Mas[j])
 				{
-					imax=j;
-					max=Mas[j];
+					imax = j;
+					max = Mas[j];
 				}
 				j++;
 			}
-			if (imax!=-1)
+			if (imax != -1)
 			{
-				t=Mas[imax];
-				Mas[imax]=Mas[n-1];
-				Mas[n-1]=t;
-				if (otvet==1)
+				t = Mas[imax];
+				Mas[imax] = Mas[n - 1];
+				Mas[n - 1] = t;
+				if (otvet == 1)
 				{
-					j=0;
+					j = 0;
 					printf("\tЭлементы массива: ");
-					while (j<Num)
+					while (j < Num)
 					{
-						printf("%d ",Mas[j]);
+						printf("%d ", Mas[j]);
 						j++;
 					}
 					printf("\n");
 				}
 				else 
-					otvet=0;
+					otvet = 0;
 				n--;
 			}
 			else 
 				n=i;
 		}
-		if (otvet==0)
+		if (otvet == 0)
 		{
-			j=0;
+			j = 0;
 			printf("\tЭлементы массива: ");
-			while (j<Num)
+			while (j < Num)
 			{
-				printf("%d ",Mas[j]);
+				printf("%d ", Mas[j]);
 				j++;
 			}
 		}

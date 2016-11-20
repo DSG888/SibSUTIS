@@ -21,48 +21,38 @@ void GenRandMas(int* arr, const int len, const int l, const int r)
 	int i;
 	srand(time(NULL));
 	for (i = 0; i < len; i++)
-		arr[i]= (l-1 + rand() % r+2);
+		arr[i]= (l - 1 + rand() % r + 2);
 }
 
 void KMUoutput(int MasX[], int M)
 {
-	int i,j, n=0;
-//	double maxi=0, d=1;
-
-//	for (i=0; i<M-1; i++)
-//	{
-//		maxi = maxi + M - i - 1;
-//		for (j=i; j<M; j++)
-//			if (MasX[i]>MasX[j])
-//				n++;
-//	}
-//	d = d * (n / maxi);
-
-	printf("\t%d:[",M);
-	for (i=0; i<M; i++)
-		i<M-1?printf("%d,", MasX[i]):printf("%d]\n", MasX[i]);
-//		i<M-1?printf("%d,", MasX[i]):printf("%d] ", MasX[i]);
-//	printf("(abs.inv)=%d; (rel.inv) = %.4lf\n", n,d);
+	int i, j, n = 0;
+	printf("\t%d:[", M);
+	for (i = 0; i < M; i++)
+		i < M - 1 ? printf("%d,", MasX[i]) : printf("%d]\n", MasX[i]);
 }
 
 void SortMP(int* arr, const int len)
 {
-	int i=0, j=0, tmp=0;
-	for(i = 0 ; i < len - 1; i++) 
+	int i = 0, j = 0, tmp = 0;
+	for(i = 0 ; i < len - 1; i++)
+	{
 		for(j = 0 ; j < len - i - 1 ; j++)
-			if(arr[j] > arr[j+1])
+		{
+			if(arr[j] > arr[j + 1])
 			{
 				tmp = arr[j];
-				arr[j] = arr[j+1] ;
-				arr[j+1] = tmp;
+				arr[j] = arr[j + 1] ;
+				arr[j + 1] = tmp;
 				KMUoutput(arr, len);
 			}
-
+		}
+	}
 }
 
 int main()
 {
-	int n=0;
+	int n = 0;
 	printf("Укажите размер случайного массива: ");
 	scanf("%d", &n);
 	int Mas[n];

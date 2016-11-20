@@ -4,7 +4,7 @@ int slen(char *s)
 //	Функция вычисления длины строки
 {
 	int i, c = 0;
-	for ( i = 0; s[i] != '\0'; i++ )
+	for (i = 0; s[i] != '\0'; i++)
 		++c;
 	return c;
 }
@@ -13,7 +13,7 @@ int schr(char s[], char c)
 //	Поиск символа в строке
 {
 	int i, num = -1;
-	for(i=0; (s[i] != '\0') && (s[i] != c); i++);
+	for(i = 0; (s[i] != '\0') && (s[i] != c); i++);
 		if(s[i] == c) 
 			num = i;
 		return num;
@@ -25,7 +25,7 @@ int stok(char str[], char delim, char *ptr[])
 	char *suf = str;
 	ptr[0] = str; // первое поле – начало str
 	int i, j = 1; // j – счетчик полей
-	while( ( i = schr(suf, delim) ) >= 0 )
+	while((i = schr(suf, delim)) >= 0)
 	{
 		suf[i] = '\0';
 		suf = suf + i + 1;
@@ -35,7 +35,7 @@ int stok(char str[], char delim, char *ptr[])
 	return j;
 }
 
-int suntok(char *str, char delim, char *ptr[80],int cnt)
+int suntok(char *str, char delim, char *ptr[80], int cnt)
 //	Сборка строки из полей
 {
 	int i;
@@ -48,7 +48,7 @@ void scpy(char m[], char y[])
 //	Функция копирования строк
 {
 	int i;
-	for(i=0; y[i] != '\0'; i++)
+	for(i = 0; y[i] != '\0'; i++)
 		m[i] = y[i];
 	m[i] = '\0';
 }

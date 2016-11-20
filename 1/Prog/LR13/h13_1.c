@@ -9,13 +9,13 @@
 
 int main()
 {
-	double a=0 , Fractional=0, FractionalBin=0, Denominator=0.1;
-	int Integer=0, IntegerBin=0, Correctness=0, Factor=1, b=0, pResult=0, i=0;
+	double a = 0 , Fractional = 0, FractionalBin = 0, Denominator = 0.1;
+	int Integer = 0, IntegerBin = 0, Correctness = 0, Factor = 1, b = 0, pResult = 0, i = 0;
 
 	printf("Введите вещественное число [float]: ");
-	scanf("%lf",&a);
+	scanf("%lf", &a);
 	printf("Введите точность [int]: ");
-	scanf("%d",&Correctness);
+	scanf("%d", &Correctness);
 
 	Integer = a;
 	while (Integer > 0)

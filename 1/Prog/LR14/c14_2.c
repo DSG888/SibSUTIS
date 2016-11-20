@@ -7,24 +7,23 @@
 
 int main()
 {
-	int a = 0, i=0, sum=0;
+	int a = 0, i = 0, sum = 0;
 	printf("Введите число элементов массива (1-100): ");
-	scanf("%d",&a);
-	if ((a > 100)||(a < 1))
+	scanf("%d", &a);
+	if ((a > 100) || (a < 1))
 	{
 		printf("Число нужно от 1-100\n");
 		exit(1);
 	}
 
 	int Mas[a];
-	for(i=0; i < a; i++)
+	for(i = 0; i < a; i++)
 	{
 		printf("Введите [%d]: ", i);
-		scanf("%d",&Mas[i]);
+		scanf("%d", &Mas[i]);
 		sum += Mas[i];
 	}
 	printf("\tСумма массива: %d\n", sum);
 
 	return 0;
 }
-

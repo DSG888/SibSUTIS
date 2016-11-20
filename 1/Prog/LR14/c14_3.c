@@ -13,20 +13,20 @@
 int main()
 {
 	srand(time(NULL));
-	int a = 0, n=0, k=100;
+	int a = 0, n = 0, k = 100;
 	printf("Введите число элементов массива (1-100): ");
-	scanf("%d",&a);
+	scanf("%d", &a);
 	if ((a > 100)||(a < 1))
 	{
 		printf("Число нужно от 1-100\n");
 		exit(1);
 	}
 	int Mas[a];
-	int minz=INT_MAX, maxz=INT_MIN, nmin, nmax, i=0;
+	int minz = INT_MAX, maxz = INT_MIN, nmin, nmax, i = 0;
 	printf("\tСлучайный массив: [");
-	for(i=0; i < a; i++)
+	for(i = 0; i < a; i++)
 	{
-		Mas[i]= (n-1 + rand() % k+2);
+		Mas[i]= (n - 1 + rand() % k + 2);
 		printf("%d,", Mas[i]);
 		if (Mas[i] < minz)
 		{
@@ -49,7 +49,7 @@ int main()
 	Mas[nmax] = Mas[nmax] ^ Mas[nmin];
 
 	printf("\tНовый массив: [");
-    for (i=0; i < a; i++)
+    for (i = 0; i < a; i++)
     	printf("%d,", Mas[i]);
 	printf("]\n");
 	return 0;

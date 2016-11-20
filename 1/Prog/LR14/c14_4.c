@@ -13,22 +13,22 @@
 int main()
 {
 	srand(time(NULL));
-	int a = 0, n=0, k=100;
+	int a = 0, n = 0, k = 100;
 	printf("Введите число элементов массива (1-100): ");
-	scanf("%d",&a);
-	if ((a > 100)||(a < 1))
+	scanf("%d", &a);
+	if ((a > 100) || (a < 1))
 	{
 		printf("Число нужно от 1-100\n");
 		exit(1);
 	}
 	int Mas[a];
-	int i=0, l=0, j=0;
+	int i = 0, l = 0, j = 0;
 	printf("\tСлучайный массив: [");
-	for(i=0; i < a; i++)
+	for(i = 0; i < a; i++)
 	{
-		Mas[i]= (n-1 + rand() % k+2);
+		Mas[i] = (n - 1 + rand() % k + 2);
 		printf("%d,", Mas[i]);
-		l+=((Mas[i]%2)==0);
+		l += ((Mas[i] % 2) == 0);
 	}
 	printf("]\n");
 
@@ -48,4 +48,3 @@ int main()
 	printf("]\n");
 	return 0;
 }
-

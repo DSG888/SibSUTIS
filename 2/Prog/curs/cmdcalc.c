@@ -36,7 +36,7 @@ double charToDigit(int i1, int i2)
 
 double MyEval(int Start, int End)
 {
-	int i = Start, OtkSKa, ZakSKa, OtkSKb, ZakSKb, Tmp=0;
+	int i = Start, OtkSKa, ZakSKa, OtkSKb, ZakSKb, Tmp = 0;
 
 	if ((MStr[Start] == '(') && (MStr[End] == ')'))
 	{
@@ -137,7 +137,6 @@ int main(int argc, char **argv)
 					printf("Ошибка ввода. Скобка закрыта до открытия\n");
 					return 1;
 				}
-
 		}
 		else
 		{
@@ -210,4 +209,3 @@ int main(int argc, char **argv)
 	printf("\t\t%s = %lf\n", MStr, result);
 	return 0;
 }
-

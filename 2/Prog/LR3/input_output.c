@@ -37,7 +37,6 @@ void interrogation(char *path, char *dir)
 	
 	if (dir[slen(dir) - 1] == '/')
 		dir[slen(dir) - 1] = '\0';
-	
 	return;
 }
 
@@ -89,5 +88,3 @@ void Write(char *fname, stu *sign, int count)
 		}
 	}
 }
-
-

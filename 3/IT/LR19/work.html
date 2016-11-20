@@ -1,8 +1,97 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Лабораторная работа №2.12</title>
+		<title>Лабораторная работа 2.12</title>
+		<script>
+			var newElem = document.createElement("table");  
+			newElem.setAttribute('id','tl');
+			newElem.setAttribute('width','200');
+			newElem.setAttribute('border','1');
+			var newRow = newElem.insertRow(0);
+			var newCell = newRow.insertCell(0);
+			newCell.width = "20";
+			newCell.innerHTML = "L";
+			var newCell = newRow.insertCell(1);
+			newCell.width = "20";
+			newCell.innerHTML = "R";
+			var newCell = newRow.insertCell(2);
+			newCell.width = "20";
+			newCell.innerHTML = "m";
+			var newCell = newRow.insertCell(3);
+			newCell.width = "20";
+			newCell.innerHTML = "A[m]";
+
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			function updaterandom() {
+				for (var i = 1; i < 11; i++)
+					document.getElementById('a'+i).value = getRandomInt(0,1000);
+				sort(1);
+			}
+			function sort(param) {
+				ar = new Array();
+				var a = 0;
+				for ( var i = 1; i < 11; i++) {
+					a = document.getElementById('a'+i).value;
+					ar[i-1] = a;
+					
+				}
+				if (param == 0)
+					ar.sort(function(a,b){return b-a;});
+				else
+					ar.sort(function(a,b){return a-b;});
+				for (var i = 1; i < 11; i++)
+					document.getElementById('a'+i).value = ar[i-1];
+			}
+			function clear_table()  {
+				var td_rows=document.getElementById("tl").rows;
+				for (var i = td_rows.length - 1; i > 0; i--) {
+					document.getElementById("tl").deleteRow(i);
+				}
+			}
+			function search_a() {
+				var X = document.getElementById('search').value;
+				if (X == '') {
+					alert("Введите число которое будем искать!");
+					return -1;
+				} 
+				ar = new Array();
+				var a = 0;
+				for ( var i = 1; i < 11; i++) {
+					a = document.getElementById('a'+i).value;
+					ar[i-1] = a;
+				}
+				var n = 1;
+				var L = 0;
+				var R = ar.length;
+				var M = 0;
+				var found = false;
+				while (L <= R && !found) {
+					M = R - Math.round((R - L) / 2);
+					var newRow = newElem.insertRow(n);
+					var newCell = newRow.insertCell(0);
+					newCell.innerHTML = L;
+					var newCell = newRow.insertCell(1);
+					newCell.innerHTML = R;
+					var newCell = newRow.insertCell(2);
+					newCell.innerHTML = M;
+					var newCell = newRow.insertCell(3);
+					newCell.innerHTML = ar[M];
+					if (ar[M] == X) {
+						found = true;
+						document.getElementById('pos').value = M;
+					} else if (ar[M] < X) {
+						L = M + 1;
+					} else {
+						R = M - 1;
+					}
+					n++;
+				}
+				document.body.appendChild(newElem);	
+			}
+		</script>
 		<style>
 			body {
 				margin: 0;
@@ -16,45 +105,28 @@
 			}
 		</style>
 		<H1>Лабораторная работа №2.12</H1>
-		<script src="script.js"></script>
 	</head>
-
-
-<style>
-input {
-	width: 50px;
-}
-</style>
-	<body OnLoad="Rand();">
-		<div>
-		<section>
-			<form action="#" name="form1">
-				<font >Массив</font>
-				<input type="text" name="textArr0"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr1"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr2"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr3"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr4"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr5"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr6"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr7"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr8"  onChange="inputArraySort()"/>
-				<input type="text" name="textArr9"  onChange="inputArraySort()"/><br><br>
-					<font >Поиск</font>
-					<input type="text" name="findField"  /><br>
-					<font >Результат(Позиция)</font>
-					<input type="text" name="resultField"  />
-			</form>
-			<br />
-			<form action="#" name="form2">
-				<div class="divRezult" id="searchHistory"></div>
-			</form>
-			<input type="button" OnClick="Rand();" value="Rand" />
-			<input type="button" OnClick="find();" value="Find" />
-			<input type="button" OnClick="clearHistory();" value="Clear" />
-		</section>
-
-	</div>
+	<body onload="updaterandom();">
+		<table >
+			<tr>
+				<td>Массив чисел</td>
+				<td><input type="text" name="a1" id="a1" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a2" id="a2" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a3" id="a3" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a4" id="a4" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a5" id="a5" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a6" id="a6" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a7" id="a7" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a8" id="a8" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a9" id="a9" size="5" onchange="sort(1);"></td>
+				<td><input type="text" name="a10" id="a10" size="5" onchange="sort(1);"></td>
+				</tr>
+		</table>
+		<form>
+			Число:<input type="text" name="search" id="search" size="5"><br>
+			Результат (позиция):<input type="text" name="pos" id="pos" size="5"><br>
+			<input type="button" value="Определить" onclick="search_a();"> <input type="button" value="Очистить" onclick="clear_table();">
+		</form>
 	</body>
+</html>
 
-</html> 

@@ -13,7 +13,7 @@ int schr(char s[], char c)
 //	Поиск символа в строке
 {
 	int i, num = -1;
-	for(i=0; (s[i] != '\0') && (s[i] != c); i++);
+	for(i = 0; (s[i] != '\0') && (s[i] != c); i++);
 		if(s[i] == c) 
 			num = i;
 		return num;
@@ -48,7 +48,7 @@ void scpy(char m[], char y[])
 //	Функция копирования строк
 {
 	int i;
-	for(i=0; y[i] != '\0'; i++)
+	for(i = 0; y[i] != '\0'; i++)
 		m[i] = y[i];
 	m[i] = '\0';
 }
@@ -59,10 +59,10 @@ int scmp(char m[], char n[])
 	int i, j = 0;
 	if(slen(m) == slen(n))
 	{
-		for(i = 0; i < slen(m); i++)
+		for (i = 0; i < slen(m); i++)
 			if(m[i] == n[i])
 				j++;
-		if(i == j)
+		if (i == j)
 			return 0;
 	}
 	else
@@ -73,7 +73,7 @@ int scmp(char m[], char n[])
 char *skip_spaces(char *suf)
 // Функция пропуска пробельных символов
 {
-	while( schr(" \t\n",*suf) )
+	while (schr(" \t\n",*suf))
 	{
 		suf++;
 	}

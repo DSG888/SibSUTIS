@@ -10,33 +10,35 @@
 
 int main()
 {
-	int Num=0;
-	double maxi=0, d=1;
+	int Num = 0;
+	double maxi = 0, d = 1;
 	printf("Введите количество элементов: ");
-	scanf("%d",&Num);
-	int Mas[Num], i=0, j=0, k=0, n=0;
-	for (i=0;i<Num;i++)
+	scanf("%d", &Num);
+	int Mas[Num], i = 0, j = 0, k = 0, n = 0;
+	for (i = 0; i < Num; i++)
 	{
-		printf("Введите [%d]: ",i+1);
-		scanf("%d",&Mas[i]);
+		printf("Введите [%d]: ", i + 1);
+		scanf("%d", &Mas[i]);
 	}
 	printf("\tМассив: [");
-	for (i=0; i < Num; i++)
-		(i >= Num-1)?printf("%d", Mas[i]):printf("%d,", Mas[i]);
+	for (i = 0; i < Num; i++)
+	{
+		(i >= Num - 1) ? printf("%d", Mas[i]) : printf("%d,", Mas[i]);
+	}
 	printf("]\n");
 
 	printf("\tЧисло инв. для масс., отсортир. в обр. пор.= ");
-	for (i=0; i < Num - 1; i++)
+	for (i = 0; i < Num - 1; i++)
 	{
 		maxi = maxi + Num - i - 1;
-		(i >= Num-2)?printf("%d", Num - i - 1):printf("%d+", Num - i - 1);
+		(i >= Num - 2) ? printf("%d", Num - i - 1):printf("%d+", Num - i - 1);
 	}
 	i = maxi;
 	printf(" = %d\n", i);
-	for (i=0; i<Num-1; i++)
+	for (i = 0; i < Num - 1; i++)
 	{
-		for (j=k; j<Num; j++)
-			if (Mas[i]>Mas[j])
+		for (j = k; j < Num; j++)
+			if (Mas[i] > Mas[j])
 				n++;
 		k++;
 	}
@@ -44,5 +46,3 @@ int main()
 	printf("\tАбсолютное количество инверсий (abs. inv) = %d \n\tОтносительное количество инверсий (rel. inv) = %.5lf\n",n,d);
 	return 0;
 }
-
-

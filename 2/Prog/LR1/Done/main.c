@@ -1,7 +1,4 @@
 #include <stdio.h>
-//#include <string.h>
-//#include <stdlib.h>
-
 #include "string.h"
 
 #define MAXPATH 261
@@ -41,7 +38,6 @@ void input(char *a, char *c, char *d)
 	}
 	printf(" delim: ");
 	scanf("%c", d);
-//	scanf("%c%*c",&b);
 
 	if (c[0] != '/')
 	{
@@ -52,15 +48,15 @@ void input(char *a, char *c, char *d)
 	a[slen(a) - 1] = '\0';
 	c[slen(c) - 1] = '\0';
 
-	for (i = slen(a)-1; i > 1; --i)
-		if ((a[i]=='/')&&(a[i-1]=='/'))
+	for (i = slen(a) - 1; i > 1; --i)
+		if ((a[i] == '/')&&(a[i - 1] == '/'))
 		{
 			printf("%sСтрока не корректна%s\n", clBoldRed, clNormal);
 			myexit();
 		}
 
-	for (i = slen(c)-1; i >= 1; --i)
-		if ((c[i]=='/')&&(c[i-1]=='/'))
+	for (i = slen(c) - 1; i >= 1; --i)
+		if ((c[i]=='/')&&(c[i - 1] == '/'))
 		{
 			printf("%sПуть не корректен%s\n", clBoldRed, clNormal);
 			myexit();
@@ -69,16 +65,16 @@ void input(char *a, char *c, char *d)
 	if (c[slen(c) - 1] == '/')
 		c[slen(c) - 1] = '\0';
 
-	for (i=0; a[i]!='\0'; i++)
-		if ((32>a[i]) || (a[i]==34) || (a[i]==42) || (a[i]==58) || (a[i]==60) || (a[i]==62) || (a[i]==63) || (a[i]==64) || (a[i]==92) || (126<a[i]))
+	for (i = 0; a[i]!='\0'; i++)
+		if ((32 > a[i]) || (a[i] == 34) || (a[i] == 42) || (a[i] == 58) || (a[i] == 60) || (a[i] == 62) || (a[i] == 63) || (a[i] == 64) || (a[i] == 92) || (126 < a[i]))
 		{
 			printf("Строка содержит запрещенный заданием символ: \"%c\"\n", a[i]);
 			printf("Запрещенный заданием символ по счету: \"%d\"\n", i);
 			myexit();
 		}
 
-	for (i=0; c[i]!='\0'; i++)
-		if ((32>c[i]) || (c[i]==34) || (c[i]==42) || (c[i]==58) || (c[i]==60) || (c[i]==62) || (c[i]==63) || (c[i]==64) || (c[i]==92) || (126<c[i]))
+	for (i = 0; c[i] != '\0'; i++)
+		if ((32 > c[i]) || (c[i] == 34) || (c[i] == 42) || (c[i] == 58) || (c[i] == 60) || (c[i]==62) || (c[i] == 63) || (c[i] == 64) || (c[i] == 92) || (126 < c[i]))
 		{
 			printf("Путь содержит запрещенный заданием символ: \"%c\"\n", c[i]);
 			printf("Запрещенный заданием символ по счету: \"%d\"\n", i);
@@ -87,7 +83,7 @@ void input(char *a, char *c, char *d)
 
 	if ((32 > *d) || (126 < *d))
 	{
-		printf("%sВведен запрещенный разделительный символ%s\n",clBoldRed,clNormal);
+		printf("%sВведен запрещенный разделительный символ%s\n", clBoldRed, clNormal);
 		myexit();
 	}
 	return;

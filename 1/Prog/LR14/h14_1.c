@@ -13,34 +13,38 @@
 
 int main()
 {
-	int i=0, j=1, n, t=0, NClients=0;
+	int i = 0, j = 1, n, t = 0, NClients = 0;
 	printf("Введите количество клиентов: ");
-	scanf("%d",&NClients);
+	scanf("%d", &NClients);
 	int Time[NClients];
-	for(i=0; i<NClients; i++)
+	for(i = 0; i < NClients; i++)
 	{
-		printf("Введите время %d клиента: ",i+1);
-		scanf("%d",&Time[i]);
+		printf("Введите время %d клиента: ", i + 1);
+		scanf("%d", &Time[i]);
 	}
 
-	while (j!=0)
+	while (j != 0)
 	{
 		printf("Продолжить? ('0'-нет/'1+'-да)");
-		scanf("%d",&j);
+		scanf("%d", &j);
 		if (j)
 		{
 			printf("Введите номер клиента: ");
-			scanf("%d",&n);
-			if (n>NClients)
+			scanf("%d", &n);
+			if (n > NClients)
+			{
 				printf("\tКлиент с таким номером отсутствует.\n");
+			}
 			else
 			{
-				for(i=0; i<n; i++)
+				for(i = 0; i < n; i++)
+				{
 					t = t + Time[i];
-				printf("\tВремя в очереди клиента №%d: %d\n",n,t);
+				}
+				printf("\tВремя в очереди клиента №%d: %d\n", n, t);
 			}
 		}
-		t=0;
+		t = 0;
 	}
 
 	return 0;

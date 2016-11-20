@@ -21,25 +21,29 @@ void GenRandMas(int* arr, const int len, const int l, const int r)
 	int i;
 	srand(time(NULL));
 	for (i = 0; i < len; i++)
-		arr[i]= (l-1 + rand() % r+2);
+	{
+		arr[i]= (l - 1 + rand() % r + 2);
+	}
 }
 
 void output(int MasX[], int M)
 {
 	int i;
 	printf("\t[");
-	for (i=0; i<M; i++)
-		i<M-1?printf("%d,", MasX[i]):printf("%d]\n", MasX[i]);
+	for (i = 0; i < M; i++)
+	{
+		i < M - 1 ? printf("%d,", MasX[i]) : printf("%d]\n", MasX[i]);
+	}
 }
 
 void SortMAS(int* arr, const int len)
 {
-	int i=0, j=0, nMin, TMP;
-	for ( i = 0; i < len; i ++ )
+	int i = 0, j = 0, nMin, TMP;
+	for (i = 0; i < len; i ++)
 	{
 		nMin = i;
-		for ( j = i+1; j < len; j ++ )
-			if ( arr[j] < arr[nMin] )
+		for (j = i + 1; j < len; j ++)
+			if (arr[j] < arr[nMin])
 				nMin = j;
 		if (nMin != i)
 		{
@@ -53,7 +57,7 @@ void SortMAS(int* arr, const int len)
 
 int main()
 {
-	int n=0;
+	int n = 0;
 	printf("Укажите размер случайного массива: ");
 	scanf("%d", &n);
 	int Mas[n];

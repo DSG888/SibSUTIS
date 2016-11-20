@@ -24,6 +24,7 @@ ID	Класс					Символы
 4	comment					#.*
 -1	error
 */
+
 typedef struct
 {
 	int id;

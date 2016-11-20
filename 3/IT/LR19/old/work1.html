@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №2.12</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+		</style>
+		<H1>Лабораторная работа №2.12</H1>
+		<script src="script.js"></script>
+	</head>
+
+
+<style>
+input {
+	width: 50px;
+}
+</style>
+	<body OnLoad="Rand();">
+		<div>
+		<section>
+			<form action="#" name="form1">
+				<font >Массив</font>
+				<input type="text" name="textArr0"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr1"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr2"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr3"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr4"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr5"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr6"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr7"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr8"  onChange="inputArraySort()"/>
+				<input type="text" name="textArr9"  onChange="inputArraySort()"/><br><br>
+					<font >Поиск</font>
+					<input type="text" name="findField"  /><br>
+					<font >Результат(Позиция)</font>
+					<input type="text" name="resultField"  />
+			</form>
+			<br />
+			<form action="#" name="form2">
+				<div class="divRezult" id="searchHistory"></div>
+			</form>
+			<input type="button" OnClick="Rand();" value="Rand" />
+			<input type="button" OnClick="find();" value="Find" />
+			<input type="button" OnClick="clearHistory();" value="Clear" />
+		</section>
+
+	</div>
+	</body>
+
+</html> 

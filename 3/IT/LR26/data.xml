@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<data>
+	<fakultet name="ИВТ">
+		<kurs value="1">
+			<gruppa name="ИВ-62">
+				<stud name="Иванов И.И.">
+					<mark name="m1">2</mark>
+					<mark name="m2">1</mark>
+					<mark name="m3">2</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Пупкин В.С.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<stud name="Жириновский Ф.И.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<predmeti>
+					<predmet>Математика</predmet>
+					<predmet>Программирование</predmet>
+					<predmet>Информатика</predmet>
+					<predmet>Экология</predmet>
+					<predmet>САОД</predmet>
+					<predmet>Физика</predmet>
+					<predmet>Физическая Культура</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+		<kurs value="2">
+			<gruppa name="ИВ-62">
+				<stud name="Семенов Е.Ф.">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">1</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Пушкин А.С.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">0</mark>
+					<mark name="m4">0</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<predmeti>
+					<predmet>Математика</predmet>
+					<predmet>Эл. техника</predmet>
+					<predmet>Мат. Логика</predmet>
+					<predmet>Экономика</predmet>
+					<predmet>САОД</predmet>
+					<predmet>ООП</predmet>
+					<predmet>Физическая Культура</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+	</fakultet>
+
+	<fakultet name="ГФ">
+		<kurs value="1">
+			<gruppa name="ГГ-11">
+				<stud name="Пупков">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">2</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Казимов Т.В.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">2</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<stud name="Иванов Ф.И.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">2</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<predmeti>
+					<predmet>Мат.анализ</predmet>
+					<predmet>Ин яз</predmet>
+					<predmet>Микроэкономика</predmet>
+					<predmet>История</predmet>
+					<predmet>Нем. яз</predmet>
+					<predmet>ОБЖ</predmet>
+					<predmet>Физическая Культура</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+		<kurs value="2">
+			<gruppa name="ГС-33">
+				<stud name="Пупкин Е.Ф.">
+					<mark name="m1">2</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">1</mark>
+					<mark name="m4">1</mark>
+					<mark name="m5">1</mark>
+					<mark name="m6">2</mark>
+					<mark name="m7">2</mark>
+				</stud>
+				<stud name="Кизяков А.С.">
+					<mark name="m1">1</mark>
+					<mark name="m2">2</mark>
+					<mark name="m3">0</mark>
+					<mark name="m4">0</mark>
+					<mark name="m5">0</mark>
+					<mark name="m6">1</mark>
+					<mark name="m7">0</mark>
+				</stud>
+				<predmeti>
+					<predmet>Социлогия 1</predmet>
+					<predmet>Регион.эконом</predmet>
+					<predmet>Финансы</predmet>
+					<predmet>МВКО</predmet>
+					<predmet>Социлогия 2</predmet>
+					<predmet>ММИТ</predmet>
+					<predmet>Физическая Культура</predmet>
+				</predmeti>
+			</gruppa>
+		</kurs>
+	</fakultet>
+</data>

@@ -18,37 +18,47 @@ void GenRandMas(int* arr, const int len, const int l, const int r)
 	int i;
 	srand(time(NULL));
 	for (i = 0; i < len; i++)
-		arr[i]= (l-1 + rand() % r+2);
+		arr[i]= (l - 1 + rand() % r + 2);
 }
 
 void SortMP(int* arr, const int len)
 {
-	int i=0, j=0, tmp=0;
-	for(i = 0 ; i < len - 1; i++) 
+	int i = 0, j = 0, tmp = 0;
+	for(i = 0 ; i < len - 1; i++)
+	{
 		for(j = 0 ; j < len - i - 1 ; j++)
+		{
 			if(arr[j] > arr[j+1])
 			{
 				tmp = arr[j];
 				arr[j] = arr[j+1] ;
 				arr[j+1] = tmp;
 			}
+		}
+	}
 }
 
 void InvMas(int MasX[], int M)
 {
 	int i, tmpMas[M];
-	for (i=M-1; i>=0; i--)
-		tmpMas[M-i-1]=MasX[i];
-	for (i=0; i<M; i++)
+	for (i = M - 1; i >= 0; i--)
+	{
+		tmpMas[M - i - 1] = MasX[i];
+	}
+	for (i = 0; i < M; i++)
+	{
 		MasX[i] = tmpMas[i];
+	}
 }
 
 void output(int MasX[], int M)
 {
 	int i;
 	printf("\t[");
-	for (i=0; i<M; i++)
-		i<M-1?printf("%d,", MasX[i]):printf("%d]\n", MasX[i]);
+	for (i = 0; i < M; i++)
+	{
+		i < M - 1 ? printf("%d,", MasX[i]) : printf("%d]\n", MasX[i]);
+	}
 }
 
 int main ()
@@ -57,7 +67,7 @@ int main ()
 	int a = 0;
 	printf("Введите число элементов массива (1-100): ");
 	scanf("%d", &a);
-	if ((a > 100)||(a < 1))
+	if ((a > 100) || (a < 1))
 	{
 		printf("\tЧисло нужно от 1-100\n");
 		return 1;
@@ -86,8 +96,8 @@ int main ()
 	int x=0;
 	printf("Какое число вставить в массив? x = ");
 	scanf("%d", &x);
-	int R=0, L=0, i, j=0;
-	for (i=1; i<a; i++)						//	Получение характеристики массива
+	int R = 0, L = 0, i, j = 0;
+	for (i = 1; i < a; i++)						//	Получение характеристики массива
 	{
 //		R=R+(!(Mas[i]>=Mas[i-1]));			//	I
 //		L=L+(!(Mas[i]<=Mas[i-1]));
@@ -98,19 +108,19 @@ int main ()
 //			if (!(Mas[i]<=Mas[i-1]))
 //				L++;
 
-		L=L+(Mas[i]>Mas[i-1]);				//	III
-		R=R+(Mas[i]<Mas[i-1]);
+		L = L + (Mas[i] > Mas[i - 1]);				//	III
+		R = R + (Mas[i] < Mas[i - 1]);
 	}
-	if ( (R)&&(L) )
+	if ( (R) && (L) )
 	{
 		printf("\tМассив не изменился. Последовательность не возрастает и не убывает\n");
 		output(Mas, a);
 		return 0;
 	}
-	int NewMas[a+1];
+	int NewMas[a + 1];
 	if (!(R))
 	{
-		for (i=0; i<a; i++)				//	Занесение всего до X
+		for (i = 0; i < a; i++)				//	Занесение всего до X
 			if (Mas[i] <= x)
 			{
 				NewMas[j] = Mas[i];
@@ -122,13 +132,13 @@ int main ()
 				j++;
 				break;
 			}
-		for (i=j; i < a+1; i++)			//	Занесение всего после X
-			NewMas[i] = Mas[i-1];
+		for (i = j; i < a + 1; i++)			//	Занесение всего после X
+			NewMas[i] = Mas[i - 1];
 	}
 
 	if (!(L))
 	{
-		for (i=0; i<a; i++)				//	Занесение всего до X
+		for (i = 0; i < a; i++)				//	Занесение всего до X
 			if (Mas[i] >= x)
 			{
 				NewMas[j] = Mas[i];
@@ -140,12 +150,12 @@ int main ()
 				j++;
 				break;
 			}
-		if (i==a)						//	Интегрированный костыль
+		if (i == a)						//	Интегрированный костыль
 			NewMas[a] = x;				//	Шоб вставить в конец X. Если он минимальный.
 		else
-			for (i=j; i < a+1; i++)		//	Занесение всего после X
-				NewMas[i] = Mas[i-1];
+			for (i = j; i < a + 1; i++)		//	Занесение всего после X
+				NewMas[i] = Mas[i - 1];
 	}
-	output(NewMas, a+1);
+	output(NewMas, a + 1);
 	return 0;
 }

@@ -13,48 +13,48 @@
 
 int main()
 {
-	unsigned int a=0, b=0, d=10, numberA=0, numberB=0, sum=0, tmp=0;
+	unsigned int a = 0, b = 0, d = 10, numberA = 0, numberB = 0, sum = 0, tmp = 0;
 
 	printf("Введите первое число представленное в двоичной системе счисления: ");
 	scanf("%u", &numberA);
 	printf("Введите второе число представленное в двоичной системе счисления: ");
 	scanf("%u", &numberB);
-	a=numberA;
-	b=numberB;
+	a = numberA;
+	b = numberB;
 
-	while(((a%10)>0) || ((b%10)>0))
+	while(((a % 10) > 0) || ((b % 10) > 0))
 	{
-		if((a%10) > 1)
+		if((a % 10) > 1)
 		{
-			printf("В числе %u находится неверный разряд %d\n", numberA, a%10);
+			printf("В числе %u находится неверный разряд %d\n", numberA, a % 10);
 			exit(1);
 		}
 
 		if ((b%10) > 1)
 		{
-			printf("В числе %u находится неверный разряд %d\n", numberB, b%10);
+			printf("В числе %u находится неверный разряд %d\n", numberB, b % 10);
 			exit(1);
 		}
 		a = (a/10);
 		b = (b/10);
 	}
 
-	sum = numberA+numberB;
+	sum = numberA + numberB;
 	tmp = sum;
 
-	while(tmp>0)
+	while(tmp > 0)
 	{
-		if((tmp%10)>1)
+		if((tmp % 10) > 1)
 		{
-			sum = sum-(2*((tmp%10)/2))*d/10;
-			sum = sum+((tmp%10)/2)*d;
+			sum = sum - (2 * ((tmp % 10) / 2)) * d / 10;
+			sum = sum + ((tmp % 10) / 2) * d;
 			tmp = sum;
 			d = 10;
 		}
-		tmp = tmp/10;
-		d = d*10;
+		tmp = tmp / 10;
+		d = d * 10;
 	}
-	printf("Сумма чисел %u и %u равна: %u\n",numberA, numberB, sum);
+	printf("Сумма чисел %u и %u равна: %u\n", numberA, numberB, sum);
 	
 	return 0;
 }

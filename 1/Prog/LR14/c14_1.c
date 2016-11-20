@@ -9,10 +9,10 @@
 
 int main()
 {
-	int a = 0, i=0;
+	int a = 0, i = 0;
 	printf("Введите число элементов массива (1-100): ");
-	scanf("%d",&a);
-	if ((a > 100)||(a < 1))
+	scanf("%d", &a);
+	if ((a > 100) || (a < 1))
 	{
 		printf("Число нужно от 1-100\n");
 		exit(1);
@@ -22,14 +22,15 @@ int main()
 	for(i=0; i < a; i++)
 	{
 		printf("Введите [%d]: ", i);
-		scanf("%d",&Mas[i]);
+		scanf("%d", &Mas[i]);
 	}
 	printf("\tЭлементы массива: ");
 		
-	for(i=0; i < a; i++)
+	for(i = 0; i < a; i++)
+	{
 		printf("%d  ", Mas[i]);
+	}
 	printf("\n");
-	
 
 	return 0;
 }

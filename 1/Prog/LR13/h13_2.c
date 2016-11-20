@@ -8,7 +8,7 @@
 
 int main()
 {
-	long int a=0, b=0, c=0, d=0, i=1, j=0, z=0, Result=0, tmp=0;
+	long int a = 0, b = 0, c = 0, d = 0, i = 1, j = 0, z = 0, Result = 0, tmp = 0;
 	printf("Введите два целых числа: ");
 	scanf("%ld %ld", &a, &b);
 
@@ -24,13 +24,17 @@ int main()
 		c = a / i;
 		d = a % i;
 		if ((d == 0) && (b % c == 0))
-			{
+		{
 			Result = c;
 			z = 1;
-			}
+		}
 		else
+		{
 			if ((d == 0) && (b % i == 0))
+			{
 				Result = i;
+			}
+		}
 		i++;
 		j = c;
 	}

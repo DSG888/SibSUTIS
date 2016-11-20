@@ -15,10 +15,10 @@ int main()
 	scanf("%d", &a);
 
 	printf("Разряды в обратном порядке: ");
-	while (a>0)
+	while (a > 0)
 	{
-		printf("%d ", a%10);
-		a = a/10;	
+		printf("%d ", a % 10);
+		a = a / 10;	
 	}
 	printf("\n");
 	return 0;

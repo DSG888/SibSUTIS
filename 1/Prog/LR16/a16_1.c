@@ -14,32 +14,34 @@ void GenRandMas(int* arr, const int len, const int l, const int r)
 	int i;
 	srand(time(NULL));
 	for (i = 0; i < len; i++)
-		arr[i]= (l-1 + rand() % r+2);
+		arr[i]= (l - 1 + rand() % r + 2);
 }
 
 void KMUoutput(int MasX[], int M)
 {
-	int i,j, n=0;
-	double maxi=0, d=1;
+	int i, j, n = 0;
+	double maxi = 0, d = 1;
 
-	for (i=0; i<M-1; i++)
+	for (i = 0; i < M - 1; i++)
 	{
 		maxi = maxi + M - i - 1;
-		for (j=i; j<M; j++)
-			if (MasX[i]>MasX[j])
+		for (j = i; j < M; j++)
+		{
+			if (MasX[i] > MasX[j])
 				n++;
+		}
 	}
 	d = d * (n / maxi);
 
 	printf("\t[");
-	for (i=0; i<M; i++)
-		i<M-1?printf("%d,", MasX[i]):printf("%d] ", MasX[i]);
-	printf("(abs.inv)=%d; (rel.inv) = %.4lf\n", n,d);
+	for (i = 0; i < M; i++)
+		i < M - 1 ? printf("%d,", MasX[i]) : printf("%d] ", MasX[i]);
+	printf("(abs.inv)=%d; (rel.inv) = %.4lf\n", n, d);
 }
 
 void SortMV(int* arr, const int len)
 {
-	int i=0, j=0, tmp=0;
+	int i = 0, j = 0, tmp = 0;
 	for (i = 1; i < len; i++)
 	{
 		tmp = arr[i];
@@ -52,7 +54,6 @@ void SortMV(int* arr, const int len)
 			KMUoutput(arr, len);
 		}
 	}
-
 }
 
 int main()

@@ -9,25 +9,25 @@
 
 int main()
 {
-	int a=0, b=0, k=0, t=1, l=0;
+	int a = 0, b = 0, k = 0, t = 1, l = 0;
 
 	printf("Введите целое десятичное число: ");
-	scanf("%d",&a);
+	scanf("%d", &a);
 	b = a;
 	printf("Разряды в прямом порядке: ");
-	while (b>0)
+	while (b > 0)
 	{
-		k = b%10;
-		b = b/10;
-		l = l*t+k;
+		k = b % 10;
+		b = b / 10;
+		l = l * t + k;
 		t = 10;
 	}
 
-	while (l>0)
+	while (l > 0)
 	{
-		k = l%10;
-		l = l/10;
-		printf("%d ",k);
+		k = l % 10;
+		l = l / 10;
+		printf("%d ", k);
 	}
 	printf("\n");
 	return 0;

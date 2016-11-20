@@ -9,12 +9,12 @@
 
 int main()
 {
-	double a=0;
-	int b=0, c=1, d=0;
-	unsigned int e=0;
+	double a = 0;
+	int b = 0, c = 1, d = 0;
+	unsigned int e = 0;
 
 	printf("Введите вещественное число: ");
-	scanf("%lf",&a);
+	scanf("%lf", &a);
 	b = a;
 	while (b > 0)
 	{

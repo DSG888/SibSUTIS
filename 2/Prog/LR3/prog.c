@@ -55,7 +55,6 @@ II уровень сложности. Вариант 3
 #include "processing.h"
 #include "input_output.h"
 
-
 int main()
 {
 	char filepath[MAXPATH];
@@ -64,7 +63,7 @@ int main()
 	stu sign[1000];
 
 	interrogation(filepath, dir);
-	
+
 	Read(filepath, textfile);
 	int Z = process(textfile, dir, sign);
 //	printf("%s", textfile);
