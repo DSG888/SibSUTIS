@@ -1,141 +1,148 @@
  <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Лабораторная работа №2.10</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №2.10</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+			.clock {
+				height: 21px;
+				display: inline-block;
+			}
+		</style>
+	</head>
 
-<style>
-	body {
-		margin: 0;
-		margin-top: 0;
-	}
-	h1 {
-		margin-top: 0;
-		background: #0000FF;
-		padding: 10px;
-		color: #FFFFFF;
-	}
-	.clock {
-		height: 21px;
-		display: inline-block;
-	}
-</style>
-
-<body>
-
-<H1>Лабораторная работа №2.10</H1>
-
-<div id="script1">
-<div><code>   <script language="javascript" type="text/javascript">
- /* Visit http://www.yaldex.com/ for full source code
- and get more free JavaScript, CSS and DHTML scripts! */
- <!-- Begin
- var dn;
- c1 = new Image(); c1.src = "lab2.10_files/dg1.gif";
- c2 = new Image(); c2.src = "lab2.10_files/dg2.gif";
- c3 = new Image(); c3.src = "lab2.10_files/dg3.gif";
- c4 = new Image(); c4.src = "lab2.10_files/dg4.gif";
- c5 = new Image(); c5.src = "lab2.10_files/dg5.gif";
- c6 = new Image(); c6.src = "lab2.10_files/dg6.gif";
- c7 = new Image(); c7.src = "lab2.10_files/dg7.gif";
- c8 = new Image(); c8.src = "lab2.10_files/dg8.gif";
- c9 = new Image(); c9.src = "lab2.10_files/dg9.gif";
- c0 = new Image(); c0.src = "lab2.10_files/dg0.gif";
- cb = new Image(); cb.src = "lab2.10_files/dg0.gif";
- cam = new Image(); cam.src = "lab2.10_files/dgam.gif";
- cpm = new Image(); cpm.src = "lab2.10_files/dgpm.gif";
- function extract(h,m,s,type) {
- if (!document.images) return;
- if (h <= 9) {
- document.images.a.src = cb.src;
- document.images.b.src = eval("c"+h+".src");
- }
- else {
- document.images.a.src = eval("c"+Math.floor(h/10)+".src");
- document.images.b.src = eval("c"+(h%10)+".src");
- }
- if (m <= 9) {
- document.images.d.src = c0.src;
- document.images.e.src = eval("c"+m+".src");
- }
- else {
- document.images.d.src = eval("c"+Math.floor(m/10)+".src");
- document.images.e.src = eval("c"+(m%10)+".src");
- }
- if (s <= 9) {
- document.g.src = c0.src;
- document.images.h.src = eval("c"+s+".src");
- }
- else {
- document.images.g.src = eval("c"+Math.floor(s/10)+".src");
- document.images.h.src = eval("c"+(s%10)+".src");
- }
- if (dn == "AM") document.j.src = cam.src;
- else document.images.j.src = cpm.src;
- }
- function show3() {
- if (!document.images)
- return;
- var Digital = new Date();
- var hours = Digital.getHours();
- var minutes = Digital.getMinutes();
- var seconds = Digital.getSeconds();
- dn = "AM";
- if ((hours >= 12) && (minutes >= 1) || (hours >= 13)) {
- dn = "PM";
- hours = hours-12;
- }
- if (hours == 0)
- hours = 12;
- extract(hours, minutes, seconds, dn);
- setTimeout("show3()", 1000);
- }
- window.onload=show3;
- //  End -->
- </script>
- <img height=21 src="lab2.10_files/dg0.gif" width=16 name=a><img height=21 src="lab2.10_files/dg0.gif" width=16 name=b><img height=21 src="lab2.10_files/dgc.gif" width=9 name=c><img height=21 src="lab2.10_files/dg0.gif" width=16 name=d><img height=21 src="lab2.10_files/dg0.gif" width=16 name=e><img height=21 src="lab2.10_files/dgc.gif" width=9 name=f><img height=21 src="lab2.10_files/dg0.gif" width=16 name=g><img height=21 src="lab2.10_files/dg0.gif" width=16 name=h><img height=21 src="lab2.10_files/dgam.gif" width=16 name=j>
- </code></div>
-</div>
+	<body>
+		<H1>Лабораторная работа №2.10</H1>
+		<div id="script1">
+			<div>
+				<code>
+					<script language="javascript" type="text/javascript">
+						var dn;
+						c1 = new Image(); c1.src = "lab2.10_files/dg1.gif";
+						c2 = new Image(); c2.src = "lab2.10_files/dg2.gif";
+						c3 = new Image(); c3.src = "lab2.10_files/dg3.gif";
+						c4 = new Image(); c4.src = "lab2.10_files/dg4.gif";
+						c5 = new Image(); c5.src = "lab2.10_files/dg5.gif";
+						c6 = new Image(); c6.src = "lab2.10_files/dg6.gif";
+						c7 = new Image(); c7.src = "lab2.10_files/dg7.gif";
+						c8 = new Image(); c8.src = "lab2.10_files/dg8.gif";
+						c9 = new Image(); c9.src = "lab2.10_files/dg9.gif";
+						c0 = new Image(); c0.src = "lab2.10_files/dg0.gif";
+						cb = new Image(); cb.src = "lab2.10_files/dg0.gif";
+						cam = new Image(); cam.src = "lab2.10_files/dgam.gif";
+						cpm = new Image(); cpm.src = "lab2.10_files/dgpm.gif";
+						function extract(h,m,s,type)
+						{
+							if (!document.images)
+								return;
+							if (h <= 9)
+							{
+								document.images.a.src = cb.src;
+								document.images.b.src = eval("c"+h+".src");
+							}
+							else
+							{
+								document.images.a.src = eval("c"+Math.floor(h/10)+".src");
+								document.images.b.src = eval("c"+(h%10)+".src");
+							}
+							if (m <= 9)
+							{
+								document.images.d.src = c0.src;
+								document.images.e.src = eval("c"+m+".src");
+							}
+							else
+							{
+								document.images.d.src = eval("c"+Math.floor(m/10)+".src");
+								document.images.e.src = eval("c"+(m%10)+".src");
+							}
+							if (s <= 9)
+							{
+								document.g.src = c0.src;
+								document.images.h.src = eval("c"+s+".src");
+							}
+							else
+							{
+								document.images.g.src = eval("c"+Math.floor(s/10)+".src");
+								document.images.h.src = eval("c"+(s%10)+".src");
+							}
+							if (dn == "AM")
+								document.j.src = cam.src;
+							else
+								document.images.j.src = cpm.src;
+						}
+						
+						function show3()
+						{
+							if (!document.images)
+								return;
+							var Digital = new Date();
+							var hours = Digital.getHours();
+							var minutes = Digital.getMinutes();
+							var seconds = Digital.getSeconds();
+							dn = "AM";
+							if ((hours >= 12) && (minutes >= 1) || (hours >= 13))
+							{
+								dn = "PM";
+								hours = hours-12;
+							}
+							if (hours == 0)
+								hours = 12;
+							extract(hours, minutes, seconds, dn);
+							setTimeout("show3()", 1000);
+						}
+						window.onload=show3;
+					</script>
+					<img height=21 src="lab2.10_files/dg0.gif" width=16 name=a><img height=21 src="lab2.10_files/dg0.gif" width=16 name=b><img height=21 src="lab2.10_files/dgc.gif" width=9 name=c><img height=21 src="lab2.10_files/dg0.gif" width=16 name=d><img height=21 src="lab2.10_files/dg0.gif" width=16 name=e><img height=21 src="lab2.10_files/dgc.gif" width=9 name=f><img height=21 src="lab2.10_files/dg0.gif" width=16 name=g><img height=21 src="lab2.10_files/dg0.gif" width=16 name=h><img height=21 src="lab2.10_files/dgam.gif" width=16 name=j>
+				</code>
+			</div>
+		</div>
 
 
 
 
 
 
-    <div id="clock" class="clock">
-    </div>
-    
-    
-    <script>
-        var clock = document.getElementById('clock');
-        setInterval(function (){
-            var date = function (){
-                var date = new Date();
-                return {
-                    "day": date.getDate()<10?"0"+date.getDate():date.getDate().toString(),
-                    "month": date.getMonth()<10?"0"+date.getMonth():date.getMonth().toString(),
-                    "year": date.getFullYear().toString(),
-                    "hours": (date.getHours()%12)<10?"0"+(date.getHours()%12):(date.getHours()%12).toString(),
-                    "ampm": date.getHours()>=12?'p':'a',
-                    "minutes": date.getMinutes()<10?"0"+date.getMinutes():date.getMinutes().toString(),
-                    "seconds": date.getSeconds()<10?"0"+date.getSeconds():date.getSeconds().toString(),
-                    "space": "x".toString()
-                }
-            }();
+		<div id="clock" class="clock">
+		</div>
+		
+		<script>
+			var clock = document.getElementById('clock');
+			setInterval(function ()
+			{
+				var date = function ()
+				{
+					var date = new Date();
+					return {
+						"day": date.getDate()<10?"0"+date.getDate():date.getDate().toString(),
+						"month": date.getMonth()<10?"0"+date.getMonth():date.getMonth().toString(),
+						"year": date.getFullYear().toString(),
+						"hours": (date.getHours()%12)<10?"0"+(date.getHours()%12):(date.getHours()%12).toString(),
+						"ampm": date.getHours()>=12?'p':'a',
+						"minutes": date.getMinutes()<10?"0"+date.getMinutes():date.getMinutes().toString(),
+						"seconds": date.getSeconds()<10?"0"+date.getSeconds():date.getSeconds().toString(),
+						"space": "x".toString()
+					}
+				}();
 
-            var string = date.ampm+date.hours+"c"+date.minutes+"c"+date.seconds+date.space+date.day+"d"+date.month+"d"+date.year+"e";
-            clock.innerHTML = '';
-            for(var i=0; i<string.length; i++){
-                var img = new Image();
-                img.src = "lab2.10_files/dg" + string[i] + ".gif";
-                clock.appendChild(img);
-            }
-        }, 1000)
-    </script>
-    
-    
-
-</body>
-
+				var string = date.ampm+date.hours+"c"+date.minutes+"c"+date.seconds+date.space+date.day+"d"+date.month+"d"+date.year+"e";
+				clock.innerHTML = '';
+				for(var i=0; i<string.length; i++)
+				{
+					var img = new Image();
+					img.src = "lab2.10_files/dg" + string[i] + ".gif";
+					clock.appendChild(img);
+				}
+			}, 1000)
+		</script>
+	</body>
 </html> 

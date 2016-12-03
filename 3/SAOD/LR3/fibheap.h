@@ -1,3 +1,6 @@
+#ifndef FIBHEAP_H
+#define FIBHEAP_H
+
 #include "stdio.h"		// printf
 #include "stdlib.h"		// free, malloc
 #include "math.h"		// log10
@@ -34,3 +37,5 @@ void Cut (struct heap* H, struct node* x, struct node* y);
 void Cascading_Cut (struct heap* H, struct node* y);
 void Fib_Heap_Delete (struct heap* H, struct node* x);
 void Print_Fib_Heap (struct heap* H, struct node* x);
+
+#endif

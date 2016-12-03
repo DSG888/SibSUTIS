@@ -15,91 +15,91 @@
 				color: #FFFFFF;
 			}
 		</style>
+		
 		<H1>Лабораторная работа №2.8</H1>
+		
+		<script language="javascript"> 
+			function svod(obj){
+				// переменные для оценок
+				var assessment2 = 0;
+				var assessment3 = 0;
+				var assessment4 = 0;
+				var assessment5 = 0;
+				// для подсчета среднего
+				var s = 0;
+				var num = 0;
+				var i;
+				var r; 
+				var st = obj.data.value;
+				for ( i = 0; i < st.length; i++) {
+					r = st.charAt(i);
+					// проверка ввода
+					if (r < "2" || r > "5") {
+						alert('Ошибка ввода');
+						return 0;
+					}
+					// пробегаем по всему вводу и выбираем нужные символы
+					if (r >= "2" && r <= "5") { 
+						num++;  
+						s = s + Number(r);  
+						switch (r){
+							case "2": {
+								assessment2++; 
+								break;
+							}; 
+							case "3": {
+								assessment3++;
+								break;
+							}; 
+							case "4": {
+								assessment4++;
+								break;
+							}; 
+							case "5": {
+								assessment5++;
+								break;
+							}; 
+						} 
+					} 
+				}
+				// меняем значения внутри объектов
+				obj.res2.value=assessment2;  
+				obj.res3.value=assessment3; 
+				obj.res4.value=assessment4;  
+				obj.res5.value=assessment5; 
+				obj.num.value=num;
+				obj.sr.value=s/num; 
+			}
+		</script>
 	</head>
-
-<script language="javascript"> 
-function svod(obj){
-	// переменные для оценок
-	var assessment2 = 0;
-	var assessment3 = 0;
-	var assessment4 = 0;
-	var assessment5 = 0;
-	// для подсчета среднего
-	var s = 0;
-	var num = 0;
-	var i;
-	var r; 
-	var st = obj.data.value;
-	for ( i = 0; i < st.length; i++) {
-		r = st.charAt(i);
-		// проверка ввода
-		if (r < "2" || r > "5") {
-			alert('Ошибка ввода');
-			return 0;
-		}
-		// пробегаем по всему вводу и выбираем нужные символы
-		if (r >= "2" && r <= "5") { 
-			num++;  
-			s = s + Number(r);  
-			switch (r){
-				case "2": {
-					assessment2++; 
-					break;
-				}; 
-				case "3": {
-					assessment3++;
-					break;
-				}; 
-				case "4": {
-					assessment4++;
-					break;
-				}; 
-				case "5": {
-					assessment5++;
-					break;
-				}; 
-			} 
-		} 
-	}
-	// меняем значения внутри объектов
-	obj.res2.value=assessment2;  
-	obj.res3.value=assessment3; 
-	obj.res4.value=assessment4;  
-	obj.res5.value=assessment5; 
-	obj.num.value=num;
-	obj.sr.value=s/num; 
-}
-
-</script> 
 
 	<body>
 		<form name="form">
-		<center>Введите оценки: <input type="text" name="data" size="30"><br><br> 
-		<input type="button" value="Выполнить" onclick="svod(form)"><br><br> 
-		<table border=1><caption>Cводка по экзамену</caption> 
-		<tr>
-			<th bgcolor=silver>Оценка</th>
-			<th bgcolor=silver>Число сдавших на оценку</th>
-		</tr> 
-		<tr>
-			<td>Отлично</td>
-			<td align=center><input type="text" name="res5" size="5"></td>
-		</tr> 
-		<tr>
-			<td>Хopomo</td>
-			<td align=center><input type="text" name="res4" size="5"></td></tr>
-		<tr>
-			<td>Удoвлeтвopитeльнo</td>
-			<td align=center><input type="text" name="res3" size="5"></td></tr> 
-		<tr>
-			<td>Нeyдoвлeтвopитeльнo</td>
-			<td align=center><input type="text" name="res2" size="5"></td>
-		</tr> 
-		</table>
-		<br>Дополнительные сведения<br><br>Кoличecтвo сдававших
-		<input type="text" name="num" size="5">Сpeдний балл <input type="text" name="sr" size="5"> 
-		<input type="reset" value="Отменить"> 
+			<center>Введите оценки: <input type="text" name="data" size="30"><br><br> 
+			<input type="button" value="Выполнить" onclick="svod(form)"><br><br> 
+			<table border=1><caption>Cводка по экзамену</caption> 
+			<tr>
+				<th bgcolor=silver>Оценка</th>
+				<th bgcolor=silver>Число сдавших на оценку</th>
+			</tr> 
+			<tr>
+				<td>Отлично</td>
+				<td align=center><input type="text" name="res5" size="5"></td>
+			</tr> 
+			<tr>
+				<td>Хopomo</td>
+				<td align=center><input type="text" name="res4" size="5"></td></tr>
+			<tr>
+				<td>Удoвлeтвopитeльнo</td>
+				<td align=center><input type="text" name="res3" size="5"></td></tr> 
+			<tr>
+				<td>Нeyдoвлeтвopитeльнo</td>
+				<td align=center><input type="text" name="res2" size="5"></td>
+			</tr> 
+			</table>
+			<br>Дополнительные сведения<br><br>Кoличecтвo сдававших
+			<input type="text" name="num" size="5">Сpeдний балл <input type="text" name="sr" size="5"> 
+			<input type="reset" value="Отменить">
 		</form>
 	</body>
 </html> 

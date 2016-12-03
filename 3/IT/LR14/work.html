@@ -15,36 +15,36 @@
 				color: #FFFFFF;
 			}
 		</style>
+
 		<H1>Лабораторная работа №2.7</H1>
+		
+		<script type="text/javascript">
+			function func(){
+				// получаем значения
+				var str = document.getElementsByTagName('input')[0].value,
+				textarea = document.getElementsByTagName('textarea')[0], i=0;
+				(function(){ 
+					if(i<str.length){
+						// добавляем в массив символы
+						textarea.value += str[i]+'\n';
+						i++;
+						//вызываем функцию выполняему сейчас
+						setTimeout(arguments.callee, 0);
+					};    
+				}())
+			}
+		</script>
+
+		<style>
+			#pole1 {
+				width: 300px; /* Ширина поля в пикселах */
+			} 
+			#name {
+				width: 300px; /* Ширина поля в пикселах */
+				height: 600px;
+			}
+		</style>
 	</head>
-
-<script type="text/javascript">
-
-function func(){
-	// получаем значения
-	var str = document.getElementsByTagName('input')[0].value,
-	textarea = document.getElementsByTagName('textarea')[0], i=0;
-	(function(){ 
-		if(i<str.length){
-			// добавляем в массив символы
-			textarea.value += str[i]+'\n';
-			i++;
-			//вызываем функцию выполняему сейчас
-			setTimeout(arguments.callee, 0);
-		};    
-	}())
-}
-</script>
-
-  <style>
-   #pole1 {
-    width: 300px; /* Ширина поля в пикселах */
-   } 
-   #name {
-    width: 300px; /* Ширина поля в пикселах */
-    height: 600px;
-   } 
-  </style>
 
 	<body>
 		<input type="text" id = "pole1">
@@ -56,5 +56,4 @@ function func(){
 		<br>
 		<textarea id="name" width="300" height="300"></textarea>
 	</body>
-
 </html> 

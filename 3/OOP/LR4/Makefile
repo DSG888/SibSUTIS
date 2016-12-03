@@ -4,7 +4,7 @@ obj:
 	mkdir obj
 
 LAB4: obj/main.o obj/point.o obj/line.o obj/rectangle.o obj/triangle.o obj/circle.o obj/rhombus.o obj/ellipse.o
-	g++ -lglut -lX11 -lGL -lGLU -O3 obj/*.o -o LAB4
+	g++ obj/*.o -lglut -lX11 -lGL -lGLU -O3 -o LAB4
 
 obj/main.o: main.cpp
 	g++ -c main.cpp -o obj/main.o

@@ -1,42 +1,40 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
   "http://www.w3.org/TR/html4/frameset.dtd">
 <html>
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Лабораторная работа №2.1</title>
- </head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Лабораторная работа №2.1</title>
 
-<style>
-body {
-	margin: 0;
-	margin-top: 0;
-}
-h1 {
-	margin-top: 0;
-	background: #0000FF;
-	padding: 10px;
-	color: #FFFFFF;
-}
-</style>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 0;
+			}
+			h1 {
+				margin-top: 0;
+				background: #0000FF;
+				padding: 10px;
+				color: #FFFFFF;
+			}
+		</style>
 
-<script language="JavaScript">
-function chpict ()
-{
-	var d=document
-	var l=d.pm1.src
-	d.pm1.src=d.pm2.src
-	d.pm2.src=l
-}
-</script>
+		<script language="JavaScript">
+			function chpict ()
+			{
+				var d=document
+				var l=d.pm1.src
+				d.pm1.src=d.pm2.src
+				d.pm2.src=l
+			}
+		</script>
+	</head>
 
-<body>
-<H1>Лабораторная работа №2.1</H1>
-
-<IMG src="pic1.png" name=pm1 width=200>
-<IMG src="pic2.jpg" name=pm2 width=200>
-<FORM name="form1">
-<input type="button" value="Обменять" onClick="chpict()">
-
-</FORM>
-</body>
+	<body>
+		<H1>Лабораторная работа №2.1</H1>
+		<IMG src="pic1.png" name=pm1 width=200>
+		<IMG src="pic2.jpg" name=pm2 width=200>
+		<FORM name="form1">
+			<input type="button" value="Обменять" onClick="chpict()">
+		</FORM>
+	</body>
 </html>

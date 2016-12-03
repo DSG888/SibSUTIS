@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Лабораторная работа №2.6</title>
+		
 		<style>
 			body {
 				margin: 0;
@@ -15,44 +16,44 @@
 				color: #FFFFFF;
 			}
 		</style>
+		
 		<H1>Лабораторная работа №2.6</H1>
+		
+		<script>
+			function Change() {
+				var table = document.getElementById ("table1");
+				// считываем данные
+				var border = document.forms["form1"].elements["border1"].value;
+				var cellspacing = document.forms["form1"].elements["cellspacing1"].value;
+				var cellpadding = document.forms["form1"].elements["cellpadding1"].value;
+				table.border = border; 
+				document.getElementById('table1').cellPadding = cellpadding; 
+				document.getElementById('table1').cellSpacing = cellspacing; 
+				// table.refresh();
+				//alert(border);
+			}
+		</script>
 	</head>
-
-<script>
-
-function Change() {
-    var table = document.getElementById ("table1");
-	// считываем данные
-	var border = document.forms["form1"].elements["border1"].value;
-	var cellspacing = document.forms["form1"].elements["cellspacing1"].value;
-	var cellpadding = document.forms["form1"].elements["cellpadding1"].value;
-    table.border = border; 
-    document.getElementById('table1').cellPadding = cellpadding; 
-    document.getElementById('table1').cellSpacing = cellspacing; 
-    // table.refresh();
-	//alert(border);
-}
-</script>
 
 	<body>
 		<form action="#" name="form1">
-		<table border="1" cellspacing="2" cellpadding="2" align="center" name="table" id="table1">
-			<tr>
-				<td>border</td>
-				<td><input id="border1" name="border" type=textbox value="1"></td>
-			</tr>
-			<tr>
-				<td>cellspacing</td>
-				<td><input id="cellspacing1" name="cellspacing" type=textbox value="2"></td>
-			</tr>
-			<tr>
-				<td>cellpadding</td>
-				<td><input id="cellpadding1" name="cellpadding" type=textbox value="2"></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="button" value="Изменить" onclick="Change()"></td>
-			</tr>
-		</table>
+			<table border="1" cellspacing="2" cellpadding="2" align="center" name="table" id="table1">
+				<tr>
+					<td>border</td>
+					<td><input id="border1" name="border" type=textbox value="1"></td>
+				</tr>
+				<tr>
+					<td>cellspacing</td>
+					<td><input id="cellspacing1" name="cellspacing" type=textbox value="2"></td>
+				</tr>
+				<tr>
+					<td>cellpadding</td>
+					<td><input id="cellpadding1" name="cellpadding" type=textbox value="2"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" value="Изменить" onclick="Change()"></td>
+				</tr>
+			</table>
 		</form>
 	</body>
 

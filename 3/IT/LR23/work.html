@@ -14,114 +14,108 @@
 				padding: 10px;
 				color: #FFFFFF;
 			}
+			.div1 {
+				color: #FF00FF;
+				position: absolute;
+				background: Teal;
+				top: 70px;
+				left: 0px;
+				width: 50px;
+				height: 0px;
+				padding: 25px;
+				text-align: center;
+			}
+			.div2 {
+				 color: #FF00FF;
+				 position: absolute;
+				 border: solid 2px black;
+				 background: Teal;
+				 top: 118px;
+				 left: 25px;
+				 width: 80px;
+				 text-align: center;
+			}
+			.div12 {
+				color: #FF00FF;
+				position: absolute;
+				background: Teal;
+				top: 70px;
+				left: 100px;
+				width: 50px;
+				height: 0px;
+				padding: 25px;
+				text-align: center;
+			}
+			.div9 {
+				color: #FF00FF;
+				position: absolute;
+				border: solid 2px black;
+				background: Teal;
+				top: 118px;
+				left: 125px;
+				width: 80px;
+				text-align: center;
+			}
+			.div13 {
+				color: #FF00FF;
+				position: absolute;
+				background: Teal;
+				top: 70px;
+				left: 200px;
+				width: 50px;
+				height: 0px;
+				padding: 25px;
+				text-align: center;
+			}
+			.div10 {
+				color: #FF00FF;
+				position: absolute;
+				border: solid 2px black;
+				background: Teal;
+				top: 118px;
+				left: 225px;
+				width: 95px;
+				text-align: center;
+			}
+
+			.div3 {
+				color: #FF00FF;
+				position: absolute;
+				border: solid 2px black;
+				background: Teal;
+				top: 150px;
+				left: 320px;
+				width: 95px;
+				text-align: center;
+			}
+
+			.div4 {
+				color: #FF00FF;
+				position: absolute;
+				border: solid 2px black;
+				background: white;
+				top: 155px;
+				left: 415px;
+				width: 95px;
+				text-align: center;
+			}
+			input {
+				width: 100px;
+			}
+			.divRezult {
+				padding: 20px;
+			}
 		</style>
 		<H1>Лабораторная работа №3.1</H1>
+		<script type="text/javascript">
+			function showMenu1(i) {
+				if (document.getElementById("InterruptMenu" + i).style.display == "none") 
+					document.getElementById("InterruptMenu" + i).style.display = ""; 
+				else 
+				for (idx = 1; idx < 6; idx++)
+					  document.getElementById("InterruptMenu" + idx).style.display = "none"; }
+		</script>
 	</head>
-
-<script type="text/javascript">
-
-	function showMenu1(i) {
-		if (document.getElementById("InterruptMenu" + i).style.display == "none") 
-			document.getElementById("InterruptMenu" + i).style.display = ""; 
-		else 
-		for (idx = 1; idx < 6; idx++)
-			  document.getElementById("InterruptMenu" + idx).style.display = "none"; }
-	</script>
-
-
-<style>
-.div1 {
-	color: #FF00FF;
-  	position: absolute;
-  	background: Teal;
-  	top: 70px;
-  	left: 0px;
-  	width: 50px;
-  	height: 0px;
-  	padding: 25px;
-  	text-align: center;
-}
-.div2 {
-	 color: #FF00FF;
-	 position: absolute;
-	 border: solid 2px black;
-	 background: Teal;
-  	 top: 118px;
-  	 left: 25px;
-  	 width: 80px;
-  	 text-align: center;
-}
-.div12 {
-	color: #FF00FF;
-  	position: absolute;
-  	background: Teal;
-  	top: 70px;
-  	left: 100px;
-  	width: 50px;
-  	height: 0px;
-  	padding: 25px;
-  	text-align: center;
-}
-.div9 {
-	color: #FF00FF;
-	position: absolute;
-	border: solid 2px black;
-	background: Teal;
-  	top: 118px;
-  	left: 125px;
-  	width: 80px;
-  	text-align: center;
-}
-.div13 {
-	color: #FF00FF;
-  	position: absolute;
-  	background: Teal;
-  	top: 70px;
-  	left: 200px;
-  	width: 50px;
-  	height: 0px;
-  	padding: 25px;
-  	text-align: center;
-}
-.div10 {
-	color: #FF00FF;
-	position: absolute;
-	border: solid 2px black;
-	background: Teal;
-  	top: 118px;
-  	left: 225px;
-  	width: 95px;
-  	text-align: center;
-}
-
-.div3 {
-	color: #FF00FF;
-    position: absolute;
-    border: solid 2px black;
-    background: Teal;
-    top: 150px;
-    left: 320px;
-    width: 95px;
-    text-align: center;
-}
-
-.div4 {
-	color: #FF00FF;
-    position: absolute;
-    border: solid 2px black;
-    background: white;
-    top: 155px;
-    left: 415px;
-    width: 95px;
-    text-align: center;
-}
-input {
-	width: 100px;
-}
-.divRezult {
-	padding: 20px;
-}
-</style>
 	
 	<body>
 		<div id = "Menu1" class = "div1" onMouseOver="showMenu1(1);" onMouseOut="setTimeout('showMenu1(1);', 200)" style="display:""">Menu1</div>
@@ -132,7 +126,5 @@ input {
 		<div id = "InterruptMenu3" class = "div10" style="display:none;">subMenu3.1<div onMouseOver="showMenu1(4);" style="display:""">SubMenu3.1</div>SubMenu3.1</div>
 		<div id = "InterruptMenu4" class = "div3" style="display:none;">SubMenu3.2</div>
 		<div id = "InterruptMenu5" class = "div4" style="display:none;">subMenu3.3</div>
-
 	</body>
-
 </html> 

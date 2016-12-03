@@ -1,46 +1,44 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
   "http://www.w3.org/TR/html4/frameset.dtd">
 <html>
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Лабораторная работа №2.4</title>
- </head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Лабораторная работа №2.4</title>
+		
+		<script type="text/javascript">
+			var gi,gd,gj=1,gn=20,gt=20,gs,swd,sht,lwd,lht;function sli(ii,wd1,ht1,wd2,ht2,s){gi=ii;gd=1;swd=wd1;sht=ht1;lwd=wd2;lht=ht2;gs=s;rs();}function ssi(ii,wd1,ht1,wd2,ht2,s){gd=-1;swd=wd1;sht=ht1;lwd=wd2;lht=ht2;gs=s;rs();}function xy(x1,x2,gj){return (x2-x1)*gj/gn+x1;}function rs(){var w=Math.round(xy(swd,lwd,gj));
+			var h=Math.round(xy(sht,lht,gj));
+			if(gs)gi.style.left=(swd-w)+"px";
+			gi.style.width=w+"px";gi.style.height=h+"px";if(gd>0 && gn>gj){gj++;setTimeout('rs()',gt);}else if(0>gd && gj>0){gj--;setTimeout('rs()',gt);}}
+			function imx(n)
+			{
+				var f;
+				for(var i=0;i< 5;i++)
+				{
+					f=document.getElementById('imx'+i);
+					if(f)f.className=(i==n)?"imxs":"";
+					f=document.getElementById('im'+i);
+					if(f)f.style.display=(i==n)?"":"none";
+				}
+			}
+		</script>
+	</head>
 
-<style>
-body {
-	margin: 0;
-	margin-top: 0;
-}
-h1 {
-	margin-top: 0;
-	background: #0000FF;
-	padding: 10px;
-	color: #FFFFFF;
-}
-</style>
-
-<body>
-<script type="text/javascript">
-	var gi,gd,gj=1,gn=20,gt=20,gs,swd,sht,lwd,lht;function sli(ii,wd1,ht1,wd2,ht2,s){gi=ii;gd=1;swd=wd1;sht=ht1;lwd=wd2;lht=ht2;gs=s;rs();}function ssi(ii,wd1,ht1,wd2,ht2,s){gd=-1;swd=wd1;sht=ht1;lwd=wd2;lht=ht2;gs=s;rs();}function xy(x1,x2,gj){return (x2-x1)*gj/gn+x1;}function rs(){var w=Math.round(xy(swd,lwd,gj));
-	var h=Math.round(xy(sht,lht,gj));
-	if(gs)gi.style.left=(swd-w)+"px";
-	gi.style.width=w+"px";gi.style.height=h+"px";if(gd>0 && gn>gj){gj++;setTimeout('rs()',gt);}else if(0>gd && gj>0){gj--;setTimeout('rs()',gt);}}
-	function imx(n)
-	{
-		var f;
-		for(var i=0;i< 5;i++)
-		{
-			f=document.getElementById('imx'+i);
-			if(f)f.className=(i==n)?"imxs":"";
-			f=document.getElementById('im'+i);
-			if(f)f.style.display=(i==n)?"":"none";
+	<style>
+		body {
+			margin: 0;
+			margin-top: 0;
 		}
-	}
-</script>
-	
-<H1>Лабораторная работа №2.4</H1>
-<img onmouseover="sli(this,200,241,1000,1208,0)" onmouseout="ssi(this,200,241,1000,1208,0)" title="" alt="" src="tux.png" width="200" height="241" />
+		h1 {
+			margin-top: 0;
+			background: #0000FF;
+			padding: 10px;
+			color: #FFFFFF;
+		}
+	</style>
 
-
-</body>
+	<body>
+		<H1>Лабораторная работа №2.4</H1>
+		<img onmouseover="sli(this,200,241,1000,1208,0)" onmouseout="ssi(this,200,241,1000,1208,0)" title="" alt="" src="tux.png" width="200" height="241" />
+	</body>
 </html>

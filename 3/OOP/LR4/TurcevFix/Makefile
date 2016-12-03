@@ -11,7 +11,7 @@ obj:
 	mkdir obj
 
 $(EXECUTABLE): $(OBJECT_FILES) 
-	$(CC) $(LDFLAGS) $(OBJECT_FILES) -o $@
+	$(CC) $(OBJECT_FILES) $(LDFLAGS) -o $@
 
 obj/%.o: %.cpp
 	$(CC) -c $< -o $@
