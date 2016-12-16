@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS =  -c -Wall
+CFLAGS = -c -Wall
 LDFLAGS = 
 SOURCES = check.c check_func.c input.c main.c output.c process.c strings.c
 OBJECT_FILES = $(addprefix obj/, $(SOURCES:.c=.o))

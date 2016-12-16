@@ -1,9 +1,9 @@
-CC = g++
-CFLAGS = -O3 -Wall
-LDFLAGS = -lglut -lX11 -lGL -lGLU
-SOURCES = main.cpp point.cpp
-OBJECT_FILES = $(addprefix obj/, $(SOURCES:.cpp=.o))
-EXECUTABLE = LAB3
+CC = gcc
+CFLAGS = -O2
+LDFLAGS = 
+SOURCES = main.c cmdcalc.c
+OBJECT_FILES = $(addprefix obj/, $(SOURCES:.c=.o))
+EXECUTABLE = cmdcalc
 
 all: obj $(SOURCES) $(EXECUTABLE)
 
@@ -13,7 +13,7 @@ obj:
 $(EXECUTABLE): $(OBJECT_FILES) 
 	$(CC) $(OBJECT_FILES) $(LDFLAGS) $(CFLAGS) -o $@
 
-obj/%.o: %.cpp
+obj/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
