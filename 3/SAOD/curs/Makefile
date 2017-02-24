@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O3 -Wall
+CFLAGS = -O0 -Wall
 LDFLAGS = -lm
 SOURCES = main.c aatree.c bstree.c rbtree.c tester.c visual.c
 OBJECT_FILES = $(addprefix obj/, $(SOURCES:.c=.o))
@@ -14,7 +14,7 @@ $(EXECUTABLE): $(OBJECT_FILES)
 	$(CC) $(OBJECT_FILES) $(LDFLAGS) $(CFLAGS) -o $@
 
 obj/%.o: %.c
-	$(CC) -c $< -o $@ -O3
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf obj $(EXECUTABLE)

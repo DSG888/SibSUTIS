@@ -1,20 +1,34 @@
-CC = g++
-CFLAGS =  -c -Wall
-LDFLAGS = -lglut -lX11 -lGL -lGLU
-SOURCES = circle.cpp ellipse.cpp line.cpp main.cpp point.cpp rectangle.cpp rhombus.cpp triangle.cpp
-OBJECT_FILES = $(addprefix obj/, $(SOURCES:.cpp=.o))
-EXECUTABLE = LR4
-
-all: obj $(SOURCES) $(EXECUTABLE)
+all: obj LAB4
 
 obj:
 	mkdir obj
 
-$(EXECUTABLE): $(OBJECT_FILES) 
-	$(CC) $(OBJECT_FILES) $(LDFLAGS) -o $@
+LAB4: obj/main.o obj/point.o obj/line.o obj/rectangle.o obj/triangle.o obj/circle.o obj/rhombus.o obj/ellipse.o
+	g++ obj/*.o -lglut -lX11 -lGL -lGLU -O3 -o LAB4
 
-obj/%.o: %.cpp
-	$(CC) -c $< -o $@
+obj/main.o: main.cpp
+	g++ -c main.cpp -o obj/main.o
+
+obj/point.o: point.cpp
+	g++ -c point.cpp -o obj/point.o
+
+obj/line.o: line.cpp
+	g++ -c line.cpp -o obj/line.o
+
+obj/rectangle.o: rectangle.cpp
+	g++ -c rectangle.cpp -o obj/rectangle.o
+
+obj/triangle.o: triangle.cpp
+	g++ -c triangle.cpp -o obj/triangle.o
+
+obj/circle.o: circle.cpp
+	g++ -c circle.cpp -o obj/circle.o
+
+obj/rhombus.o: rhombus.cpp
+	g++ -c rhombus.cpp -o obj/rhombus.o
+
+obj/ellipse.o: ellipse.cpp
+	g++ -c ellipse.cpp -o obj/ellipse.o
 
 clean:
-	rm -rf obj LR4
+	rm -r obj LAB4

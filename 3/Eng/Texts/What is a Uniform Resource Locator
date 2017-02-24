@@ -1,0 +1,27 @@
+		What is a Uniform Resource Locator (URL)?
+	Most people use the term ‘URL’ interchangeably with ‘web address’, but in fact web addresses are just one type of URL. A URL can refer to any type of name or resource (files, programs, web pages) on the Internet.
+	The term URL stands for Uniform Resource Locator, and is also sometimes written as URI (for Uniform Resource Identifier). URLs were invented in 1994 by a group of Internet pioneers including Tim Berners-Lee (the inventor of the World Wide Web) and Marc Andreesen (co-author of the first widely-used graphical browser, Mosaic). The aim was to make it possible to share information reliably by giving every file or page a consistent type of address.
+
+		What elements make up a URL?
+	URLs are made up of a number of elements that help point accurately at a specific piece of information. Firstly, they have a protocol, such as ‘http’ followed by a colon and two forward slashes, that identifies the type of computer program that will be needed to display or process the information being located. Secondly, there’s a name made up of numbers or words that identifies the computer or network hosting the information. Thirdly, they have a port number which the sending and receiving computers use to establish a direct connection. This is often omitted, as the commonly-used services have agreed on standard port numbers — e.g. port 80 for web services. Fourthly, there is a path made up of words that identifies the precise location of the information on the host computer or network. And finally, there may also be a question mark followed by a string of words, letters, and/or numbers. You'll typically find these when you've entered a query into a search engine - the URL contains the information the computer needs to conduct the search and find your results.
+
+		‘Identifiers’ and their uses
+	Most people do not realise that their web browsers can handle many types of URLs that are not web addresses. Some samples of these identifiers and their uses include:
+	• HTTP - a web address.
+	• HTTPS - a secured web address which is used for encrypted connections such as those used for financial transactions.
+	• FTP - ‘File Transfer Protocol’, a more efficient (and older) way of transferring large files than HTTP.
+	• FILE - a file on the computer or local network the browser is running on.
+	• GOPHER - an older but still active type of server that indexes and searches content on the web.
+
+
+
+interchangeably - взаимозаменяемо
+reliably - надежно
+consistent - последовательный
+colon - двоеточие
+to establish - устанавливать
+to omit - пропускать, не упоминать e.g. - например
+query - вопрос, запрос
+to handle - обрабатывать, управлять
+sample - пример, образец
+to encrypt - шифровать, зашифровывать

@@ -3,26 +3,19 @@
 
 #include <stdlib.h>
 
-typedef struct node BSTreeNode;
-typedef struct tree BSTree;
-typedef struct parent Parent;
-//typedef int (*Function)(int);
-
-struct node{
-	int data;
-	BSTreeNode* left;
-	BSTreeNode* right;
-	BSTreeNode* parent;
+struct bstreenode
+{
+    int key;
+    struct bstreenode *left, *right;
 };
 
-struct tree{
-	BSTreeNode* root;
-};
+typedef struct bstreenode BSTree;
 
-BSTree createBSTree(void);
-BSTreeNode* bstreeCreateNode(int i);
-int bstreeInsert(BSTree*, int);
-BSTreeNode* bstreeFind(BSTree, int);
-void bstreeDeleteNode(BSTree*, int);
+
+struct bstreenode *deleteNode(struct bstreenode* root, int key);
+struct bstreenode *minValueNode(struct bstreenode* node);
+struct bstreenode *insert(struct bstreenode *node, int key);
+struct bstreenode *newNode(int item);
+struct bstreenode *search(struct bstreenode *root, int key);
 
 #endif

@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS =  -c -Wall
+CFLAGS = -O3 -c -Wall
 LDFLAGS = -lglut -lX11 -lGL -lGLU
 SOURCES = circle.cpp main.cpp point.cpp
 OBJECT_FILES = $(addprefix obj/, $(SOURCES:.cpp=.o))
@@ -14,7 +14,7 @@ $(EXECUTABLE): $(OBJECT_FILES)
 	$(CC) $(OBJECT_FILES) $(LDFLAGS) -o $@
 
 obj/%.o: %.cpp
-	$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf obj $(EXECUTABLE)

@@ -1,0 +1,74 @@
+08.11.2011   21:25:59,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  help.txt  if.txt  set.txt   
+08.11.2011   21:26:09,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:26:19,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:26:29,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:26:39,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:30:21,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:30:57,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:33:18,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:51:31,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:52:29,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:52:39,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:52:49,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:55:24,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:56:09,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:56:19,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:56:29,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:56:39,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   21:56:49,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:00:01,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:00:41,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:00:51,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:01,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:11,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:21,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:31,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:41,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:01:51,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:02:01,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:02:32,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:02:42,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:02:52,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:03:02,53 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:03:41,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:03:51,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:04:01,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:04:11,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
+08.11.2011   22:04:21,03 
+  1.bat  2.bat  3.bat  4.bat  5.bat  6.bat  7.bat  help.txt  if.txt  mon.txt  set.txt   
