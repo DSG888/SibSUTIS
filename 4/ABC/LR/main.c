@@ -64,12 +64,60 @@ int viewram(WINDOW *wnd, int pointer, int vector)
 	return pointer;
 }
 
+int viewprog(WINDOW *wnd, byte *mem, int pointer, int vector)
+{
+	char **bufa[5][17];
+
+	pointer += vector * 2;
+//mvwprintw(wnd, 0, 0, "%d     ", pointer );
+//	pointer = 7;
+//	mvwprintw(wnd, 1, 1, "%d", pointer );
+	int i, is = -1;
+//	int ip = 0;
+	for (i = 0; i < 5; ++i)
+	{
+	//	printf("%p %p\n", );
+		if (&(mem[pointer % 2 + i + pointer + i - 4]) < mem)
+		{
+			sprintf((char*)bufa[i], "                 ");
+			if (&(mem[pointer % 2 + i + pointer + i - 4]) < mem -4)
+				return pointer + vector * 2;
+			if (pointer+80 > MaxMemory)
+				pointer = 0;
+				//FIXME нижнего предела нет
+		}
+		else
+		{
+			sprintf((char*)bufa[i], " %02x %02x: %s %x", mem[pointer % 2 + i + pointer + i - 4], mem[pointer % 2 + i + pointer + i + 1 - 4], sc[mem[pointer % 2 + i + pointer + i - 4]], mem[pointer % 2 + i + pointer + i + 1 - 4]);
+			if ((pointer % 2 + i + pointer + i + 1 - 4-1) == IC)
+				is = i+1;
+		}
+			 
+	}
+	
+	for (i = 0; i < 5; ++i)
+	{
+		mvwprintw(wnd, 1 + i, 1, "                 " );
+		mvwprintw(wnd, 1 + i, 1, (char *)bufa[i] );
+		if (is == i)
+		{
+			mvwprintw(wnd, i, 1, "[");
+			mvwprintw(wnd, i, 17, "]");
+		}
+	}
+	
+//	mvwprintw(wnd, 3, 1, "[");
+//	mvwprintw(wnd, 3, 17, "]");
+	return pointer;
+}
+
 
 int main(int argc, char **argv)
 {
 	setlocale(LC_ALL, "");
-	int RAMVPointer = 3;		// Позиция отображаемого участка памяти
-	int ActiveWindow = WIN_MEM;	// Активное окно
+	uint8_t RAMVPointer = 3;	// Позиция отображаемого участка памяти
+	uint8_t PROVPointer = 0;
+	int ActiveWindow = WIN_PRO;	// Активное окно
 	int EditMode = False;		// Режим редактора
 	int cx, cy;					// Координаты курсора
 	
@@ -79,6 +127,10 @@ int main(int argc, char **argv)
 		perror("Память не выделена\n");
 		goto TERMINATE;
 	}
+	
+
+	
+	
 	WINDOW *winRAM;
 	WINDOW *winREG;
 	WINDOW *winTerminal;
@@ -111,9 +163,21 @@ int main(int argc, char **argv)
 	mvwprintw(winREG, 1, 1, " A: FF");
 	mvwprintw(winREG, 2, 1, " IC: FF");
 	mvwprintw(winREG, 3, 1, " FLAGS: FF");
-	mvwprintw(winProgram, 1, 1, " 87 50: LOGRC 70");
+//	mvwprintw(winProgram, 1, 1, " 87 50: LOGRC 70");
+	
+	
+	
+	loadbios(Memory);
+	viewprog(winProgram, Memory, 0, 0);
+	
+	
+	
+	sc_memorySet(Memory, 17, -5, 8);
+	
+	
 	
 	viewram(winRAM, RAMVPointer, 0);//fixme
+	
 	wrefresh(winREG);
 	wrefresh(winTerminal);
 	wrefresh(winRAM);
@@ -121,7 +185,7 @@ int main(int argc, char **argv)
 	refresh();
 
 	move(1, 1);
-	paintbox(winRAM, 1);
+	paintbox(winProgram, 1);
 	
 	int ch;
 	while (1)
@@ -202,7 +266,7 @@ int main(int argc, char **argv)
 									++cx;
 							}
 							wmove(winRAM, cy, cx);
-							wrefresh (winRAM);
+							wrefresh (winRAM);//fixme
 							if (cx < 57)
 								break;
 							else
@@ -215,7 +279,7 @@ int main(int argc, char **argv)
 							else
 								++cy;
 							wmove(winRAM, cy, cx);
-							wrefresh (winRAM);
+							wrefresh (winRAM);//fixme
 						}
 						break;
 						case KEY_LEFT:
@@ -237,7 +301,7 @@ int main(int argc, char **argv)
 									--cx;
 							}
 							wmove(winRAM, cy,cx);
-							wrefresh (winRAM);
+							wrefresh (winRAM);//fixme
 							if (cx > 7)
 								break;
 							else
@@ -253,7 +317,7 @@ int main(int argc, char **argv)
 							else
 								--cy;
 							wmove(winRAM, cy, cx);
-							wrefresh (winRAM);
+							wrefresh (winRAM);//fixme
 						}
 						break;
 					}
@@ -263,6 +327,21 @@ int main(int argc, char **argv)
 			case WIN_PRO:
 			{
 				
+				switch (ch)
+				{
+					case KEY_UP:
+						PROVPointer = viewprog(winProgram, Memory, PROVPointer, -1);
+						wrefresh(winProgram);
+						break;
+					case KEY_DOWN:
+						PROVPointer = viewprog(winProgram, Memory, PROVPointer, 1);
+						wrefresh(winProgram);
+						break;
+					case KEY_TAB://FIXME смена активного окна
+						goto TERMINATE;
+						
+						break;
+				}
 			}
 			break;
 			case WIN_REG:
@@ -281,5 +360,10 @@ TERMINATE:
 	delwin(winTerminal);
 //	refresh();
 	endwin();
+	
+	
+	//printf("flags %X\n", Flags);
+	
+	
 	return 0;
 }
