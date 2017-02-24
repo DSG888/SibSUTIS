@@ -1,6 +1,6 @@
 #include "main.h"
 
-
+static const char *sc[] = {"@","@","@","@","@","@","@","@","@","@","READ","WRITE","@","@","@","@","@","@","@","@","LOAD","STORE","@","@","@","@","@","@","@","@","ADD","SUB","DIVIDE","MUL","@","@","@","@","@","@","JUMP","JNEG","JZ","MUL","@","@","@","@","@","@","@","NOT","AND","OR","XOR","JNS","JC","JNC","JP","JNP","CHL","SHR","RCL","RCR","NEG","ADDC","SUBC","LOGLC","LOGRC","RCCL","RCCR","MOVA","MOVR","MOVCA","MOVCR","ADDC","SUBC"};
 
 
 WINDOW *create_win(int starty, int startx, int height, int width)
@@ -116,7 +116,7 @@ int main(int argc, char **argv)
 	setlocale(LC_ALL, "");
 	uint8_t RAMVPointer = 3;	// Позиция отображаемого участка памяти
 	uint8_t PROVPointer = 0;
-	int ActiveWindow = WIN_PRO;	// Активное окно
+	int ActiveWindow = WIN_REG;	// Активное окно
 	int EditMode = False;		// Режим редактора
 	int cx, cy;					// Координаты курсора
 	
@@ -159,21 +159,25 @@ int main(int argc, char **argv)
 	wbkgd(winREG, COLOR_PAIR(3));
 	wbkgd(winTerminal, COLOR_PAIR(3));
 	
-	mvwprintw(winREG, 1, 1, " A: FF");
-	mvwprintw(winREG, 2, 1, " IC: FF");
-	mvwprintw(winREG, 3, 1, " FLAGS: FF");
-//	mvwprintw(winProgram, 1, 1, " 87 50: LOGRC 70");
-	
-	
+	mvwprintw(winREG, 1, 1, "A:     0x0000");
+	mvwprintw(winREG, 2, 1, "IC:      0x00");
+//	mvwprintw(winREG, 3, 1, " FLAGS: 0x00");
+//	mvwprintw(winREG, 4, 1, " V Z E P C");
+//	mvwprintw(winREG, 5, 1, " 0 0 0 0 0");
+	mvwprintw(winREG, 3, 1, "F: 0b00000000");
+	mvwprintw(winREG, 4, 1, "        VZEPC");
+
 	
 	loadbios(Memory);
 	viewprog(winProgram, Memory, 0, 0);
 	
 	
 	
-	sc_memorySet(Memory, 17, -5, 8);
+	//sc_memorySet(Memory, 17, 5);
 	
 	
+//	sc_memorySave(Memory, (char*)"caca");
+	sc_memoryLoad(Memory, (char*)"caca");
 	
 	viewram(winRAM, RAMVPointer, 0);//fixme
 	
@@ -184,7 +188,7 @@ int main(int argc, char **argv)
 	refresh();
 
 	move(1, 1);
-	paintbox(winProgram, 1);
+	paintbox(winREG, 1);
 	
 	int ch;
 	while (1)
@@ -222,8 +226,13 @@ int main(int argc, char **argv)
 							RAMVPointer = viewram(winRAM, RAMVPointer, -1);
 							wrefresh(winRAM);
 							break;
-						case KEY_TAB://FIXME смена активного окна
-							goto TERMINATE;
+						case KEY_TAB:
+							//goto TERMINATE;
+							ActiveWindow = WIN_REG;
+							paintbox(winRAM, 3);
+							paintbox(winREG, 1);
+							ActiveWindow = WIN_REG;
+							break;
 					}
 				}
 				else
@@ -337,17 +346,43 @@ int main(int argc, char **argv)
 						wrefresh(winProgram);
 						break;
 					case KEY_TAB://FIXME смена активного окна
-						goto TERMINATE;
-						
+						//goto TERMINATE;
+						ActiveWindow = WIN_MEM;
+						paintbox(winProgram, 3);
+						paintbox(winRAM, 1);
+						ActiveWindow = WIN_MEM;
 						break;
 				}
 			}
 			break;
 			case WIN_REG:
 			{
-			
+				switch (ch)
+				{
+					case KEY_TAB:
+					paintbox(winREG, 3);
+					paintbox(winTerminal, 1);
+					ActiveWindow = WIN_TER;
+					break;
+				}
 			}
 			break;
+
+			case WIN_TER:
+			{
+				switch (ch)
+				{
+					case KEY_TAB:
+					paintbox(winTerminal, 3);
+					paintbox(winProgram, 1);
+					ActiveWindow = WIN_PRO;
+					break;
+				}
+			}
+			break;
+			
+			
+			
 		}
 	}
 	
@@ -359,10 +394,9 @@ TERMINATE:
 	delwin(winTerminal);
 //	refresh();
 	endwin();
-	
-	
-	//printf("flags %X\n", Flags);
-	
+//	sc_regSet(4,1);
+//	sc_regSet(1,1);
+//	printf("%d\n", Flags);
 	
 	return 0;
 }

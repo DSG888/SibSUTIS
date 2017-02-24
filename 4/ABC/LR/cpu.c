@@ -2,7 +2,7 @@
 
 uint16_t A = 0;
 uint8_t IC = 0;
-tFlags Flags = {0,0,0,0,0,0,0,0};
+tFlags Flags = {0, 0, 0, 0, 0, 0, 0, 0};
 
 
 void loadbios(byte *mem)

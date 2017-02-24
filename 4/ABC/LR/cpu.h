@@ -16,6 +16,14 @@ typedef struct {	//Регистр флагов содержит 5 разрядо
 	unsigned F3 : 1;	//ЗАРЕЗЕРВИРОВАНО
 } tFlags;
 
+enum FlagMask{
+	FlagV = 0b00000001,
+	FlagZ = 0b00000010,
+	FlagE = 0b00000100,
+	FlagP = 0b00001000,
+	FlagC = 0b00010000
+};
+
 uint16_t A;	//Аккумулятор
 uint8_t IC;	//Счетчик команд
 tFlags Flags;
