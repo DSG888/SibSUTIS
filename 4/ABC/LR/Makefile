@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS =  -g2 -Wall
 LDFLAGS = -lncursesw
-SOURCES = main.c memory.c cpu.c
+SOURCES = main.c memory.c cpu.c terminal.c keyboard.c
 OBJECT_FILES = $(addprefix obj/, $(SOURCES:.c=.o))
 EXECUTABLE = myEVM
 

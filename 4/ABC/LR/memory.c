@@ -1,8 +1,8 @@
 #include "memory.h"
 
-byte *initmemory(int size)
+byte *sc_memoryInit(int size)
 {
-	unsigned char *Mem = malloc(size * sizeof(unsigned char));
+	byte *Mem = malloc(size * sizeof(byte));
 	int i;
 	if (NULL != Mem)
 		for (i = 0; i < size; ++i)

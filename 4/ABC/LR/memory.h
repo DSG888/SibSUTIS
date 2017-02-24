@@ -7,7 +7,7 @@ typedef unsigned char byte;
 
 byte *Memory;
 
-byte *initmemory(int size);
+byte *sc_memoryInit(int size);
 
 
 #endif

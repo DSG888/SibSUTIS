@@ -68,8 +68,21 @@
 #include <locale.h>
 #include <ctype.h>
 #include "memory.h"
+#include "cpu.h"
 #include "configuration.h"
 
+#define KEY_TAB 9	// Номер ТАБа
+#define True 1
+#define False 0
+
+enum windows
+{
+	WIN_REG,
+	WIN_PRO,
+	WIN_MEM
+};
+
+	
 
 
 
