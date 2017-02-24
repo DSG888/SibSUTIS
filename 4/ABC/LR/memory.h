@@ -2,6 +2,7 @@
 #define MEMORY_H
 
 #include <stdlib.h>
+#include "configuration.h"
 
 typedef unsigned char byte;
 

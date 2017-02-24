@@ -111,7 +111,6 @@ int viewprog(WINDOW *wnd, byte *mem, int pointer, int vector)
 	return pointer;
 }
 
-
 int main(int argc, char **argv)
 {
 	setlocale(LC_ALL, "");
