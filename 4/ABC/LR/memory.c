@@ -122,12 +122,14 @@ int sc_memorySave(byte *mem, char *filename)
 int sc_memoryLoad(byte *mem, char *filename)
 {
 	FILE *save;
-	int res;
+	int res, i;
 	
 	save = fopen(filename, "rb");
 	if (save == NULL)
 		return 1;
 	res = fread(mem, sizeof(byte) * MaxMemory, 1, save);
+	for (i = 0; i < MaxMemory; ++i)
+		mem[i] &= 0x7FFF;
 	fclose(save);
 	if (res != 1)
 		return 2;
@@ -204,12 +206,58 @@ int sc_regGet (int reg,  int *value)
 	return 1;
 }
 
-int sc_commandEncode (int command, int operand, int * value)
+int int_cmp(const void *a, const void *b)
 {
-	return 0;
+	if (*(int*)a < *(int*)b)
+		return -1;
+	else
+	if (*(int*)a > *(int*)b)
+		return 1;
+	else
+		return 0;
 }
 
-int sc_commandDecode (int value, int * command, int * operand)
+
+const int correct_ops[] = {0x10, 0x11, 0x20, 0x21, 0x30, 0x31, 0x32, 0x33, 0x40,
+						   0x41, 0x42, 0x43, 0x59};
+const int ops_num = 13;
+
+int sc_commandEncode(int command, int operand, int *value)
 {
+	void *command_ptr;
+	
+	command_ptr = bsearch(&command, correct_ops, ops_num, sizeof(int), int_cmp);
+	if (command_ptr != NULL)
+	{
+		*value = (command << 7) | operand;
+		return 0;
+	}
+	else
+		return 1;
+}
+
+
+int sc_commandDecode(int value, int *command, int *operand)
+{
+	void *correct_command;
+	int attribute;
+	int tmp_command, tmp_operand;
+	
+	attribute = (value >> 14) & 1;
+	if (attribute == 0)
+	{
+		tmp_command = (value >> 7) & 0x7F;
+		tmp_operand = value & 0x7F;
+		correct_command = bsearch(&tmp_command, correct_ops, ops_num, sizeof(int), int_cmp);
+		if (correct_command != NULL)
+		{
+			*command = tmp_command;
+			*operand = tmp_operand;
+		}
+		else
+			return 1;
+	}
+	else
+		return 2;
 	return 0;
 }
