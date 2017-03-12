@@ -1,0 +1,122 @@
+Turbo Assembler	 Version 4.1	    30/05/11 11:08:26	    Page 1
+prg01_01.asm
+
+
+
+      1				     ;---------Prg01_01.asm--------------------------------------------------------------------------
+      2				     --
+      3				     ; Пример замены значений двух первых введённых символов в строке
+      4				     ; Исходная	строка:'abcd...'
+      5				     ; Результат      :'da...'
+      6				     ;-----------------------------------------------------------------------------------------------
+      7				     ------
+      8				     masm
+      9	0000			     model small
+     10				     ;.stack 100h
+     11	0000			     .data
+     12	0000  82 A2 A5 A4 A8 E2	A5+  var1    db	     'Введите любую строку > 2 символов: ','$'
+     13	      20 AB EE A1 E3 EE	20+
+     14	      E1 E2 E0 AE AA E3	20+
+     15	      3E 20 32 20 E1 A8	AC+
+     16	      A2 AE AB AE A2 3A	20+
+     17	      24
+     18	0024  0D 0A 88 A7 20 E1	E2+  var2    db	     13,10,'Из строки выделены два символа: $'
+     19	      E0 AE AA A8 20 A2	EB+
+     20	      A4 A5 AB A5 AD EB	20+
+     21	      A4 A2 A0 20 E1 A8	AC+
+     22	      A2 AE AB A0 3A 20	24
+     23	0047			     par     label   byte
+     24	0047  4F		     max     db	     79
+     25	0048  ??		     fact    db	     ?
+     26	0049  50*(00)		     val     db	     80	dup(0)
+     27	0099  00 00 24		     val2    db	     0,0, '$'
+     28
+     29	009C			     .code
+     30	0000			     start:
+     31	0000  B8 0000s			     mov     ax,@data
+     32	0003  8E D8			     mov     ds,ax
+     33				     ;----------------------------
+     34				     ; Вставка
+     35	0005  B4 09			     mov     ah,09h
+     36	0007  BA 0000r			     lea     dx,var1
+     37	000A  CD 21			     int     21h
+     38
+     39	000C  B4 0A			     mov     ah,0ah
+     40	000E  BA 0047r			     lea     dx,par
+     41	0011  CD 21			     int     21h
+     42
+     43				     ;----------------------------	     ; ah al
+     44	0013  A0 004Ar			     mov     al,val+1
+     45	0016  A2 0099r			     mov     val2,al
+     46				     ;	     mov     al,val2
+     47	0019  C6 06 009Ar 30		     mov     val2+1,'0'
+     48				     ;----------------------------
+     49
+     50	001E  B4 09			     mov     ah,09h
+     51	0020  BA 0024r			     lea     dx,var2
+     52	0023  CD 21			     int     21h
+     53	0025  EB 13 90		     jmp     exit
+     54
+     55	0028  33 C9			     xor     cx,cx
+     56	002A  8A 0E 0048r		     mov     cl,fact
+     57	002E  BE 0049r			     lea     si,val
+Turbo Assembler	 Version 4.1	    30/05/11 11:08:26	    Page 2
+prg01_01.asm
+
+
+
+     58	0031  B4 02			     mov     ah,02h
+     59	0033			     .loop:
+     60	0033  8A 14			     mov     dl,[si]
+     61	0035  CD 21			     int     21h
+     62	0037  46			     inc     si
+     63	0038  E2 F9			     loop    .loop
+     64	003A			     exit:
+     65	003A  B4 09			     mov     ah,09h
+     66	003C  BA 0099r			     lea     dx,val2
+     67	003F  CD 21			     int     21h
+     68				     ;----------------------------
+     69	0041  B8 4C00			     mov     ax,4c00h
+     70	0044  CD 21			     int     21h
+     71				     end     start
+Turbo Assembler	 Version 4.1	    30/05/11 11:08:26	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+.LOOP				  Near	 _TEXT:0033
+??DATE				  Text	 "30/05/11"
+??FILENAME			  Text	 "prg01_01"
+??TIME				  Text	 "11:08:26"
+??VERSION			  Number 040A
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 PRG01_01
+@INTERFACE			  Text	 000H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+EXIT				  Near	 _TEXT:003A
+FACT				  Byte	 DGROUP:0048
+MAX				  Byte	 DGROUP:0047
+PAR				  Byte	 DGROUP:0047
+START				  Near	 _TEXT:0000
+VAL				  Byte	 DGROUP:0049
+VAL2				  Byte	 DGROUP:0099
+VAR1				  Byte	 DGROUP:0000
+VAR2				  Byte	 DGROUP:0024
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  _DATA				  16  009C Word	  Public  DATA
+_TEXT				  16  0046 Word	  Public  CODE
+

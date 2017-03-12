@@ -1,0 +1,102 @@
+Turbo Assembler	 Version 4.1	    23/01/11 19:40:13	    Page 1
+string.asm
+
+
+
+      1				     ;-----------------------------------------------------------
+      2				     ; Пример ввода строки с 3fh int 21h
+      3				     ;-----------------------------------------------------------
+      4
+      5	0000			     data    segment para public 'data'	     ; начало сегмента данных
+      6									     ; para - сегмент начинается по адресу
+      7									     ;	       кратному	16
+      8									     ; public -	объединять все сегменты	с
+      9									     ;		 одинаковым именем 'data'
+     10	0000  82 A2 A5 A4 A8 E2	A5+  message1	     db	     'Введите любую строку: $'
+     11	      20 AB EE A1 E3 EE	20+
+     12	      E1 E2 E0 AE AA E3	3A+
+     13	      20 24
+     14	0017  82 EB 20 A2 A2 A5	AB+  message2	     db	     'Вы ввели строку: $'
+     15	      A8 20 E1 E2 E0 AE	AA+
+     16	      E3 3A 20 24
+     17	0029  14*(00)		     value   db	     20	dup(0)	     ;введённое	значение
+     18	003D			     data    ends			     ; конец сегмента данных
+     19
+     20	0000			     stk     segment stack		     ; начало сегмента стека
+     21	0000  0100*(3F)			     db	     256 dup('?')
+     22	0100			     stk     ends			     ; конец сегмента стека
+     23
+     24	0000			     code    segment para public 'code'	     ; начало сегмента кода
+     25					     assume  cs:code,ds:data;,ss:stk
+     26	0000			     smain   proc
+     27
+     28	0000  B8 0000s			     mov     ax,data		     ; связываем регистр ds с сегментом
+     29	0003  8E D8			     mov     ds,ax		     ;	     данных через регистр ax
+     30
+     31	0005  B4 09			     mov     ah,09h		     ; 09h - код функции для вывода строки,
+     32									     ;	     которая заканчивается '$'
+     33	0007  BA 0000r			     mov     dx,offset message1	     ; адрес начала строки
+     34	000A  CD 21			     int     21h		     ; вывод строки на экран
+     35
+     36	000C  B4 3F			     mov     ah,3fh		     ; 3fh - код функции для ввода строки
+     37	000E  BB 0000			     mov     bx,0		     ; дескриптор файла	для клавиатуры
+     38	0011  B9 0014			     mov     cx,20		     ; мах размер вводимой строки включая
+     39									     ;	     0Dh(13) и 0Ah(10)
+     40	0014  BA 0029r			     lea     dx,value		     ; начальный адрес для вводимых данных
+     41	0017  CD 21			     int     21h		     ; вызов обработчика прерываний
+     42	0019  50		     push    ax				     ; сохранить размер	введённой строки
+     43
+     44	001A  B4 09			     mov     ah,09h		     ; 09h - код функции для вывода строки
+     45	001C  BA 0017r			     mov     dx,offset message2	     ; адрес начала строки
+     46	001F  CD 21			     int     21h		     ; вывод строки на экран
+     47
+     48	0021  58		     pop     ax				     ; восстановление значения регистра
+     49									     ;	     (размер введённой строки)
+     50	0022  BE 0029r			     lea     si,value		     ; адрес значения введенной	строки
+     51	0025  03 F0			     add     si,ax		     ; адрес конца строки
+     52	0027  83 EE 02			     sub     si,2
+     53	002A  C6 04 24			     mov     byte ptr[si],'$'	     ; ограничитель конца строки для 09h
+     54
+     55	002D  B4 09			     mov     ah,09h		     ; 09h - код функции для вывода строки
+     56	002F  BA 0029r			     lea     dx,value		     ; адрес начала строки
+     57	0032  CD 21			     int     21h		     ; вывод строки на экран
+Turbo Assembler	 Version 4.1	    23/01/11 19:40:13	    Page 2
+string.asm
+
+
+
+     58
+     59	0034  B8 4C00			     mov     ax,4c00h		     ; 4c00h - код функции для стандартного
+     60									     ;	      выхода
+     61	0037  CD 21			     int 21h			     ; стандартный выход
+     62
+     63	0039			     smain   endp
+     64	0039			     code    ends			     ; конец сегмента кода
+     65				     end     smain
+Turbo Assembler	 Version 4.1	    23/01/11 19:40:13	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "23/01/11"
+??FILENAME		Text   "string	"
+??TIME			Text   "19:40:13"
+??VERSION		Number 040A
+@CPU			Text   0101H
+@CURSEG			Text   CODE			   #5  #20  #24
+@FILENAME		Text   STRING
+@WORDSIZE		Text   2			   #5  #20  #24
+MESSAGE1		Byte   DATA:0000		   #10	33
+MESSAGE2		Byte   DATA:0017		   #14	45
+SMAIN			Near   CODE:0000		   #26	65
+VALUE			Byte   DATA:0029		   #17	40  50	56
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+CODE			16  0039 Para	Public	CODE	   #24	25
+DATA			16  003D Para	Public	DATA	   #5  25  28
+STK			16  0100 Para	Stack		   #20
+

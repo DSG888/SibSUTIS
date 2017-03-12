@@ -1,0 +1,123 @@
+Turbo Assembler	 Version 4.1	    27/04/11 13:56:08	    Page 1
+PROGRAMM.asm
+
+
+
+      1				     ;-----------------------------------------------------------------------------------------------
+      2				     ------
+      3				     ; Пример типичной программы(сокращённый вариант)
+      4				     ;-----------------------------------------------------------------------------------------------
+      5				     ------
+      6	0000			     model small	     ; директива компилятору для реального режима
+      7	0000			     .data		     ; сегмент данных
+      8				     ;----------------------------
+      9				     ; Исходные	данные
+     10	0000  0D 0A 82 A2 A5 A4	A8+  msg1    db	     13,10,'Введите одноразрядное число	<Enter - выход>	: $'
+     11	      E2 A5 20 AE A4 AD	AE+
+     12	      E0 A0 A7 E0 EF A4	AD+
+     13	      AE A5 20 E7 A8 E1	AB+
+     14	      AE 20 3C 45 6E 74	65+
+     15	      72 20 2D 20 A2 EB	E5+
+     16	      AE A4 3E 20 3A 20	24
+     17	0031  0D 0A 90 A5 A7 E3	AB+  msg2    db	     13,10,'Результат :	$'
+     18	      EC E2 A0 E2 20 3A	20+
+     19	      24
+     20	0040  0D 0A		     val     db	     0dh,0ah
+     21	0042  31 24		     val1    db	     '1$'
+     22	0044  0D 0A 8E E8 A8 A1	AA+  msg3    db	     13,10,'Ошибка : $'
+     23	      A0 20 3A 20 24
+     24				     ;----------------------------
+     25	0050			     .code		     ; сегмент кода
+     26	0000			     start:		     ; точка входа в программу(начало)
+     27	0000  B8 0000s			     mov     ax,@data	     ; связываем регистр ds с сегментом
+     28	0003  8E D8			     mov     ds,ax	     ;	     данных через регистр ax
+     29				     ;------------------------------------------------------
+     30				     ; Код(команды ассемблера) программы
+     31				     ;------------------------------------------------------
+     32	0005			     met:
+     33
+     34	0005  B4 09			     mov     ah,09h
+     35	0007  BA 0000r			     lea     dx,msg1
+     36	000A  CD 21			     int     21h
+     37
+     38	000C  B4 01			     mov     ah,01h
+     39	000E  CD 21			     int     21h
+     40
+     41	0010  3C 0D			     cmp     al,0dh
+     42	0012  74 0A			     je	     fin
+     43
+     44	0014  3C 30			     cmp     al,'0'
+     45	0016  72 06			     jb	     error
+     46
+     47	0018  3C 39			     cmp     al,'9'
+     48	001A  77 02			     ja	     error
+     49
+     50	001C  EB E7			     jmp met
+     51	001E			     fin:
+     52	001E  EB 00		     error: jmp	error1
+     53
+     54	0020			     error1:
+     55	0020  50		     push ax
+     56	0021  B4 09			     mov ah,09h
+     57	0023  BA 0044r			     lea dx,msg3
+Turbo Assembler	 Version 4.1	    27/04/11 13:56:08	    Page 2
+PROGRAMM.asm
+
+
+
+     58	0026  CD 21			     int 21h
+     59
+     60	0028  58		     pop ax
+     61	0029  B4 02			     mov ah,02h
+     62	002B  8A D0			     mov dl,al
+     63	002D  CD 21			     int 21h
+     64	002F  EB D4			     jmp met
+     65
+     66	0031  B8 4C00			     mov     ax,4c00h	     ; 4c00h - код функции для стандартного
+     67								     ;	      выхода
+     68	0034  CD 21			     int     21h	     ; стандартный выход
+     69				     ;---------------------------------
+     70				     ;	Подпрограммы
+     71				     ;---------------------------------
+     72				     end     start		     ; конец программы
+Turbo Assembler	 Version 4.1	    27/04/11 13:56:08	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "27/04/11"
+??FILENAME		Text   "PROGRAMM"
+??TIME			Text   "13:56:08"
+??VERSION		Number 040A
+@32BIT			Text   0			   #6
+@CODE			Text   _TEXT			   #6  #6  #25
+@CODESIZE		Text   0			   #6
+@CPU			Text   0101H
+@CURSEG			Text   _TEXT			   #7  #25
+@DATA			Text   DGROUP			   #6  27
+@DATASIZE		Text   0			   #6
+@FILENAME		Text   PROGRAMM
+@INTERFACE		Text   000H			   #6
+@MODEL			Text   2			   #6
+@STACK			Text   DGROUP			   #6
+@WORDSIZE		Text   2			   #7  #25
+ERROR			Near   _TEXT:001E		   45  48  #52
+ERROR1			Near   _TEXT:0020		   52  #54
+FIN			Near   _TEXT:001E		   42  #51
+MET			Near   _TEXT:0005		   #32	50  64
+MSG1			Byte   DGROUP:0000		   #10	35
+MSG2			Byte   DGROUP:0031		   #17
+MSG3			Byte   DGROUP:0044		   #22	57
+START			Near   _TEXT:0000		   #26	72
+VAL			Byte   DGROUP:0040		   #20
+VAL1			Byte   DGROUP:0042		   #21
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #6  6  27
+  _DATA			16  0050 Word	Public	DATA	   #6  #7
+_TEXT			16  0036 Word	Public	CODE	   #6  6  #25  25
+

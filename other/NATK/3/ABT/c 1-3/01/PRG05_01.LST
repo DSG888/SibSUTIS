@@ -1,0 +1,110 @@
+Turbo Assembler	 Version 4.1	    26/01/11 13:08:01	    Page 1
+prg05_01.asm
+
+
+
+      1				     ;---------Prg05_01.asm--------------------------------------------------------------------------
+      2				     --
+      3				     ; Пример использования int	21h для	функций: 02h и 09h
+      4				     ;-----------------------------------------------------------------------------------------------
+      5				     ------
+      6				     masm
+      7	0000			     model small
+      8				     ;.stack 100h
+      9	0000			     .data
+     10	0000  8F E0 A8 AC A5 E0	20+  var1    db	     'Пример простой программы ...','$'
+     11	      AF E0 AE E1 E2 AE	A9+
+     12	      20 AF E0 AE A3 E0	A0+
+     13	      AC AC EB 20 2E 2E	2E+
+     14	      24
+     15	001D  0D 0A 8A AE AD A5	E6+  var2    db	     0dh,0ah,'Конец сегмента данных программы ...',0
+     16	      20 E1 A5 A3 AC A5	AD+
+     17	      E2 A0 20 A4 A0 AD	AD+
+     18	      EB E5 20 AF E0 AE	A3+
+     19	      E0 A0 AC AC EB 20	2E+
+     20	      2E 2E 00
+     21	      =0026		     len=$-var2
+     22	0043			     .code
+     23	0000			     start:
+     24	0000  B8 0000s			     mov     ax,@data
+     25	0003  8E D8			     mov     ds,ax
+     26				     ;----------------------------
+     27				     ; Вставка
+     28	0005  B4 02			     mov ah,02h
+     29	0007  8A 16 0021r		     mov dl,var2+4
+     30	000B  CD 21			     int 21h
+     31	000D  B4 09			     mov     ah,09h		     ; 09h - код функции для вывода строки,
+     32									     ;	     которая заканчивается '$'
+     33	000F  BA 0000r			     mov     dx,offset var1	     ; адрес начала строки
+     34	0012  CD 21			     int     21h		     ; вывод строки на экран
+     35
+     36	0014  B2 21			     mov     dl,'!'		     ; '!' - выводимый на экран	символ
+     37	0016  B4 02			     mov     ah,2		     ; 02h - код функции для вывода символа
+     38	0018  CD 21			     int     21h		     ; вывод символа на	экран
+     39
+     40	001A  BE 001Dr			     mov     si,offset var2	     ; адрес строки
+     41	001D  B4 02			     mov     ah,02h		     ; 02h - код функции для вывода символа
+     42	001F				 .loop:
+     43	001F  AC			     lodsb			     ; в al - очередной	символ
+     44	0020  0A C0			     or	     al,al		     ; al=0 ?
+     45	0022  74 06			     jz	     .done		     ;	     да.
+     46	0024  8A D0			     mov     dl,al		     ;	     нет. В dl - очередной символ
+     47	0026  CD 21			     int     21h		     ; вывод символа на	экран
+     48	0028  EB F5			     jmp     .loop
+     49	002A				 .done:
+     50
+     51	002A  B9 0026			     mov     cx,len
+     52	002D  BE 001Dr			     lea     si,var2
+     53	0030  B4 02			     mov     ah,02h
+     54	0032			     .loop1:
+     55	0032  8A 14			     mov     dl,[si]
+     56	0034  CD 21			     int     21h
+     57	0036  46			     inc     si
+Turbo Assembler	 Version 4.1	    26/01/11 13:08:01	    Page 2
+prg05_01.asm
+
+
+
+     58	0037  E2 F9			     loop    .loop1
+     59				     ;----------------------------
+     60	0039  B8 4C00			     mov     ax,4c00h
+     61	003C  CD 21			     int     21h
+     62				     end     start
+Turbo Assembler	 Version 4.1	    26/01/11 13:08:01	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+.DONE			Near   _TEXT:002A		   45  #49
+.LOOP			Near   _TEXT:001F		   #42	48
+.LOOP1			Near   _TEXT:0032		   #54	58
+??DATE			Text   "26/01/11"
+??FILENAME		Text   "prg05_01"
+??TIME			Text   "13:08:01"
+??VERSION		Number 040A
+@32BIT			Text   0			   #7
+@CODE			Text   _TEXT			   #7  #7  #22
+@CODESIZE		Text   0			   #7
+@CPU			Text   0101H
+@CURSEG			Text   _TEXT			   #9  #22
+@DATA			Text   DGROUP			   #7  24
+@DATASIZE		Text   0			   #7
+@FILENAME		Text   PRG05_01
+@INTERFACE		Text   000H			   #7
+@MODEL			Text   2			   #7
+@STACK			Text   DGROUP			   #7
+@WORDSIZE		Text   2			   #9  #22
+LEN			Number 0026			   #21	51
+START			Near   _TEXT:0000		   #23	62
+VAR1			Byte   DGROUP:0000		   #10	33
+VAR2			Byte   DGROUP:001D		   #15	21  29	40  52
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #7  7  24
+  _DATA			16  0043 Word	Public	DATA	   #7  #9
+_TEXT			16  003E Word	Public	CODE	   #7  7  #22  22
+

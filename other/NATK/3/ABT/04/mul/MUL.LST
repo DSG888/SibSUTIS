@@ -1,0 +1,89 @@
+Turbo Assembler	 Version 4.1	    01/01/02 00:30:39	    Page 1
+mul.asm
+
+
+
+      1				     ;--------------------------------------------
+      2				     ; Умножение ASCII-чисел
+      3				     ;--------------------------------------------
+      4	0000					     .MODEL SMALL
+      5	0000					     .DATA
+      6				     ;--------------------------------------------
+      7	0000  33 37 38 33	     MULTCAND	     DB	       '3783'		     ;ASCII-числа
+      8	0004  35		     MULTPLER	     DB	       '5'
+      9	0005  05*(00)		     ASCPROD DB	       5 DUP(0)
+     10				     ;--------------------------------------------
+     11	000A					     .CODE
+     12	0000			     BEGIN:
+     13	0000			     MULASCII	     PROC   NEAR
+     14	0000  B8 0000s				     MOV     AX,@DATA		     ;инициализация DS
+     15	0003  8E D8				     MOV     DS,AX		     ;	     через AX
+     16
+     17	0005  B9 0004				     MOV       CX,04		     ;кол-во повторений	цикла
+     18	0008  BE 0003r				     LEA       SI,MULTCAND+3	     ;инициализация адресов
+     19	000B  BF 0009r				     LEA       DI,ASCPROD+4	     ;	     ASCII-чисел
+     20	000E  80 26 0004r 0F			     AND       MULTPLER,0FH	     ;очистка 3	в ASCII-числе
+     21	0013			     A20:
+     22	0013  8A 04				     MOV       AL,[SI]		     ;загрузить	ASCII-байт в AL
+     23	0015  24 0F				     AND       AL,0FH		     ;очистка 3	в ASCII-числе
+     24	0017  F6 26 0004r			     MUL       MULTPLER		     ;умножить
+     25	001B  D4 0A				     AAM			     ;	 скорректировать умножение
+     26	001D  02 05				     ADD       AL,[DI]		     ;сложить с	ранее полученным
+     27										     ;	 результатом
+     28	001F  37				     AAA			     ;	 скорректировать сложение
+     29	0020  88 05				     MOV       [DI],AL		     ;сохранить	результат
+     30	0022  4F				     DEC       DI
+     31	0023  88 25				     MOV       [DI],AH		     ;сохранить	результат переноса
+     32	0025  4E				     DEC       SI
+     33	0026  E2 EB				     LOOP      A20		     ;повторить	4 раза
+     34
+     35	0028  BB 0009r				     LEA       BX,ASCPROD+4	     ;преобразовать результат в
+     36										     ;	     ASCII-формат
+     37	002B  B9 0005				     MOV       CX,05		     ;справа - налево 5	байт
+     38	002E			     A30:
+     39	002E  80 0F 30				     OR	       BYTE PTR[BX],30H	     ;формирование ASCII-числа
+     40	0031  4B				     DEC       BX
+     41	0032  E2 FA				     LOOP   A30			     ;повторить	5 раз
+     42
+     43	0034  B8 4C00				     MOV       AX,4C00H		     ;стандартное окнчание программы
+     44	0037  CD 21				     INT       21H
+     45	0039			     MULASCII	     ENDP
+     46						     END       BEGIN
+Turbo Assembler	 Version 4.1	    01/01/02 00:30:39	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "01/01/02"
+??FILENAME		Text   "mul	"
+??TIME			Text   "00:30:39"
+??VERSION		Number 040A
+@32BIT			Text   0			   #4
+@CODE			Text   _TEXT			   #4  #4  #11
+@CODESIZE		Text   0			   #4
+@CPU			Text   0101H
+@CURSEG			Text   _TEXT			   #5  #11
+@DATA			Text   DGROUP			   #4  14
+@DATASIZE		Text   0			   #4
+@FILENAME		Text   MUL
+@INTERFACE		Text   000H			   #4
+@MODEL			Text   2			   #4
+@STACK			Text   DGROUP			   #4
+@WORDSIZE		Text   2			   #5  #11
+A20			Near   _TEXT:0013		   #21	33
+A30			Near   _TEXT:002E		   #38	41
+ASCPROD			Byte   DGROUP:0005		   #9  19  35
+BEGIN			Near   _TEXT:0000		   #12	46
+MULASCII		Near   _TEXT:0000		   #13
+MULTCAND		Byte   DGROUP:0000		   #7  18
+MULTPLER		Byte   DGROUP:0004		   #8  20  24
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #4  4  14
+  _DATA			16  000A Word	Public	DATA	   #4  #5
+_TEXT			16  0039 Word	Public	CODE	   #4  4  #11  11
+

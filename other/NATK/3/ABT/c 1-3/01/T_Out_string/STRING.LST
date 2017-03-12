@@ -1,0 +1,65 @@
+Turbo Assembler	 Version 4.1	    01/01/02 01:16:34	    Page 1
+string.asm
+
+
+
+      1				     ;-----------------------------------------------------------
+      2				     ; Пример вывода строки.
+      3				     ;-----------------------------------------------------------
+      4				     ;masm
+      5	0000			     model small
+      6	0000			     .data
+      7	0000  80 E1 E1 A5 AC A1	AB+  message db	'Ассемблер - базовый язык компьютера','$'
+      8	      A5 E0 20 2D 20 A1	A0+
+      9	      A7 AE A2 EB A9 20	EF+
+     10	      A7 EB AA 20 AA AE	AC+
+     11	      AF EC EE E2 A5 E0	A0+
+     12	      24
+     13	0024			     .code
+     14	0000			     start:
+     15	0000  B8 0000s			     mov     ax,@data		     ; связываем регистр ds с сегментом
+     16	0003  8E D8			     mov     ds,ax		     ;	     данных через регистр ax
+     17
+     18	0005  B4 09			     mov     ah,09h		     ; 09h - код функции для вывода строки,
+     19									     ;	     которая заканчивается '$'
+     20	0007  BA 0000r			     mov     dx,offset message	     ; адрес начала строки
+     21	000A  CD 21			     int     21h		     ; вывод строки на экран
+     22
+     23	000C  B8 4C00			     mov     ax,4c00h		     ; 4c00h - код функции для стандартного
+     24									     ;	      выхода
+     25	000F  CD 21			     int     21h		     ; стандартный выход
+     26
+     27				     end     start
+Turbo Assembler	 Version 4.1	    01/01/02 01:16:34	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "01/01/02"
+??FILENAME		Text   "string	"
+??TIME			Text   "01:16:34"
+??VERSION		Number 040A
+@32BIT			Text   0			   #5
+@CODE			Text   _TEXT			   #5  #5  #13
+@CODESIZE		Text   0			   #5
+@CPU			Text   0101H
+@CURSEG			Text   _TEXT			   #6  #13
+@DATA			Text   DGROUP			   #5  15
+@DATASIZE		Text   0			   #5
+@FILENAME		Text   STRING
+@INTERFACE		Text   000H			   #5
+@MODEL			Text   2			   #5
+@STACK			Text   DGROUP			   #5
+@WORDSIZE		Text   2			   #6  #13
+MESSAGE			Byte   DGROUP:0000		   #7  20
+START			Near   _TEXT:0000		   #14	27
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #5  5  15
+  _DATA			16  0024 Word	Public	DATA	   #5  #6
+_TEXT			16  0011 Word	Public	CODE	   #5  5  #13  13
+

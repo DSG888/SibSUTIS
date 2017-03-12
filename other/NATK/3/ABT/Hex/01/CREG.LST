@@ -1,0 +1,82 @@
+Turbo Assembler	 Version 4.1	    30/06/11 12:38:55	    Page 1
+creg.asm
+
+
+
+      1				     ;
+      2				     ; Преобразование значения региста ах в ASCI-код
+      3				     ; Исходные	данные:	значение в ах
+      4				     ; Результат      :	ASCI-код(из 4-х	символов) по адресу регистра si
+      5				     ;
+      6				     ; Например; ax=0acdfh Результат='ACDF'
+      7				     ;
+      8	0000			     model small
+      9	0000			     .code
+     10	0000			     creg    proc    far
+     11					     public  creg
+     12	0000  51		     push    cx			     ;сохранить
+     13	0001  52		     push    dx
+     14	0002  53		     push    bx
+     15												     ;Часть
+     16												     ;примера
+     17	0003  B9 0004			     mov     cx,4	     ;кол-во повторений
+     18	0006			     .loop:
+     19	0006  8A F4			     mov     dh,ah	     ;очередной	байт начиная слева   ; ac
+     20	0008  80 E6 F0			     and     dh,0f0h	     ;выделение	левого полубайта     ; a0
+     21	000B  D0 EE D0 EE D0 EE	D0+	     shr     dh,4	     ;выравнивание		     ; 0a
+     22	      EE
+     23	0013  80 FE 09			     cmp     dh,9	     ;значение > 9
+     24	0016  7F 14			     jg	     .big	     ;да
+     25	0018  80 CE 30			     or	     dh,30h	     ;ASCI-код для значений 0..9
+     26	001B			     .cont:
+     27	001B  88 34			     mov     [si],dh	     ;сохранение результата	     ;'A'
+     28	001D  D1 E0 D1 E0 D1 E0	D1+	     shl     ax,4	     ;следующий	полубайт	     ; cd
+     29	      E0
+     30	0025  46			     inc     si		     ;следующий	адрес для результата
+     31	0026  E2 DE			     loop    .loop
+     32	0028  5B		     pop     bx
+     33	0029  5A		     pop     dx
+     34	002A  59		     pop     cx			     ;восстановить
+     35	002B  CB			     retf
+     36	002C			     .big:			     ;значение > 9, т.е. 10..15
+     37	002C  80 E6 07			     and     dh,07h	     ;значение - 10		     ;	2
+     38	002F  FE CE			     dec     dh		     ;уменьшение на 1		     ;	1
+     39	0031  80 CE 40			     or	     dh,40h	     ;ASCI-код для значений 10..15   ; 41='A'
+     40	0034  EB E5			     jmp     .cont
+     41	0036			     creg    endp
+     42				     end
+Turbo Assembler	 Version 4.1	    30/06/11 12:38:55	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+.BIG				  Near	 _TEXT:002C
+.CONT				  Near	 _TEXT:001B
+.LOOP				  Near	 _TEXT:0006
+??DATE				  Text	 "30/06/11"
+??FILENAME			  Text	 "creg	  "
+??TIME				  Text	 "12:38:55"
+??VERSION			  Number 040A
+@32BIT				  Text	 0
+@CODE				  Text	 _TEXT
+@CODESIZE			  Text	 0
+@CPU				  Text	 0101H
+@CURSEG				  Text	 _TEXT
+@DATA				  Text	 DGROUP
+@DATASIZE			  Text	 0
+@FILENAME			  Text	 CREG
+@INTERFACE			  Text	 000H
+@MODEL				  Text	 2
+@STACK				  Text	 DGROUP
+@WORDSIZE			  Text	 2
+CREG				  Far	 _TEXT:0000
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+DGROUP				  Group
+  _DATA				  16  0000 Word	  Public  DATA
+_TEXT				  16  0036 Word	  Public  CODE
+

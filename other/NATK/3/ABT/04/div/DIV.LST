@@ -1,0 +1,86 @@
+Turbo Assembler	 Version 4.1	    01/01/02 02:06:57	    Page 1
+div.asm
+
+
+
+      1				     ;---------------------------------------------------
+      2				     ; Деление ASCII-чисел
+      3				     ;---------------------------------------------------
+      4	0000					     .MODEL SMALL
+      5	0000					     .DATA
+      6				     ;---------------------------------------------------
+      7	0000  33 36 39 38	     DIVIDEND	     DB	       '3698'		     ;ASCII-числа
+      8	0004  34		     DIVISOR DB	       '4'
+      9	0005  04*(00)		     ASCQUOT DB	       4 DUP(0)
+     10				     ;---------------------------------------------------
+     11	0009					     .CODE
+     12	0000			     BEGIN:
+     13	0000			     DIVASCII	     PROC   NEAR
+     14	0000  B8 0000s				     MOV     AX,@DATA		     ;инициализация DS
+     15	0003  8E D8				     MOV     DS,AX		     ;	     через AX
+     16	0005  8E C0				     MOV     ES,AX
+     17
+     18	0007  B9 0004				     MOV       CX,04		     ;кол-во повторений	цикла
+     19	000A  2A E4				     SUB       AH,AH		     ;очистка левого байта делимого
+     20	000C  80 26 0004r 0F			     AND       DIVISOR,0FH	     ;очистка в	делителе 3 в ASCII
+     21	0011  BE 0000r				     LEA       SI,DIVIDEND	     ;инициализация адресов
+     22	0014  BF 0005r				     LEA       DI,ASCQUOT	     ;	     ASCII-чисел
+     23	0017			     A20:
+     24	0017  AC				     LODSB			     ;загрузить	ASCII-байт в AL
+     25	0018  24 0F				     AND       AL,0FH		     ;очистить 3 в ASCII
+     26	001A  D5 0A				     AAD			     ;скорректировать перед
+     27										     ;	     делением
+     28	001C  F6 36 0004r			     DIV       DIVISOR		     деление
+     29	0020  AA				     STOSB			     ;сохранить	результат
+     30	0021  E2 F4				     LOOP   A20			     ;повторить	4 раза
+     31										     ;преобразовать результат в
+     32	0023  BB 0005r				     LEA       BX,ASCQUOT	     ;	     ASCII-формат начиная
+     33										     ;	     с левого байта
+     34	0026  B9 0004				     MOV       CX,04		     ;	     4 раза
+     35	0029			     A30:
+     36	0029  80 0F 30				     OR	       BYTE PTR[BX],30H	     ;формирование ASCII-числа
+     37	002C  43				     INC       BX		     ;следующий	байт
+     38	002D  E2 FA				     LOOP   A30			     ;повторить	4 раза
+     39
+     40	002F  B8 4C00				     MOV       AX,4C00H		     ;стандартное окнчание программы
+     41	0032  CD 21				     INT       21H
+     42	0034			     DIVASCII	     ENDP
+     43						     END       BEGIN
+Turbo Assembler	 Version 4.1	    01/01/02 02:06:57	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name		Type   Value			   Cref	(defined at #)
+
+??DATE			Text   "01/01/02"
+??FILENAME		Text   "div	"
+??TIME			Text   "02:06:57"
+??VERSION		Number 040A
+@32BIT			Text   0			   #4
+@CODE			Text   _TEXT			   #4  #4  #11
+@CODESIZE		Text   0			   #4
+@CPU			Text   0101H
+@CURSEG			Text   _TEXT			   #5  #11
+@DATA			Text   DGROUP			   #4  14
+@DATASIZE		Text   0			   #4
+@FILENAME		Text   DIV
+@INTERFACE		Text   000H			   #4
+@MODEL			Text   2			   #4
+@STACK			Text   DGROUP			   #4
+@WORDSIZE		Text   2			   #5  #11
+A20			Near   _TEXT:0017		   #23	30
+A30			Near   _TEXT:0029		   #35	38
+ASCQUOT			Byte   DGROUP:0005		   #9  22  32
+BEGIN			Near   _TEXT:0000		   #12	43
+DIVASCII		Near   _TEXT:0000		   #13
+DIVIDEND		Byte   DGROUP:0000		   #7  21
+DIVISOR			Byte   DGROUP:0004		   #8  20  28
+
+Groups & Segments	Bit Size Align	Combine	Class	   Cref	(defined at #)
+
+DGROUP			Group				   #4  4  14
+  _DATA			16  0009 Word	Public	DATA	   #4  #5
+_TEXT			16  0034 Word	Public	CODE	   #4  4  #11  11
+
