@@ -1,0 +1,5 @@
+D:\LabC#\05\Student\19\Refresh\Refresh\bin\Debug\Refresh.exe
+D:\LabC#\05\Student\19\Refresh\Refresh\bin\Debug\Refresh.pdb
+D:\LabC#\05\Student\19\Refresh\Refresh\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\19\Refresh\Refresh\obj\Debug\Refresh.exe
+D:\LabC#\05\Student\19\Refresh\Refresh\obj\Debug\Refresh.pdb

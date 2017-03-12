@@ -1,0 +1,5 @@
+P:\OS\2011_OBT\Lab\07_Async\Async\Work\Work\bin\Debug\Work.exe
+P:\OS\2011_OBT\Lab\07_Async\Async\Work\Work\bin\Debug\Work.pdb
+P:\OS\2011_OBT\Lab\07_Async\Async\Work\Work\obj\Debug\ResolveAssemblyReference.cache
+P:\OS\2011_OBT\Lab\07_Async\Async\Work\Work\obj\Debug\Work.exe
+P:\OS\2011_OBT\Lab\07_Async\Async\Work\Work\obj\Debug\Work.pdb

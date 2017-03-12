@@ -1,0 +1,9 @@
+C:\Laptev\Console\32_Process\Event\Event\Event\bin\Debug\Event.exe
+C:\Laptev\Console\32_Process\Event\Event\Event\bin\Debug\Event.pdb
+C:\Laptev\Console\32_Process\Event\Event\Event\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\32_Process\Event\Event\Event\obj\Debug\Event.exe
+C:\Laptev\Console\32_Process\Event\Event\Event\obj\Debug\Event.pdb
+C:\Laptev\LabC#\16\04\Event\Event\obj\Debug\Event.exe
+C:\Laptev\LabC#\16\04\Event\Event\obj\Debug\Event.pdb
+D:\LabC#\05\Student\04\Event\Event\obj\Debug\Event.exe
+D:\LabC#\05\Student\04\Event\Event\obj\Debug\Event.pdb

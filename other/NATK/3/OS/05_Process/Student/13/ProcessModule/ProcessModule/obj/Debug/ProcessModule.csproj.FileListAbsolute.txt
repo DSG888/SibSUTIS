@@ -1,0 +1,17 @@
+C:\Laptev\Console\33_Process1\ProcessModule\ProcessModule\ProcessModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\33_Process1\ProcessModule\ProcessModule\ProcessModule\bin\Debug\ProcessModule.exe
+C:\Laptev\Console\33_Process1\ProcessModule\ProcessModule\ProcessModule\bin\Debug\ProcessModule.pdb
+C:\Laptev\Console\33_Process1\ProcessModule\ProcessModule\ProcessModule\obj\Debug\ProcessModule.exe
+C:\Laptev\Console\33_Process1\ProcessModule\ProcessModule\ProcessModule\obj\Debug\ProcessModule.pdb
+C:\Laptev\LabC#\16\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.exe
+C:\Laptev\LabC#\16\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.pdb
+C:\Laptev\LabC#\16\13\ProcessModule\ProcessModule\bin\Debug\ProcessModule.exe
+C:\Laptev\LabC#\16\13\ProcessModule\ProcessModule\bin\Debug\ProcessModule.pdb
+C:\Laptev\LabC#\16\13\ProcessModule\ProcessModule\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.exe
+D:\LabC#\05\Student\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.pdb
+D:\LabC#\05\Student\13\ProcessModule\ProcessModule\bin\Debug\ProcessModule.exe
+D:\LabC#\05\Student\13\ProcessModule\ProcessModule\bin\Debug\ProcessModule.pdb
+D:\LabC#\05\Student\13\ProcessModule\ProcessModule\obj\Debug\ResolveAssemblyReference.cache
+P:\2011_OBT\Lab\05_Process\Student\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.exe
+P:\2011_OBT\Lab\05_Process\Student\13\ProcessModule\ProcessModule\obj\Debug\ProcessModule.pdb

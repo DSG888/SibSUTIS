@@ -1,0 +1,5 @@
+D:\LabC#\05\Student\22\Console22\Console22\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\22\Console22\Console22\bin\Debug\Console22.exe
+D:\LabC#\05\Student\22\Console22\Console22\bin\Debug\Console22.pdb
+D:\LabC#\05\Student\22\Console22\Console22\obj\Debug\Console22.exe
+D:\LabC#\05\Student\22\Console22\Console22\obj\Debug\Console22.pdb

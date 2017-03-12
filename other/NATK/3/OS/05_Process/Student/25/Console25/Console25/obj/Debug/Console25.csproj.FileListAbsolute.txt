@@ -1,0 +1,5 @@
+D:\LabC#\05\Student\25\Console25\Console25\bin\Debug\Console25.exe
+D:\LabC#\05\Student\25\Console25\Console25\bin\Debug\Console25.pdb
+D:\LabC#\05\Student\25\Console25\Console25\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\25\Console25\Console25\obj\Debug\Console25.exe
+D:\LabC#\05\Student\25\Console25\Console25\obj\Debug\Console25.pdb

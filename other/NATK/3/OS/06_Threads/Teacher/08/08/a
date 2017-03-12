@@ -1,0 +1,26 @@
+Data in thread_9256's data slot:   0
+Data in thread_9320's data slot:   1
+Data in thread_9368's data slot:   2
+Data in thread_9396's data slot:   3
+Data in thread_9256's data slot is still:   0
+Data in thread_9368's data slot is still:   2
+Data in thread_9396's data slot is still:   3
+Data in thread_9320's data slot is still:   1
+Other code displays data in thread_9368's data slot:   2
+Other code displays data in thread_9320's data slot:   1
+Other code displays data in thread_9396's data slot:   3
+Other code displays data in thread_9256's data slot:   0
+
+
+Data in thread_System.Threading.Thread's data slot:   0
+Data in thread_System.Threading.Thread's data slot:   1
+Data in thread_System.Threading.Thread's data slot:   2
+Data in thread_System.Threading.Thread's data slot:   3
+Data in thread_System.Threading.Thread's data slot is still:   1
+Data in thread_System.Threading.Thread's data slot is still:   0
+Data in thread_System.Threading.Thread's data slot is still:   2
+Data in thread_System.Threading.Thread's data slot is still:   3
+Other code displays data in thread_System.Threading.Thread's data slot:   1
+Other code displays data in thread_System.Threading.Thread's data slot:   3
+Other code displays data in thread_System.Threading.Thread's data slot:   2
+Other code displays data in thread_System.Threading.Thread's data slot:   0

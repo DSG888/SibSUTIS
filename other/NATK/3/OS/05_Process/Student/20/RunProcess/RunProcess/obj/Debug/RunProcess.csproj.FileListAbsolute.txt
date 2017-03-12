@@ -1,0 +1,5 @@
+D:\LabC#\05\Student\20\RunProcess\RunProcess\bin\Debug\RunProcess.exe
+D:\LabC#\05\Student\20\RunProcess\RunProcess\bin\Debug\RunProcess.pdb
+D:\LabC#\05\Student\20\RunProcess\RunProcess\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\20\RunProcess\RunProcess\obj\Debug\RunProcess.exe
+D:\LabC#\05\Student\20\RunProcess\RunProcess\obj\Debug\RunProcess.pdb

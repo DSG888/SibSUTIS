@@ -1,0 +1,15 @@
+C:\Laptev\Console\33_Process1\Lib\Lib\Lib\bin\Debug\Lib.exe
+C:\Laptev\Console\33_Process1\Lib\Lib\Lib\bin\Debug\Lib.pdb
+C:\Laptev\Console\33_Process1\Lib\Lib\Lib\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\33_Process1\Lib\Lib\Lib\obj\Debug\Lib.exe
+C:\Laptev\Console\33_Process1\Lib\Lib\Lib\obj\Debug\Lib.pdb
+C:\Laptev\LabC#\16\10\Lib\Lib\obj\Debug\Lib.exe
+C:\Laptev\LabC#\16\10\Lib\Lib\obj\Debug\Lib.pdb
+C:\Laptev\LabC#\16\10\Lib\Lib\bin\Debug\Lib.exe
+C:\Laptev\LabC#\16\10\Lib\Lib\bin\Debug\Lib.pdb
+C:\Laptev\LabC#\16\10\Lib\Lib\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\10\Lib\Lib\obj\Debug\Lib.exe
+D:\LabC#\05\Student\10\Lib\Lib\obj\Debug\Lib.pdb
+D:\LabC#\05\Student\10\Lib\Lib\bin\Debug\Lib.exe
+D:\LabC#\05\Student\10\Lib\Lib\bin\Debug\Lib.pdb
+D:\LabC#\05\Student\10\Lib\Lib\obj\Debug\ResolveAssemblyReference.cache

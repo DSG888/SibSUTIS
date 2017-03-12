@@ -1,0 +1,2 @@
+cls
+prog test.txt

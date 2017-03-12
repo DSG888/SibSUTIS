@@ -1,0 +1,5 @@
+D:\LabC#\05\Student\18\GetCurrent\GetCurrent\bin\Debug\GetCurrent.exe
+D:\LabC#\05\Student\18\GetCurrent\GetCurrent\bin\Debug\GetCurrent.pdb
+D:\LabC#\05\Student\18\GetCurrent\GetCurrent\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\18\GetCurrent\GetCurrent\obj\Debug\GetCurrent.exe
+D:\LabC#\05\Student\18\GetCurrent\GetCurrent\obj\Debug\GetCurrent.pdb

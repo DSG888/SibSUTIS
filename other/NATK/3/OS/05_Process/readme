@@ -1,0 +1,18 @@
+
+	Labs 07, ???
+
+	For 08, 09, 10, 12  before parameters input
+
+                string fn = "";
+		...
+		...
+                for (int i = fileName.Length - 1; i > 0; i--)
+                {
+                    if (fileName[i] == '\\')
+                        break;
+                    if (fileName[i] == '.')
+                        fn = "";
+                    else
+                        fn = fileName[i] + fn;
+                }
+                Console.WriteLine("File name = {0}", fn);

@@ -1,0 +1,12 @@
+C:\Laptev\Console\33_Process1\Memory\Memory\Memory\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\33_Process1\Memory\Memory\Memory\bin\Debug\Memory.exe
+C:\Laptev\Console\33_Process1\Memory\Memory\Memory\bin\Debug\Memory.pdb
+C:\Laptev\Console\33_Process1\Memory\Memory\Memory\obj\Debug\Memory.exe
+C:\Laptev\Console\33_Process1\Memory\Memory\Memory\obj\Debug\Memory.pdb
+C:\Laptev\LabC#\16\09\Memory\Memory\obj\Debug\Memory.exe
+C:\Laptev\LabC#\16\09\Memory\Memory\obj\Debug\Memory.pdb
+D:\LabC#\05\Student\09\Memory\Memory\obj\Debug\Memory.exe
+D:\LabC#\05\Student\09\Memory\Memory\obj\Debug\Memory.pdb
+D:\LabC#\05\Student\09\Memory\Memory\bin\Debug\Memory.exe
+D:\LabC#\05\Student\09\Memory\Memory\bin\Debug\Memory.pdb
+D:\LabC#\05\Student\09\Memory\Memory\obj\Debug\ResolveAssemblyReference.cache

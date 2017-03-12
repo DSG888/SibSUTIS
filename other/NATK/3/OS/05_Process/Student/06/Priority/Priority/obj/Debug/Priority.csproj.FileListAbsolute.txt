@@ -1,0 +1,12 @@
+C:\Laptev\Console\32_Process\Priority\Priority\Priority\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\32_Process\Priority\Priority\Priority\bin\Debug\Priority.exe
+C:\Laptev\Console\32_Process\Priority\Priority\Priority\bin\Debug\Priority.pdb
+C:\Laptev\Console\32_Process\Priority\Priority\Priority\obj\Debug\Priority.exe
+C:\Laptev\Console\32_Process\Priority\Priority\Priority\obj\Debug\Priority.pdb
+C:\Laptev\LabC#\16\06\Priority\Priority\obj\Debug\Priority.exe
+C:\Laptev\LabC#\16\06\Priority\Priority\obj\Debug\Priority.pdb
+D:\LabC#\05\Student\06\Priority\Priority\obj\Debug\Priority.exe
+D:\LabC#\05\Student\06\Priority\Priority\obj\Debug\Priority.pdb
+D:\LabC#\05\Student\06\Priority\Priority\bin\Debug\Priority.exe
+D:\LabC#\05\Student\06\Priority\Priority\bin\Debug\Priority.pdb
+D:\LabC#\05\Student\06\Priority\Priority\obj\Debug\ResolveAssemblyReference.cache

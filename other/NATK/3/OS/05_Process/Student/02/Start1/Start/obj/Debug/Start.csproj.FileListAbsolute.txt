@@ -1,0 +1,17 @@
+C:\Laptev\Console\32_Process\Start1\Start\Start\bin\Debug\Start.exe
+C:\Laptev\Console\32_Process\Start1\Start\Start\bin\Debug\Start.pdb
+C:\Laptev\Console\32_Process\Start1\Start\Start\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\32_Process\Start1\Start\Start\obj\Debug\Start.exe
+C:\Laptev\Console\32_Process\Start1\Start\Start\obj\Debug\Start.pdb
+C:\Laptev\LabC#\16\02\Start1\Start\obj\Debug\Start.exe
+C:\Laptev\LabC#\16\02\Start1\Start\obj\Debug\Start.pdb
+C:\Laptev\LabC#\05\Teacher\02\Start1\Start\obj\Debug\Start.exe
+C:\Laptev\LabC#\05\Teacher\02\Start1\Start\obj\Debug\Start.pdb
+C:\Laptev\LabC#\05\Teacher\02\Start1\Start\bin\Debug\Start.exe
+C:\Laptev\LabC#\05\Teacher\02\Start1\Start\bin\Debug\Start.pdb
+C:\Laptev\LabC#\05\Teacher\02\Start1\Start\obj\Debug\ResolveAssemblyReference.cache
+D:\LabC#\05\Student\02\Start1\Start\obj\Debug\Start.exe
+D:\LabC#\05\Student\02\Start1\Start\obj\Debug\Start.pdb
+D:\LabC#\05\Student\02\Start1\Start\bin\Debug\Start.exe
+D:\LabC#\05\Student\02\Start1\Start\bin\Debug\Start.pdb
+D:\LabC#\05\Student\02\Start1\Start\obj\Debug\ResolveAssemblyReference.cache

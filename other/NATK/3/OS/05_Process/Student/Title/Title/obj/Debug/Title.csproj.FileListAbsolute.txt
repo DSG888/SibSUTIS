@@ -1,0 +1,7 @@
+C:\Laptev\Console\32_Process\Title\Title\Title\bin\Debug\Title.exe
+C:\Laptev\Console\32_Process\Title\Title\Title\bin\Debug\Title.pdb
+C:\Laptev\Console\32_Process\Title\Title\Title\obj\Debug\ResolveAssemblyReference.cache
+C:\Laptev\Console\32_Process\Title\Title\Title\obj\Debug\Title.exe
+C:\Laptev\Console\32_Process\Title\Title\Title\obj\Debug\Title.pdb
+D:\LabC#\05\Student\Title\Title\obj\Debug\Title.exe
+D:\LabC#\05\Student\Title\Title\obj\Debug\Title.pdb
