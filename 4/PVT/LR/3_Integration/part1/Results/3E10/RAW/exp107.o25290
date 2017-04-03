@@ -1,0 +1,19 @@
+invalid option: status-utf8
+no current session
+invalid option: status-utf8
+open terminal failed: not a terminal
+Потоков: 3
+Version: 1
+Numerical integration: [-8.000000, 8.000000], n = 30000000000
+Result Pi: 3.14159265363420470152
+Elapsed time (sec.): 1636.777880812064
+===
+Version: 2
+Numerical integration: [-8.000000, 8.000000], n = 30000000000
+Result Pi: 3.14159265363420470152
+Elapsed time (sec.): 598.880697636865
+===
+Version: 3
+Numerical integration: [-8.000000, 8.000000], n = 30000000000
+Result Pi: 3.14159261850580540099
+Elapsed time (sec.): 607.639426429989

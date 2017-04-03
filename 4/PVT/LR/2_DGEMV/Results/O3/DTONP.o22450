@@ -1,0 +1,10 @@
+invalid option: status-utf8
+no current session
+invalid option: status-utf8
+open terminal failed: not a terminal
+Потоков: 5
+MATRIX = 25000000
+Matrix-vector product (c[m] = a[m, n] * b[n]; m = 5000, n = 5000)
+Memory used: 190 MiB
+Elapsed time (serial): 0.0700309 sec.
+Elapsed time (parallel): 0.0420439 sec.
