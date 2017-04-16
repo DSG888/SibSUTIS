@@ -1,0 +1,11 @@
+invalid option: status-utf8
+no current session
+invalid option: status-utf8
+open terminal failed: not a terminal
+Потоков: 2
+Последовательная версия:
+Result: 1.066656329076, n 200000000
+Elapsed time (sec.): 30.128619930241
+Параллельная версия:
+Result: 1.066698754622, n 200000000
+Elapsed time (sec.): 15.115851546172
