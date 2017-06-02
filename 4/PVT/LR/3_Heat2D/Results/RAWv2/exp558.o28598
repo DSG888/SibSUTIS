@@ -1,0 +1,9 @@
+invalid option: status-utf8
+no current session
+invalid option: status-utf8
+open terminal failed: not a terminal
+Потоков: 6
+# Heat 2D (OMP 6): grid: rows 5000, cols 5000
+# niters 243, total time (sec.): 34.750988
+# talloc: 0.000012, tinit: 0.167348, titers: 34.583628
+c5bcd0711760d22e2eb6503c7683a3db  /tmp/QR558

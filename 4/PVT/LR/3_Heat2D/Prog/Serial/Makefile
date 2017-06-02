@@ -1,9 +1,9 @@
 CC = gcc
-CFLAGS = -fopenmp -std=c99
+CFLAGS = -std=c99
 LDFLAGS = -lm
 SOURCES = main.c
 OBJECT_FILES = $(addprefix obj/, $(SOURCES:.c=.o))
-EXECUTABLE = Heat2DS
+EXECUTABLE = Heat2Ds
 
 all: obj $(SOURCES) $(EXECUTABLE)
 

@@ -1,0 +1,224 @@
+===Потоков: 1
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.045876, tinit 0.000003, tforces 0.839355, tmove 0.107428
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.386468, tinit 0.000003, tforces 1.180332, tmove 0.107036
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.106937, tinit 0.000002, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.056427, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 0.765426, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 2
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.873666, tinit 0.000003, tforces 1.629372, tmove 0.134123
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.386421, tinit 0.000003, tforces 1.179838, tmove 0.107633
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.852977, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.348735, tinit 0.000002, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.107537, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 3
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 3.174724, tinit 0.000003, tforces 2.925760, tmove 0.147264
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.389263, tinit 0.000003, tforces 1.180196, tmove 0.109726
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.971395, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.402845, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.240702, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 4
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 3.088862, tinit 0.000003, tforces 2.837443, tmove 0.145331
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.386187, tinit 0.000002, tforces 1.179933, tmove 0.107186
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 2.050585, tinit 0.000002, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.516302, tinit 0.000002, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.336876, tinit 0.000004, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 5
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 3.689728, tinit 0.000002, tforces 3.447311, tmove 0.139352
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.397209, tinit 0.000004, tforces 1.182614, tmove 0.115515
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.996526, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.456243, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.423349, tinit 0.000004, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 6
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 4.014257, tinit 0.000002, tforces 3.769347, tmove 0.145767
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.409436, tinit 0.000003, tforces 1.203075, tmove 0.107073
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 2.038279, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.456732, tinit 0.000002, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.529911, tinit 0.000004, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 7
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 3.795124, tinit 0.000003, tforces 3.549761, tmove 0.140965
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.449892, tinit 0.000004, tforces 1.243705, tmove 0.106894
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 2.018183, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.504203, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.604511, tinit 0.000004, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
+===Потоков: 8
+
+==V1==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 4.262875, tinit 0.000003, tforces 4.010125, tmove 0.146261
+==V1-=
+
+==V2==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.385398, tinit 0.000003, tforces 1.179853, tmove 0.106663
+==V2-=
+
+==V3==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 2.060494, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V3-=
+
+==V4==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.584861, tinit 0.000003, tforces 0.000000, tmove 0.000000
+==V4-=
+
+==V5==
+# NBody (n=10)
+# Elapsed time (sec): ttotal 1.769671, tinit 0.000004, tforces 0.000000, tmove 0.000000
+==V5-=
+
+==+
