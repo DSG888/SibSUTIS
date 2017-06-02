@@ -1,2 +1,0 @@
-cls
-prog test.txt

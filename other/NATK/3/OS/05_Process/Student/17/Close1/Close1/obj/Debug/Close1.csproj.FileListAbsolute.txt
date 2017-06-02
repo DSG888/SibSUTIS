@@ -1,7 +1,0 @@
-D:\LabC#\05\Student\17\Close1\Close1\bin\Debug\Close1.exe
-D:\LabC#\05\Student\17\Close1\Close1\bin\Debug\Close1.pdb
-D:\LabC#\05\Student\17\Close1\Close1\obj\Debug\ResolveAssemblyReference.cache
-D:\LabC#\05\Student\17\Close1\Close1\obj\Debug\Close1.exe
-D:\LabC#\05\Student\17\Close1\Close1\obj\Debug\Close1.pdb
-P:\2011_OBT\Lab\05_Process\Student\17\Close1\Close1\obj\Debug\Close1.exe
-P:\2011_OBT\Lab\05_Process\Student\17\Close1\Close1\obj\Debug\Close1.pdb

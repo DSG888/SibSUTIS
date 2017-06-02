@@ -1,7 +1,0 @@
-C:\Laptev\LabC#\05\Student\02\MyProcess\MyProcess\bin\Debug\MyProcess.exe
-C:\Laptev\LabC#\05\Student\02\MyProcess\MyProcess\bin\Debug\MyProcess.pdb
-C:\Laptev\LabC#\05\Student\02\MyProcess\MyProcess\obj\Debug\ResolveAssemblyReference.cache
-C:\Laptev\LabC#\05\Student\02\MyProcess\MyProcess\obj\Debug\MyProcess.exe
-C:\Laptev\LabC#\05\Student\02\MyProcess\MyProcess\obj\Debug\MyProcess.pdb
-D:\LabC#\05\Student\021\MyProcess\MyProcess\obj\Debug\MyProcess.exe
-D:\LabC#\05\Student\021\MyProcess\MyProcess\obj\Debug\MyProcess.pdb

@@ -1,3 +1,0 @@
-This is the header for the file.
--------------------
-The date is: 07.12.2011 19:50:06

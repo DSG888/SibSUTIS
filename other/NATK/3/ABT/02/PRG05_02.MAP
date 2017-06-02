@@ -1,9 +1,0 @@
-
- Start  Stop   Length Name               Class
-
- 00000H 000A8H 000A9H DATA               DATA
- 000B0H 001AFH 00100H STK                
- 001B0H 001DBH 0002CH CODE               CODE
-
-Program entry point at 001B:0000
-

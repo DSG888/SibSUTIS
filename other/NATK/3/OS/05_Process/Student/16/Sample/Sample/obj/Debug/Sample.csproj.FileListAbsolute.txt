@@ -1,5 +1,0 @@
-D:\LabC#\05\Student\16\Sample\Sample\bin\Debug\Sample.exe
-D:\LabC#\05\Student\16\Sample\Sample\bin\Debug\Sample.pdb
-D:\LabC#\05\Student\16\Sample\Sample\obj\Debug\ResolveAssemblyReference.cache
-D:\LabC#\05\Student\16\Sample\Sample\obj\Debug\Sample.exe
-D:\LabC#\05\Student\16\Sample\Sample\obj\Debug\Sample.pdb

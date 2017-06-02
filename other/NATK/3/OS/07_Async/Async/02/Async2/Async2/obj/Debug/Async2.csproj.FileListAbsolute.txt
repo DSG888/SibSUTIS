@@ -1,5 +1,0 @@
-D:\LabC#\07\Async\02\Async2\Async2\bin\Debug\Async2.exe
-D:\LabC#\07\Async\02\Async2\Async2\bin\Debug\Async2.pdb
-D:\LabC#\07\Async\02\Async2\Async2\obj\Debug\ResolveAssemblyReference.cache
-D:\LabC#\07\Async\02\Async2\Async2\obj\Debug\Async2.exe
-D:\LabC#\07\Async\02\Async2\Async2\obj\Debug\Async2.pdb

@@ -1,5 +1,0 @@
-D:\LabC#\05\Student\23\Console23\Console23\bin\Debug\Console23.exe
-D:\LabC#\05\Student\23\Console23\Console23\bin\Debug\Console23.pdb
-D:\LabC#\05\Student\23\Console23\Console23\obj\Debug\ResolveAssemblyReference.cache
-D:\LabC#\05\Student\23\Console23\Console23\obj\Debug\Console23.exe
-D:\LabC#\05\Student\23\Console23\Console23\obj\Debug\Console23.pdb

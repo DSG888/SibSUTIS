@@ -1,9 +1,0 @@
-
- Start  Stop   Length Name               Class
-
- 00000H 0002AH 0002BH _TEXT              CODE
- 0002CH 0006EH 00043H _DATA              DATA
-
-Program entry point at 0000:0000
-Warning: No stack
-

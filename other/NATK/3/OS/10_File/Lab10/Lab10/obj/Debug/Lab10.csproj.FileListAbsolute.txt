@@ -1,7 +1,0 @@
-C:\Users\Laptev-VG\OS\10\Lab10\Lab10\bin\Debug\Lab10.exe
-C:\Users\Laptev-VG\OS\10\Lab10\Lab10\bin\Debug\Lab10.pdb
-C:\Users\Laptev-VG\OS\10\Lab10\Lab10\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Laptev-VG\OS\10\Lab10\Lab10\obj\Debug\Lab10.exe
-C:\Users\Laptev-VG\OS\10\Lab10\Lab10\obj\Debug\Lab10.pdb
-P:\OS\2011_OBT\Lab\10_File\Lab10\Lab10\obj\Debug\Lab10.exe
-P:\OS\2011_OBT\Lab\10_File\Lab10\Lab10\obj\Debug\Lab10.pdb
