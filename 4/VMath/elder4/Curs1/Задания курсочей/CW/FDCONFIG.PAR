@@ -1,0 +1,7 @@
+Screen   .SFT  8 10  0 9 7
+HiRes    .EFT  8 16  0 9 5
+Print    .PFT 16 24 12 9 5
+QPrint   .QFT 32 24 12 5 5
+24Pin    .XFT 40 30 18 5 5
+Laser    .LFT 40 50 25 5 3
+

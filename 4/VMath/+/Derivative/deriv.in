@@ -1,0 +1,21 @@
+x**(1/3)
+1+0+x
+x
+ln(x)
+sin(x)
+cos(x)
+tg(x)
+ctg(x)
+arctg(x)
+arcsin(x)
+ln(x) * sin(x)
+x ** 2
+x ** 3
+2 ** x
+x ** x
+(x + 1) * (x + 2) * (x + 3)
+arctg(x) / sin(x)
+arcsin(sin(1) * sin(x) / (1 - cos(x) * cos(1)))
+arctg(2 ** (x / 2)) - ln(((2 ** x) / (2 ** x + 1)) ** 0.5)
+(5 * x + 2) / (x ** 2 + x + 1) + ln(((x - 1) ** 2 / (x ** 2 + x + 1)) ** (1/3)) + 8 * arctg((2 * x + 1) / 3)
+(ln((x ** 2 + 4) ** 0.5 - (x ** 2 - 4) ** 0.5)) ** tg(x ** 2 + ln(2 * x))

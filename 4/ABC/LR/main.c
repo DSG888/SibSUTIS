@@ -1,6 +1,19 @@
 #include "main.h"
 
+#include "keyboard.h"
+
+//kill -SIGUSR1 `pidof myEVM`
+//kill -2 `pidof myEVM`
+
 static const char *sc[] = {"@","@","@","@","@","@","@","@","@","@","READ","WRITE","@","@","@","@","@","@","@","@","LOAD","STORE","@","@","@","@","@","@","@","@","ADD","SUB","DIVIDE","MUL","@","@","@","@","@","@","JUMP","JNEG","JZ","MUL","@","@","@","@","@","@","@","NOT","AND","OR","XOR","JNS","JC","JNC","JP","JNP","CHL","SHR","RCL","RCR","NEG","ADDC","SUBC","LOGLC","LOGRC","RCCL","RCCR","MOVA","MOVR","MOVCA","MOVCR","ADDC","SUBC"};
+
+void sig_handler(int signo)
+{
+	if (signo == SIGINT)
+		printf("received SIGINT\n");	//FIXME
+	if (signo == SIGUSR1)
+		printf("restart\n");	//FIXME
+}
 
 
 WINDOW *create_win(int starty, int startx, int height, int width)
@@ -113,6 +126,11 @@ int viewprog(WINDOW *wnd, byte *mem, int pointer, int vector)
 
 int main(int argc, char **argv)
 {
+	if (signal(SIGINT, sig_handler) == SIG_ERR)
+		printf("\ncan't catch SIGINT\n");
+	if (signal(SIGUSR1, sig_handler) == SIG_ERR)
+		printf("\ncan't catch SIGUSR1\n");
+	
 	setlocale(LC_ALL, "");
 	uint8_t RAMVPointer = 3;	// Позиция отображаемого участка памяти
 	uint8_t PROVPointer = 0;
@@ -363,6 +381,8 @@ int main(int argc, char **argv)
 					paintbox(winREG, 3);
 					paintbox(winTerminal, 1);
 					ActiveWindow = WIN_TER;
+					
+					goto TERMINATE;
 					break;
 				}
 			}
@@ -396,7 +416,42 @@ TERMINATE:
 	endwin();
 //	sc_regSet(4,1);
 //	sc_regSet(1,1);
-//	printf("%d\n", Flags);
 	
+	
+	mt_clrscr();
+	//bc_printA("\n");
+
+	
+	//bc_setbigcharpos(r[3],0,0,0b10000001);
+	
+
+
+int bcint0 [2] = {1717976064, 3958374};	//0b01100110011001100011110000000000, 0b00000000001111000110011001100110
+int bcint1 [2] = {1010315264, 3158064};	//0b00111100001110000011000000000000, 0b00000000001100000011000000110000
+int bcint2 [2] = {1010842624, 8258050};	//0b00111100010000000011110000000000, 0b00000000011111100000001000000010
+int bcint3 [2] = {2120252928, 8282238};	//0b01111110011000000111111000000000, 0b00000000011111100110000001111110
+int bcint4 [2] = {2120640000, 6316158};	//0b01111110011001100110011000000000, 0b00000000011000000110000001111110
+int bcint5 [2] = {1040350720, 4079680};	//0b00111110000000100111111000000000, 0b00000000001111100100000001000000
+int bcint6 [2] = {35789824, 1974814};	//0b00000010001000100001110000000000, 0b00000000000111100010001000011110
+int bcint7 [2] = {811630080, 396312};	//0b00110000011000000111111000000000, 0b00000000000001100000110000011000
+int bcint8 [2] = {1013332992, 3958374};	//0b00111100011001100011110000000000, 0b00000000001111000110011001100110;
+int bcint9 [2] = {2087074816, 3956832};	//0b01111100011001100011110000000000, 0b00000000001111000110000001100000
+int bcintA [2] = {2118269952, 4342338};	//0b01111110010000100011110000000000, 0b00000000010000100100001001000010
+int bcintB [2] = {1044528640, 4080194};	//0b00111110010000100011111000000000, 0b00000000001111100100001001000010
+int bcintC [2] = {37895168, 3949058};	//0b00000010010000100011110000000000, 0b00000000001111000100001000000010
+int bcintD [2] = {1111637504, 4080194};	//0b01000010010000100011111000000000, 0b00000000001111100100001001000010
+int bcintE [2] = {2114092544, 8258050};	//0b01111110000000100111111000000000, 0b00000000011111100000001000000010
+int bcintF [2] = {33717760, 131646};	//0b00000010000000100111111000000000, 0b00000000000000100000001000111110
+int bcintp [2] = {2115508224, 1579134};	//0b01111110000110000001100000000000, 0b00000000000110000001100001111110
+/*
+	
+	bc_printbigchar(bcintp, 5, 5, cl_blue, cl_red);
+	
+	bc_box(2, 1, 50, 20);
+*/
+
+	int a;
+	rk_readkey(&a);
+	printf("%d\n", a);
 	return 0;
 }

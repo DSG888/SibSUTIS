@@ -1,0 +1,52 @@
+NF   20
+NK   60
+LL   78
+F1 STANDARD                     
+F2 NORMAL                       
+F3 ITALIC                       
+F4 BOLD                         
+F5 STAND-S                                       
+F6 ITALIC-S                                    
+F7 GREEK-S                      
+F8 LINEDRAW                                    
+F9 MATHI                        
+F0 MATHII                       
+FA R-STAND   
+FB R-NORMAL  
+FC R-ITALIC  
+FD R-BOLD    
+FE R-HEADER  
+FF ORATOR    
+FG GREEK     
+FH GOTHIC    
+FI SMALL     
+FJ MATHIII          
+PP    0
+QU    0
+IN    2
+MI   15
+HT    4
+HM    1
+CS ****>9>3N8N2N9N3****>7>1N4N6>4>6N7N1G+G-
+CU N8N2>9>3N9N3********>7>1N4N6>4>6N7N1G+G-
+CK G*^A^B^C^D^F^GCICJ^K^LCM^N^P^R^S^T^W^ZC[^]CB^ISTN0^O^X
+WD
+KF MATH.KEY
+DX .CHI
+DR QUAL.PRN
+PL  126
+PF    1
+TF    4
+RM   59
+LM    7
+TM    0
+BM    0
+PI    0
+JU    1
+HS    1
+DS    1
+EN    0
+SP    1
+TA   2  4  6  9 11 15 20 25 30 35 40 45 50 55 60 65 70 75 80
+
+

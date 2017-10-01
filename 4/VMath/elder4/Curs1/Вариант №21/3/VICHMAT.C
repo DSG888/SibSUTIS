@@ -1,0 +1,233 @@
+#include<math.h>
+#include<conio.h>
+#include<graphics.h>
+#include<stdio.h>
+
+#define E 0.001    // tochnost' dlya itercaioonih metodov
+double F[2],Y[2];   // (sm. lekcii)
+double Y0[2];       //  y(x=0) i (dy/dx)(x=0)
+double k;           // (sm. zadanie)
+int printing=0;     /* opredelyaet, budut li pechatatca promejutochnie
+                       rezultati pri dvoinom pereschete */
+
+               /* nahojdenie koefficienta k */
+void findk()
+{
+  double a=0, b=2, c=(a+b)/2, fc=c*c*c*c*c-sin(c)-1;
+  do
+  {
+    if(((a*a*a*a*a-sin(a)-1)*fc)<0)  b=c;
+    else  a=c;
+    c=(a+b)/2;
+    fc=c*c*c*c*c-sin(c)-1;
+  }while(( (fc>=0) ? fc : -fc ) > E);
+  k=c;
+}
+
+            /* zdes opredelyaetca nashe uravnenie : */
+#define difur(f2) ( f2 - sin(f2) - sin(Y[0]) - 2*Y[1] - k*exp(-2*x) )
+
+            /* zapolnenie vectora F(x,Y) (sm.lekcii) */
+void fillF(double x, double *Y)
+{
+  double a,b,c=0,fc=difur(c),delta;
+  int dir=2;
+  F[0]=Y[1];          // pervaya proizvodnaya
+          // naidem vtoruyu proizvodnuyu v dva shaga:
+                  // 1 - opredelenie diapazona
+  if(fc>0)  dir=-dir;
+  do
+  {
+    c+=dir;
+    fc=difur(c);
+  }while((dir*fc)<0);
+                  // 2 - metod polovinnogo deleniya
+  a=(dir>0) ? (c-dir) : c;
+  b=a+( (dir>0) ? dir: -dir );
+  do
+  {
+    c=(a+b)/2; fc=difur(c);
+    if(fc<0)  {a=c; delta=-fc;}
+    else      {b=c; delta=fc;}
+  }while(delta>E*100);
+  F[1]=c;
+}
+
+   /* metod Runge-Kutta 2-go poryadka s usredneniem po vremeni (sm.lekcii) */
+void rungekutt(double x, long int n)
+{
+  double Yzv[2],h=x/n,xi;
+  long int i;
+  Y[0]=Y0[0];  Y[1]=Y0[1];
+  for(i=0;i<n;i++)
+  {
+    xi=i*h;
+    fillF(xi,Y);
+    Yzv[0]=Y[0]+(h/2)*F[0];
+    Yzv[1]=Y[1]+(h/2)*F[1];
+    fillF(xi+h/2,Yzv);
+    Y[0]+=h*F[0]; Y[1]+=h*F[1];
+  }
+  if(printing)  printf("h=%f -> y=%f, dy/dx=%f\n",h,Y[0],Y[1]);
+}
+
+	      /* reshenie difura v tochke 'x' s dvoinim pereschetom */
+void doublecount(double x)
+{
+  long int n=1;
+  double Ytemp[2],delta[2];
+  rungekutt(x,n);
+  do
+  {
+    Ytemp[0]=Y[0]; Ytemp[1]=Y[1];
+    n*=2;
+    rungekutt(x,n);
+    delta[0]=(Ytemp[0]>Y[0]) ? (Ytemp[0]-Y[0]) : (Y[0]-Ytemp[0]);
+    delta[1]=(Ytemp[1]>Y[1])?(Ytemp[1]-Y[1]):(Y[1]-Ytemp[1]);
+  }while( (delta[0]>=E) || (delta[1]>=E) );
+}
+
+	     /* odin 'vistrel' v metode strelb */
+void singleshot()
+{
+  printf("esli dy/dx(0)=%f, to:\n",Y0[1]);
+  doublecount(1);
+  printf("y(1)=%f, dy/dx(1)=%f\n",Y[0],Y[1]);
+  getch();
+}
+
+           /* nahojdenie dy/dx v tochke x=0 metodom strelb */
+void shooting()
+{
+  int dir=1;
+  double a,b,c,delta;
+  printf("naidem dy/dx v tochke x=0 metodom strelb:\n\n");
+            // 1 - opredelenie diapazona
+  Y0[1]=0;
+  singleshot();
+  if(Y[1]>0.5)  dir=-1;
+  do
+  {
+    Y0[1]+=dir;
+    singleshot();
+  }while((dir*(Y[1]-0.5))<0);
+            // 2 - metod polovinnogo deleniya
+  a=(dir>0) ? (Y0[1]-dir) : Y0[1];
+  b=a+( (dir>0) ? dir : -dir );
+  do
+  {
+    c=(a+b)/2; Y0[1]=c;
+    singleshot();
+    if(Y[1]<0.5)  {a=c; delta=0.5-Y[1];}
+    else          {b=c; delta=Y[1]-0.5;}
+  }while(delta>E);
+  printf("\n itogo: dy/dx(0)=%f\n",Y0[1]);
+}
+
+double Xint[6],Yint[6];   // massivi, ispolzuemie pri interpolyacii
+
+          /* nahojdenie faktoriala ot 'x' (nujno dlya metoda Nyutona) */
+long faktorial(int x)
+{
+  long f=1;
+  int i;
+  for(i=1;i<=x;i++)  f*=i;
+  return f;
+}
+
+     /* nahojdenie konechnoi raznosti v metode Nyutona (sm. lekcii) */
+double delta(int i,int k)
+{
+  double d;
+  if(!k)  d=Yint[i];
+  else d=delta(i+1,k-1)-delta(i,k-1);
+  return d;
+}
+
+          /* vichislenie interpolyacionnogo mnogochlena metodom Nyutona */
+double interpol(double x)
+{
+  int j,i;
+  double q,p,dp;
+  q=(x-Xint[0])/0.2;
+  p=Yint[0];
+  i=1;
+  do
+  {
+    dp=delta(0,i)/faktorial(i);
+    for(j=0;j<i;j++)
+    dp*=(q-j);
+    p+=dp;  i++;
+  }while(i<=6);
+  return p;
+}
+
+        /* postroenie grafika */
+void grafik()
+{
+  double x[400],p[400];
+  int i=DETECT,j;
+  printing=0;   //budem pechatat' promejutochnie rezultati
+  initgraph(&i,&j,"d:\\work\\cpp\\bgi");
+  setcolor(WHITE);
+  line(40,0,40,480);
+  line(0,440,640,440);
+  for(i=0;i<400;i++)
+  {
+    x[i]=(double)i/400;
+    p[i]=interpol(x[i]);
+  }
+  for(i=0;i<400;i++)  putpixel(40+i,410-(int)(p[i]*400),RED);
+  for(i=0;i<6;i++)  circle(40+(int)(Xint[i]*400),410-(int)(Yint[i]*400),4);
+  outtextxy(25,8,"1");
+  outtextxy(440,445,"1");
+  getch();
+  closegraph();
+}
+
+   /* vichislenioe integrala (kolichestva teploti) metodom simpsona*/
+void findQ()
+{
+  double X[101],Y[101],temp1,temp2;
+  int i;
+  for(i=0;i<=100;i++)
+  {
+    X[i]=i*0.01;
+    temp1=interpol(X[i]);
+    Y[i]=temp1*temp1;
+  }
+  temp1=0; temp2=0;
+  for(i=0;i<100;i+=2)
+  {
+    temp1+=Y[i+1];
+    temp2+=Y[i];
+  }
+  temp1*=2/3.0;  temp2/=3.0;
+  temp1=(temp1+temp2+(Y[0]+Y[100])/6)*(X[100]-X[0])/50;
+  printf("integral (y*y)dx ot %f do %f  =  %f",X[0],X[100],temp1);
+  getch();
+}
+
+
+void main()
+{
+  int i;
+  clrscr();
+  findk();
+  printf("k=%f\n",k);
+  Y0[0]=1;
+  shooting();
+  printing=1;
+  printf("reshim dif. ur. dlya uzlov interpolyacii:\n\n");
+  for(i=0;i<6;i++)
+  {
+    Xint[i]=i*0.2;
+    doublecount(Xint[i]);
+    Yint[i]=Y[0];
+    printf("pri x=%f,  y=%f, dy/dx=%f \n\n",Xint[i],Yint[i],Y[1]);
+    getch();
+  }
+  printf("naidem Q:\n");
+  findQ();
+  grafik();
+}

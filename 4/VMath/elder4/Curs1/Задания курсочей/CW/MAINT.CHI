@@ -1,0 +1,171 @@
+\1cw
+\U1STANDARD
+\U3ITALIC
+\U4BOLD
+\U!UNDERLIN
+\FD
+\+
+\+
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \@\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\=
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \4MAINTAINING YOUR DICTIONARY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\+
+\,
+\+
+\^\ \ \ \ \ \ \ \ \ \ \ \ \ \ \1Using MicroSpell's MAINT.EXE Program\ \ \ \ \ \ \ \ \ \ \ \ \ \ \^\,
+\+
+\,
+\+
+\ \ \ \ \[Here is a step by step procedure on \ how \ to \ keep \ the \ main 
+\+
+dictionary (MAIN.LEX) up-to-date by using \ MicroSpell's \ MAINT.EXE 
+\+
+program.\,
+\+
+\ \ \ \ \[The main dictionary (MAIN.LEX) contains all of the words \ the 
+\+
+speller already knows.  And this main dictionary should be on \ the 
+\+
+hard drive (C:\\CHIWRITE).  Adding or deleting words will mean \ you 
+\+
+are \ adding/deleting \ words \ straight \ from \ the \ main \ dictionary 
+\+
+(MAIN.LEX).\,
+\+
+\ \ \ \ \[Note that the MAINT.EXE program can \!only \1be used correctly on 
+\+
+a hard disk system.  A floppy \ disk \ system \ will \ not \ allow \ the 
+\+
+program to operate correctly.\,
+\+
+\,
+\+
+\4INSTALLING MAINT.EXE ONTO HARD DISK SYSTEM\,
+\+
+\,
+\+
+\ \ \ \ \[\1To install MAINT.EXE onto a hard disk is \ very \ simple. \  The 
+\+
+original spell \ checker \ disk \ containing \ the \ MAINT.EXE \ program 
+\+
+should be in drive A: (or drive B:) then type:\,
+\+
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \[COPY A:MAINT.EXE C:\\CHIWRITE\,
+\+
+\ \ \ \ \[This will copy MAINT.EXE from the floppy disk onto \ the \ hard 
+\+
+disk on drive C:\\CHIWRITE (or whatever the \ hard \ drive \ directory 
+\+
+is).  After MAINT.EXE is installed on the hard drive, you can \ add 
+\+
+or delete words into the main dictionary (MAIN.LEX).\,
+\+
+\,
+\+
+\4COLLECTING THE WORDS YOU WANT TO ADD/DELETE\,
+\+
+\,
+\+
+\ \ \ \ \[\1In order for you to add/delete words from the dictionary \ you 
+\+
+will have to create an ASCII file which will contain all the words 
+\+
+you want to add/delete later on.  MAINT.EXE only accepts lists \ of 
+\+
+words in the form of a standard ASCII text file.\,
+\+
+\ \ \ \ \[To \ collect \ words \ to \ include \ in \ \ the \ \ main \ \ dictionary 
+\+
+(MAIN.LEX), spell check a few files.  Whenever the \ spell \ checker 
+\+
+comes across a word that it \ does \ not \ "know" \ and \ you \ consider 
+\+
+important, select the "Write" option.  This will insert \ the \ word 
+\+
+into an auxiliary dictionary, filename.AUX, (with the same name as 
+\+
+the document but with the extension .AUX).\,
+\+
+\ \ \ \ \[After performing this operation a few times, \ there \ will \ be 
+\+
+several \ .AUX \ files \ on \ your \ document \ \ floppy \ \ disk \ \ or \ \ on 
+\+
+C:\\CHIWRITE\\DOC.  Now copy them all into one file, \ LEX.AUX, \ with 
+\+
+the following DOS command:\,
+\+
+\ \ \ \ \ \ \ \ \ \[COPY file1.AUX+file2.AUX+file3.AUX+  ...  LEX.AUX\,
+\+
+\ \ \ \ \[Then edit this LEX.AUX with ChiWriter.  Read it in with "Read 
+\+
+Import ASCII".  Then remove duplicate words and words you \ do \ not 
+\+
+want to add to MAIN.LEX.  Add any \ other \ words \ you \ would 
+\+
+like to include in the main dictionary and \ fix \ all \ errors \ now.  
+\+
+Before leaving ChiWriter, make sure \ you \ save \ LEX.AUX \ with \ the 
+\+
+"Write Export ASCII".\,
+\+
+\,
+\+
+\4EXECUTING THE MAINT PROGRAM \,
+\+
+\,
+\+
+\ \ \ \ \[\1You \ will \ execute \ MAINT \ by \ typing \ \ MAINT[\3Return\1]. \ \  The 
+\+
+MicroSpell Dictionary \ Maintenance \ Utility \ screen \ will \ appear.  
+\+
+Then the program will prompt you for the information it \ needs \ in 
+\+
+order to operate correctly, namely:\,\/
+\+
+\,
+\+
+\ \ \ \ \[1.\ \[Whether you want to add or delete words.  The default \ is 
+\+
+\ \ \ \ \ \ \ \ \[set to adding words (+); type - if \ you \ want \ to \ delete 
+\+
+\ \ \ \ \ \ \ \ \[word(s).\,
+\+
+\,
+\+
+\ \ \ \ \[2.\ \[The file name which contains the words \ to \ be \ added \ or 
+\+
+\ \ \ \ \ \ \ \ \[deleted.  This file must be an ASCII file. \  The \ default 
+\+
+\ \ \ \ \ \ \ \ \[file \ given \ for \ adding \ is \ LEX.AUX \ in \ \ the \ \ current 
+\+
+\ \ \ \ \ \ \ \ \[directory.\,
+\+
+\,
+\+
+\ \ \ \ \[3.\ \[The (sub)directory where the dictionary file MAIN.LEX \ is 
+\+
+\ \ \ \ \ \ \ \ \[located if it is not in the current directory.\,
+\+
+\,
+\+
+\ \ \ \ \[4.\ \[The \ (sub)directory \ where \ you \ want \ to \ send \ the \ new 
+\+
+\ \ \ \ \ \ \ \ \[MAIN.LEX.  By default, it will be the exact same place as 
+\+
+\ \ \ \ \ \ \ \ \[the original MAIN.LEX.  But if you do not want to replace 
+\+
+\ \ \ \ \ \ \ \ \[the \ original \ dictionary, \ then \ specify \ \ a \ \ different 
+\+
+\ \ \ \ \ \ \ \ \[directory.  Otherwise, type [\3Return\1].\,
+\+
+\,
+\+
+\ \ \ \ \[Because the entire dictionary will have to \ be \ rebuilt, \ the 
+\+
+process \ of \ adding/deleting \ words \ will \ take \ several \ \ minutes 
+\+
+(regardless of the number of words you are adding/deleting).\,
+\=
+
