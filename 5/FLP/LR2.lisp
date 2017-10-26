@@ -13,5 +13,4 @@
 ; 3. Удаляющую элементы из первого списка с номерами из второго списка (второй список упорядочен по возрастанию, нумерация элементов должна начинаться с 1).
 ;    Например, L1=(a s d f g h j k l), L2=(1 4 5 8) –> (s d h j l).
 (defun del_idx (x y &optional (n 1)) (cond ((null x) nil) ((null y) x) ((= (car y) n) (del_idx (cdr x) (cdr y) (1+ n))) ((cons (car x) (del_idx (cdr x) y (1+ n))))))
-
-
+(del_idx `( a s d f g h j k l) `(1 4 5 8))
