@@ -1,0 +1,5 @@
+./configure --target-list=i386-softmmu --prefix=$HOME/qemu/ --disable-kvm --disable-vnc-tls --disable-docs
+
+/*
+--target-list="i386-softmmu x86_64-softmmu"
+*/
